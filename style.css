@@ -1,0 +1,80 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0e0e0; /* Light grey background */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styles */
+header {
+  background-color: #000; /* Black header bar */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Main content styles */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+  max-width: 600px;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* Notify Button styles */
+.notify-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #000;  /* Black button */
+  color: #fff;             /* White text */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.notify-btn:hover {
+  background-color: #333;
+}
+
+/* Optional Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #f0f0f0;
+  font-size: 0.9rem;
+  color: #777;
+}
