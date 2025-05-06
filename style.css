@@ -1,23 +1,19 @@
-/* BASE RESET */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-
-/* BODY BACKGROUND */
+/* BODY */
 body {
-  margin: 0;
-
-  background-color: #000;
+  font-family: 'Arial', sans-serif;
+  background-color: #111;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /*background-image: url('Square Logo.jpg'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -36,52 +32,41 @@ body {
   z-index: 1;
 }
 
-/* CONTENT AREA */
+/* FADE BLOCKER (to stop flicker) */
+.fade-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 1s ease-in;
+}
+
+body.breaking .fade-blocker {
+  opacity: 1;
+}
+
+/* CONTENT */
 .content {
   z-index: 2;
   text-align: center;
   padding: 2rem;
-  animation: fadeSlideUp 1.2s ease-out;
 }
 
 /* HEADLINE */
 h1 {
-  font-family: 'Bararian', sans-serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  opacity: 0;
-  animation: fadeIn 1.4s ease-in-out forwards;
-  animation-delay: 0.2s;
   font-size: 4.5rem;
   margin-bottom: 1rem;
-  opacity: 0;
-  animation: fadeIn 1.4s ease-in-out forwards;
-  animation-delay: 0.2s;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-
-/* PARAGRAPH */
-.content p:first-of-type {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeIn 1.4s ease-in-out forwards;
-  animation-delay: 0.6s;
-}
-
-
-
-/* FORM ANIMATION */
-form {
-  opacity: 0;
-  animation: fadeInUp 1.4s ease-out forwards;
-  animation-delay: 1.2s;
-}
-
-/* EMAIL INPUT */
+/* INPUT */
 input[type="email"] {
   padding: 0.75rem;
   font-size: 1rem;
@@ -97,7 +82,7 @@ input[type="email"]:focus {
   transform: scale(1.03);
 }
 
-/* BUTTON STYLES */
+/* BUTTON */
 button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -107,8 +92,6 @@ button {
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
 button:hover {
@@ -116,18 +99,39 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* TAGLINE WITH PULSE EFFECT */
+/* TAGLINE */
 .tagline {
   margin-top: 2rem;
   font-weight: bold;
   font-size: 1rem;
   color: #fff;
+}
+
+/* ENTRY ANIMATIONS (once on load) */
+body:not(.breaking) h1 {
+  opacity: 0;
+  animation: fadeIn 1.4s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+
+body:not(.breaking) .content p:first-of-type {
+  opacity: 0;
+  animation: fadeIn 1.4s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+body:not(.breaking) form {
+  opacity: 0;
+  animation: fadeInUp 1.4s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+body:not(.breaking) .tagline {
   opacity: 0;
   animation: fadeIn 1.4s ease-in-out forwards;
   animation-delay: 1.8s;
 }
 
-/* ANIMATIONS */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -145,13 +149,56 @@ button:hover {
   }
 }
 
-@keyframes fadeSlideUp {
-  from {
-    transform: translateY(50px);
+/* BREAK / FALL ANIMATIONS */
+.fall {
+  opacity: 1;
+  position: relative;
+}
+
+body.breaking .fall {
+  animation-fill-mode: forwards;
+}
+
+body.breaking .fall-slow {
+  animation: fallSlow 2.8s ease-in;
+}
+
+body.breaking .fall-medium {
+  animation: fallMedium 2.4s ease-in;
+}
+
+body.breaking .fall-fast {
+  animation: fallFast 2s ease-in;
+}
+
+body.breaking .fall-spin {
+  animation: fallSpin 2.2s ease-in;
+}
+
+@keyframes fallSlow {
+  to {
+    transform: translateY(150vh) rotate(-10deg);
     opacity: 0;
   }
+}
+
+@keyframes fallMedium {
   to {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(120vh) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fallFast {
+  to {
+    transform: translateY(100vh) rotate(-25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fallSpin {
+  to {
+    transform: translateY(130vh) rotate(360deg);
+    opacity: 0;
   }
 }
