@@ -7,13 +7,15 @@
 
 /* BODY */
 body {
+  touch-action: manipulation;
+  overscroll-behavior: none;
   font-family: 'Arial', sans-serif;
   background-color: #111;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -200,5 +202,35 @@ body.breaking .fall-spin {
   to {
     transform: translateY(130vh) rotate(360deg);
     opacity: 0;
+  }
+}
+
+
+/*PHONE*/
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  p,
+  .tagline {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  input[type="email"] {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  button {
+    width: 80%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: 1rem;
   }
 }
