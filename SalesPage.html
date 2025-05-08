@@ -1,7 +1,8 @@
+
 <!-- Begin Brevo Form -->
 <!-- START - We recommend to place the below code in head tag of your website html  -->
 <style>
-  @font-face {
+   @font-face {
   font-display: block;
   font-family: Roboto;
   src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),
@@ -76,7 +77,6 @@ html {
 }
 
 
-
 </style>
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <!--  END - We recommend to place the above code in head tag of your website html -->
@@ -108,7 +108,7 @@ html {
     </div>
     <div></div>
     <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:22px; border-width:1px; border-color:#000000; border-style:solid; direction:ltr">
-      <form id="sib-form" method="POST" action="https://sibforms.com/serve/MUIFADjkEsrSU8Lah61zh_stV3h-yy_FXYJ-gyHrM6CbReBuMhdBCdUyrL6z3wHjnX7zk4D8gO7u9WkGod_nqPdE7udQCMhELNLsXZTelZVwf9XmM4j5HEy8Gjc1CvXDS7UTvHpyMaodF3j72jmFSAyPhfbxeFGFNfI0rGGMCnsC9mGY2l5merJBEiIFmcKN4P-UgaAe_yWnH2oJ" data-type="subscription">
+      <form id="sib-form" method="POST" action="https://sibforms.com/serve/MUIFAFN_ZSIzByEDpURtAcq33BOOqB9fWSnrNuqhUKXEX5xkuHG6gAO3AXcIeRDGzREcVZrLuwRK6j7xi8G6K9F_6gdHR--gr88NQ7DrV5iyclEWSxcjhRzoYx3Vdco7cCF5e5lBs6e9L2A9f6N5Rvni-9wrvEXBfvvvaUN3r6Lp35nLOMI9lkBx9pXRUFiypNqz6XkBvKIdN9Xt" data-type="subscription">
         <div style="padding: 8px 0;">
           <div class="sib-form-block" style="font-size:53px; text-align:center; font-weight:700; font-style:italic; font-family:Baskerville, serif; color:#000000; background-color:transparent; text-align:center">
             <p>Beyond Motivation</p>
@@ -150,24 +150,7 @@ html {
           </div>
         </div>
         <div style="padding: 8px 0;">
-          <div class="sib-captcha sib-form-block">
-            <div class="form__entry entry_block">
-              <div class="form__label-row ">
-                <script>
-                  function handleCaptchaResponse() {
-                    var event = new Event('captchaChange');
-                    document.getElementById('sib-captcha').dispatchEvent(event);
-                  }
-                </script>
-                <div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha" data-sitekey="6LcE4TIrAAAAAOBS3K-Rg_NdS9R4hutfW6MluDS2" data-callback="handleCaptchaResponse" style="direction:ltr"></div>
-              </div>
-              <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#f4d4d4; border-radius:3px; border-color:#ff4949;">
-              </label>
-              <label class="entry__specification" style="font-size:12px; text-align:center; font-family:Futura, sans-serif; color:#8390A4; text-align:center">
-                Form secured by reCAPTCHA
-              </label>
-            </div>
-          </div>
+          <div class="g-recaptcha-v3" data-sitekey="6LcE4TIrAAAAAOBS3K-Rg_NdS9R4hutfW6MluDS2" style="display: none"></div>
         </div>
         <div style="padding: 8px 0;">
           <div class="sib-form-block" style="font-size:15px; text-align:center; font-family:Futura, sans-serif; color:#000000; background-color:transparent; text-align:center">
@@ -212,7 +195,7 @@ html {
 
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
-<script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LcE4TIrAAAAAOBS3K-Rg_NdS9R4hutfW6MluDS2&hl=en" async defer></script>
 
 <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
 <!-- End Brevo Form -->
