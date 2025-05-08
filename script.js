@@ -10,7 +10,7 @@ window.onload = () => {
         if (blocker) {
           // Wait for the fade-blocker to fully fade in
           blocker.addEventListener('transitionend', () => {
-            window.location.href = "V2.html"; // or your next page
+            window.location.href = "SalesPage.html"; // or your next page
           });
         }
       });

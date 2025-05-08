@@ -68,36 +68,23 @@ h1 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* INPUT */
-input[type="email"] {
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  width: 250px;
-  transition: transform 0.3s ease;
-}
-
-input[type="email"]:focus {
-  outline: none;
-  transform: scale(1.03);
-}
-
 /* BUTTON */
 button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 1rem 2.5rem;        /* More internal space */
+  font-size: 1.5rem;           /* Larger text */
   background: #fff;
   color: #000;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;          /* More rounded corners */
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Optional: subtle shadow */
 }
+
 
 button:hover {
   background: #ccc;
+  transform: scale(1.05);      /* Slight grow effect on hover */
   transform: translateY(-2px);
 }
 
@@ -205,6 +192,31 @@ body.breaking .fall-spin {
   }
 }
 
+.navbar {
+  position: fixed;
+  top: 30;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #000; /* Change to match your site aesthetic */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Home icon image inside navbar */
+.home-icon {
+  width: 110px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.home-icon:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
 /*PHONE*/
 @media (max-width: 768px) {
