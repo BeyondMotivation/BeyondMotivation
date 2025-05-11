@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+
+.bodoni-moda {
+  font-family: "Bodoni Moda", serif;
+
+}
+
+
 /* BODY */
 body {
   touch-action: manipulation;
@@ -22,6 +29,17 @@ body {
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+p{
+font-family: "SUSE", sans-serif;
+font-size: 130%;
+
+}
+
+ul{
+  font-family: "SUSE", sans-serif;
+font-size: 130%;
 }
 
 /* OVERLAY */
@@ -60,13 +78,40 @@ body.breaking .fade-blocker {
   padding: 2rem;
 }
 
+.hero {
+  font-size: 150%;
+}
+
 /* HEADLINE */
 h1 {
-  font-size: 4.5rem;
+  font-size: 6rem;
   margin-bottom: 1rem;
+  margin-top: 80px;
+  line-height: 90%;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  /*font-family: "Bacasime Antique", serif;*/
+  font-weight: 200;
+  text-align: center;
+  font-family: "Ramaraja", serif;
+  max-width: 1000px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  margin-top: 10px;
+  letter-spacing: 1px;
+    font-family: "Bacasime Antique", serif;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 10px;
+  letter-spacing: 1px;
+    font-family: "Bacasime Antique", serif;
+  font-weight: 300;
 }
 
 /* BUTTON */
@@ -191,6 +236,10 @@ body.breaking .fall-spin {
     transform: translateY(130vh) rotate(360deg);
     opacity: 0;
   }
+}
+
+section.content:first-of-type {
+  margin-top: 20px; /* or padding-top: 100px; */
 }
 
 .navbar {
