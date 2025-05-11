@@ -1,0 +1,70 @@
+[SECTION 1: HERO SECTION – Top of the Page]
+
+- Large Headline (H1): “You Don’t Need More Motivation—You Need to Finally Break the Cycle.”
+- Subheadline (H2 or paragraph): “A course for people who start strong… and quit by week two.”
+- Primary Call-to-Action Button: “Notify Me When It Launches”
+→ When clicked: opens email input page
+- Layout: Fullscreen, centered text, clean and emotional.
+
+---
+
+[SECTION 2: PAIN SECTION]
+
+- Section Title (H2): “Let Me Guess…”
+- Bullet List of Pain Points:
+    - Tried morning routines and quit by Thursday
+    - Vision boards, journaling, scripting—still fell off
+    - Can’t figure out why you’re not consistent
+
+---
+
+[SECTION 3: VISION SECTION]
+
+- Section Title (H2): “Now Imagine This…”
+- Paragraph Description: Describe how it feels to finally become consistent, resilient, and confident.
+- Sub-bullet highlights: examples of daily wins, emotional relief, long-term impact
+- Call-to-Action Button: Same as above (repeated here to convert mid-scroll)
+
+---
+
+[SECTION 4: COURSE INTRO / DIFFERENTIATOR SECTION]
+
+- Section Title (H2): “Beyond Motivation: The Last Course You’ll Ever Need”
+- Paragraph(s):  “I built this because I lived in that cycle too…”
+- Bullet List of Core Wins from the Course:
+    - Learn how to follow through on routines
+    - Escape burnout before it begins
+    - Build daily discipline like a system
+    - Finally stick to your goals without forcing it
+
+---
+
+[SECTION 5: OBJECTION-KILLER SECTION]
+
+- Section Title (H2): “This Isn’t for Everyone”
+- Paragraph: Say who this is NOT for (surface-level hype seekers), and who it IS for (those tired of starting over).
+- Optional Format: Use bold headers like “If you’ve tried everything…” followed by short reassurances.
+
+---
+
+[SECTION 6: SOCIAL PROOF SECTION] (Leave space for this later)
+Purpose: Future section for testimonials, screenshots, or quotes
+
+- Placeholder for: Testimonials, quotes, results, video feedback
+- Layout: 2 or 3 columns or slider-style layout
+
+---
+
+[SECTION 7: FINAL SIGN-UP CTA SECTION]
+Purpose: Catch final sign-ups + emotional closing
+
+- Section Title (H2): “You Don’t Need More Motivation. You Need What Actually Works.”
+- CTA Description: One sentence reinforcing the value
+Example: “Join the waitlist and be the first to access Beyond Motivation when it launches.”
+- Email Input Field + Submit Button: “Join Waitlist” / “Notify Me”
+- Small Trust Text Below: “No spam. Just real tools and honest guidance.”
+
+---
+
+[FOOTER]
+Optional elements: Your name/brand, minimal links (Contact, Privacy Policy )
