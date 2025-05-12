@@ -1,0 +1,114 @@
+
+/* =============================== */
+/* ANIMATIONS + CUSTOM BEHAVIOR CSS */
+/* =============================== */
+
+/* Text glow styling */
+.glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+               0 0 30px rgba(253, 251, 212, 0.2),
+               0 0 60px rgba(255, 255, 255, 0.1);
+}
+
+.reverseglow {
+  text-shadow:
+    1px 1px 6px rgba(0, 0, 0, 0.6),
+    2px 2px 12px rgba(0, 0, 0, 0.4),
+    -1px -1px 8x rgba(0, 0, 0, 0.2);
+}
+
+/* Entry Animations */
+body:not(.breaking) h1 {
+  opacity: 0;
+  animation: fadeIn 1.4s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+
+body:not(.breaking) .content p:first-of-type {
+  opacity: 0;
+  animation: fadeIn 1.4s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+body:not(.breaking) form {
+  opacity: 0;
+  animation: fadeInUp 1.4s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+body:not(.breaking) .tagline {
+  opacity: 0;
+  animation: fadeIn 1.4s ease-in-out forwards;
+  animation-delay: 1.8s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Fall Animations (for breaking effect) */
+.fall {
+  opacity: 1;
+  position: relative;
+}
+
+body.breaking .fall {
+  animation-fill-mode: forwards;
+}
+
+body.breaking .fall-slow {
+  animation: fallSlow 2.8s ease-in;
+}
+
+body.breaking .fall-medium {
+  animation: fallMedium 2.4s ease-in;
+}
+
+body.breaking .fall-fast {
+  animation: fallFast 2s ease-in;
+}
+
+body.breaking .fall-spin {
+  animation: fallSpin 2.2s ease-in;
+}
+
+@keyframes fallSlow {
+  to {
+    transform: translateY(150vh) rotate(-10deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fallMedium {
+  to {
+    transform: translateY(120vh) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fallFast {
+  to {
+    transform: translateY(100vh) rotate(-25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fallSpin {
+  to {
+    transform: translateY(130vh) rotate(360deg);
+    opacity: 0;
+  }
+}

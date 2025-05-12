@@ -3,41 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_base.css">
+  <link rel="stylesheet" href="style_animations.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bacasime+Antique&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Ramaraja&family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bacasime+Antique&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ramaraja&family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+
 
 <title>Beyond Motivation</title>
-  <style>
-    body {
-      display: block;
-      overflow-x: hidden;
-    }
 
-    section.content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 3rem 1rem;
-      text-align: center;
-      color: white;
-    }
-
-    section.content ul {
-      text-align: left;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    section.content h2 {
-      margin-bottom: 1rem;
-    }
-
-    form {
-      margin-top: 1.5rem;
-    }
-  </style>
 </head>
 
 <body id="page">
@@ -46,20 +21,27 @@
     <a href="index.html">
       <img src="homebutton.png" alt="Home" class="home-icon">
     </a>
+     <span style="color: white;" class="nav-title">Beyond Motivation</span>
   </nav>
 
   <!-- Overlay Effects -->
   <div class="fade-blocker"></div>
 
   <!-- SECTION 1: HERO -->
-  <section class="content">
-    <h1 class="fall fall-slow">Motivation is a system, not a feeling.</h1>
-    <h2 class="fall fall-medium"></h2>
-    <form class="fall fall-fast">
-      <button id="breakButton" type="button">Notify Me When It Launches</button>
-    </form>
-    <p class="tagline fall fall-spin">Beyond Motivation 2025.</p>
-  </section>
+<section class="content hero-header">
+
+  <img src="Main Weblogo 4.webp" alt="Logo" class="hero-logo">
+  <!-- <h1 style="color: rgb(255, 255, 255);" class="fall fall-slow glow">Don’t Chase Motivation. Create It.</h1> -->
+<h2 class="fall fall-slow reverseglow" style="color:  white; position: relative; font-size: 300%; font-style: oblique; font-family: Bacasime Antique; font-weight: 200;">
+  Motivation is a system, not a feeling.
+</h2>
+
+<h2 class="fall fall-medium"></h2>
+  <form class="fall fall-fast">
+    <button id="breakButton" type="button">Notify Me When It Launches</button>
+  </form>
+  <p class="tagline fall fall-spin">Beyond Motivation 2025.</p>
+</section>
 
   <!-- SECTION 2: PAIN POINTS -->
   <section class="content">

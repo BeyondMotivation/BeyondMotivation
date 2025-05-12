@@ -1,0 +1,168 @@
+
+/* ============================= */
+/* BASIC TYPOGRAPHY + LAYOUT CSS */
+/* ============================= */
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  font-family: 'Arial', sans-serif;
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Paragraph and List Styling */
+p, ul {
+  font-family: "SUSE", sans-serif;
+  font-size: 130%;
+}
+
+/* Main Content Wrapper */
+.content {
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Headings */
+h1 {
+  font-size: 12rem;
+  margin-bottom: 1rem;
+  margin-top: 80px;
+  line-height: 90%;
+  letter-spacing: 3px;
+  font-family: "Montserrat", serif;
+  font-style: oblique;
+  font-weight: 800;
+  text-align: center;
+  max-width: 1000px;
+}
+.hero-header {
+  /*background-image: url('Main\ Weblogo\ 4.webp'); /* Make sure filename is correct */
+  background-size: 45%;                      /* Let it fill naturally */
+  background-position: center top;             /* Show more of the top, avoid clipping bottom */
+  background-repeat: no-repeat;
+  min-height: 100vh;                           /* Make sure the section fills the full screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  position: absolute;
+  top: -0px;  /* adjust for vertical positioning */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;   /* adjust size as needed */
+  height: auto;
+  z-index: -3; /* change to 3 later */
+
+  pointer-events: none; /* make sure it doesn't block clicks */
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  font-family: "Bacasime Antique", serif;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  font-family: "Bacasime Antique", serif;
+  font-weight: 300;
+}
+
+/* Buttons */
+button {
+  padding: 1rem 2.5rem;
+  font-size: 1.5rem;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: #ccc;
+  transform: scale(1.05) translateY(-2px);
+}
+
+.home-icon {
+  width: 80px;       /* 👈 much cleaner size for nav */
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+/* Tagline */
+.tagline {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #fff;
+}
+.navbar {
+  display: flex;
+  justify-content: center;  /* centers the whole nav-content block */
+  align-items: center;
+  height: 120px;
+  background: transparent; /* or set a color if you want a navbar background */
+}
+
+.nav-title {
+  font-family: "Bodoni Moda", serif;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 200;
+  margin-left: 10px;
+}
+
+/* Responsive Mobile Styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  p, .tagline {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  button {
+    width: 80%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}

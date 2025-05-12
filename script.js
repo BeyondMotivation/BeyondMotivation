@@ -18,4 +18,3 @@ window.onload = () => {
   };
   
 
-  /*pizzapugparty3@gmail.com*/
