@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'HelveticaCustom';
+  src: url('fonts/Helvetica.woff') format('woff');
+}
+
+body {
+  font-family: 'HelveticaCustom', sans-serif;
+  line-height: 1.6;
+background: #131313 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
+  background-size: 50px;
+  margin-top: 100px;
+  color: #fff;
+  min-height: 100vh;
+}
+
+
+/* Header */
+.citations-header {
+  background: #111;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+}
+
+.citations-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.citations-header p {
+  color: #eee;
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+/* Main grid */
+.citations-main {
+  padding: 2rem 0 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.citations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  width: 90vw;
+  max-width: 1100px;
+}
+
+/* Citation Card */
+.citation-card {
+  background: #181818;
+  border-radius: 18px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.20);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.3s;
+}
+
+.citation-card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.citation-card p {
+  color: #ddd;
+  font-size: 1rem;
+  margin: 0.75rem 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.citation-card a {
+  color: #9b8cff;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px dashed #9b8cff;
+  transition: color 0.2s;
+}
+
+.citation-card a:hover {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+/* Footer */
+.citations-footer {
+  background: #111;
+  text-align: center;
+  padding: 2rem 1rem 1.5rem 1rem;
+  font-size: 1rem;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .citations-header h1 { font-size: 2rem; }
+  .citations-grid { grid-template-columns: 1fr; }
+  .citation-card { padding: 1.25rem 1rem; }
+}
+
+.navbar {
+  font-family: 'HelveticaCustom', sans-serif;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: rgb(0, 0, 0);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.logo {
+  font-weight: bold;
+
+}
+.navbar-logo img {
+  height: 60px; /* Adjust as needed */
+  display: block;
+}
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ffffff;
+}

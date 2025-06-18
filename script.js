@@ -52,6 +52,7 @@ document.querySelectorAll('.card-wrapper').forEach(wrapper => {
     currentIRL = (currentIRL + 1) % irlExamples.length;
     document.getElementById("irlTitle").textContent = irlExamples[currentIRL].title;
     document.getElementById("irlDescription").textContent = irlExamples[currentIRL].description;
+
   }
   
 
