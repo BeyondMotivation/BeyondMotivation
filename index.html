@@ -14,65 +14,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bacasime+Antique&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Ramaraja&family=SUSE:wght@100..800&family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
 
 
+
 </head>
 <body>
-  <!-- HEADER SECTION -->
+  <!-- Navbar -->
   <header class="hero">
     <nav class="navbar">
-      <div class="logo">Beyond Motivation</div>
+       <a href="index.html" class="navbar-logo">
+    <img src="images/homebutton.png" alt="Logo" />
+  </a>
       <div class="nav-links">
-        <a href="#">Portfolio</a>
+        <a href="#">Reference Studies</a>
         <a href="#">Contact</a>
       </div>
     </nav>
+
+      <!-- HERO or Title -->
     <div class="hero-content">
       <p class="catchphrase"><span>•</span> Beyond Motivation <span>•</span></p>
         <img src="images/Motivation Text V2.webp" class="mainimage" alt="Main Creative" />
   
         <h1>is a system, not a feeling.</h1>
-        <div class="scroll-text">The person you have to spend the most time listening too in life is yourself, try not to lose thier respect.</div>
     </div>
-
+    <div class="hero-bottom">
+      <p class="tagline">Beyond Motivation</p>
+      <p class="contact-email">themindliesofficial@gmail.com</p>
+    </div>
   </header>
 
 
 
-
-  <!-- ABOUT SECTION -->
-  <section class="about">
-
-    <!-- Fun Text -->
-    <div class="hero-bottom">
-      <p class="tagline">nothing changes if nothing changes.</p>
-      <p class="contact-email">themindliesofficial@gmail.com</p>
-    </div>
-
 <!-- Introduction area -->
-    <h1>
-    _____________ We were all sold a lie. _____________
-    </h1>
-    <h2 class="context">
-     <b>motivation is not just a mindset, mood, or random feeling.</b><br>
-     <br>
-      Your brain is constantly calculating whether effort is worth the energy, 
-      whether a goal feels safe, and whether you have the capacity to follow through. 
-      
-    </h2>
-        <h1>
-    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-    </h1>
-
-    <h1>
-      Time to change how you feel
-    </h1>
-    <h3>
-      Lets look at common symptoms we will fix
-    </h3>
-<br>
+<div class="intro-wrapper">
+  <section class="intro-split">
+    <div class="intro-image">
+      <img src="images/Motivation Is a calculation white.webp" alt="Motivation Concept" />
+    </div>
+    <div class="intro-text">
+      <h1>Understand the formula to win.</h1>
+      <p>
+        <b>You are not lazy, broken or diffrent. You just dont understand yet the formula to unlock motivation.</b><br><br>
+        Your brain is constantly calculating whether effort is worth the energy, 
+        whether a goal feels safe, and whether you have the capacity to follow through.
+      </p>
+    </div>
+  </section>
+</div>
 
 
+<h1 class="separation">Struggles</h1>
+
+<!-- painpoints and Cards -->
 <div class="cards">
-
   <div class="card-wrapper">
   <div class="card flip-container">
     <div class="flipper">
@@ -151,56 +144,59 @@
 </div>  <!-- Cards end DIv -->
   </section>
 
-<!-- WHATS IN THE COURSE -->
-  <section class="flow-section">
-  <div class="flow-step">
-    <span class="flow-icon">🧠</span>
-    <div>
-      <h4>Awareness</h4>
-      <p>Why you feel stuck</p>
-    </div>
-  </div>
-  <div class="arrow">↓</div>
 
-  <div class="flow-step">
-    <span class="flow-icon">⚡</span>
-    <div>
-      <h4>Understanding</h4>
-      <p>Dopamine & suppression</p>
-    </div>
-  </div>
-  <div class="arrow">↓</div>
+<!-- PROCESS of Motivation -->
 
-  <div class="flow-step">
-    <span class="flow-icon">🔁</span>
-    <div>
-      <h4>Reprogramming</h4>
-      <p>Beliefs & identity loops</p>
-    </div>
-  </div>
-  <div class="arrow">↓</div>
 
-  <div class="flow-step">
-    <span class="flow-icon">🛠️</span>
-    <div>
-      <h4>Structuring</h4>
-      <p>Systems for focus & action</p>
-    </div>
+<section class="phase-section">
+  <div class="phase-card" id="phaseCard">
+    <h2 id="phaseTitle">Phase 1</h2>
+    <p id="phaseDescription">
+      Discover why you're stuck by identifying hidden thought loops and suppressed energy.
+    </p>
   </div>
-  <div class="arrow">↓</div>
 
-  <div class="flow-step">
-    <span class="flow-icon">🚀</span>
-    <div>
-      <h4>Integration</h4>
-      <p>Daily clarity & momentum</p>
-    </div>
-  </div>
+  <button class="next-button" onclick="goToNextPhase()">
+    <img src="images/next-button.svg" alt="Next" />
+  </button>
 </section>
+
+
+<!-- IRL examples -->
+<section class="irl-section">
+  <div class="irl-card" id="irlCard">
+    <h2 id="irlTitle">IRL Example 1</h2>
+    <p id="irlDescription">
+      Here’s a real-life scenario where someone overcame procrastination using these principles.
+    </p>
+  </div>
+
+  <button class="next-irl-button" onclick="goToNextIRL()">
+    <img src="images/next-irl-button.svg" alt="Next IRL Example" />
+  </button>
+</section>
+
+
+<!-- Studies -->
+
+<section class="studies-section">
+  <h2 class="studies-title">Studies & Scientific Backing</h2>
+        <div class="stats">
+      <div><h3>3+</h3><p>Years of experience</p></div>
+      <div><h3>40+</h3><p>Satisfied clients</p></div>
+      <div><h3>100+</h3><p>Projects delivered</p></div>
+    </div>
+  <p class="studies-description">
+    All of the insights and frameworks shared here are grounded in real neuroscience, psychology, and behavioral research. Click below to explore the detailed studies, papers, and findings that support each phase.
+  </p>
+  <a href="studies.html" class="studies-button">View Studies</a>
+</section>
+
+
 
 <!-- No more section -->
   <!-- ABOUT 2 SECTION -->
-  <section class="about">
+
     <h1>lets go deeper
 
     </h1>
@@ -227,17 +223,12 @@ The question is—do you actually want to</p>
         <span class="card-number">03</span>
       </div>
 
-          <div class="stats">
-      <div><h3>3+</h3><p>Years of experience</p></div>
-      <div><h3>40+</h3><p>Satisfied clients</p></div>
-      <div><h3>100+</h3><p>Projects delivered</p></div>
-    </div>
     </div>
   </section>
 
 
 <!-- warning section -->
-  <section class="about warning">
+  <section class="warning">
     <h1><span class="dim">[</span>disclaimer<span class="dim">]</span></h1>
     <h3 style="color: #686868">This course doesn’t teach motivation.</h3>
     <h3>
