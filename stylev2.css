@@ -918,6 +918,156 @@ text-align: center;
 
 
 /*--------------------------------------------------*/
+/* IRL SECTION */
+/*--------------------------------------------------*/
+/* irl section */
+
+.irlpeople-section {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 4rem 2rem;
+}
+
+.irlpeople-card {
+  width: 560px;
+  min-height: 420px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 2.5rem 2.5rem 2.5rem 2.2rem;
+  box-sizing: border-box;
+  background: #fff;
+  border: 3px solid #111;
+  border-radius: 24px;
+  box-shadow: 7px 7px 0 #000;
+}
+
+.irlpeople-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 14px;
+  margin-top: 6px;
+}
+
+.irlpeople-heading-row .material-symbols-outlined {
+  font-size: 54px;
+  color: #000;
+  filter: none !important;
+  text-shadow: none !important;
+  line-height: 1;
+  display: block;
+}
+
+.irlpeople-label {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #555;
+  margin-bottom: 0;
+  line-height: 1.15;
+  display: block;
+}
+
+.irlpeople-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 2.5rem;
+  line-height: 1.14;
+}
+
+.irlpeople-divider {
+  width: 100%;
+  border: none;
+  border-top: 2px solid #ddd;
+  margin-bottom: 2.25rem;
+}
+
+.irlpeople-desc {
+  font-size: 1.18rem;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 94%;
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+.irlpeople-number {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 5.2rem;
+  font-weight: 700;
+  color: #222;
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Button style for IRL section */
+.next-irlpeople-button {
+  padding: 1.1rem 1.4rem;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  margin-left: 2rem;
+}
+
+.next-irlpeople-button:hover {
+  background: #f4f4f4;
+}
+
+.next-irlpeople-button .material-symbols-outlined {
+  color: #000;
+  font-size: 72px !important;
+  filter: none !important;
+  text-shadow: none !important;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .irlpeople-section {
+    gap: 1.2rem !important;
+    padding: 2rem 0.5rem !important;
+  }
+  .irlpeople-card {
+    width: 96vw !important;
+    max-width: 99vw !important;
+    min-width: unset !important;
+    padding: 1.2rem !important;
+    margin: 0 auto !important;
+  }
+  .irlpeople-heading-row .material-symbols-outlined {
+    font-size: 38px !important;
+  }
+  .irlpeople-label {
+    font-size: 1.2rem !important;
+  }
+  .next-irlpeople-button .material-symbols-outlined {
+    font-size: 54px !important;
+  }
+  .next-irlpeople-button {
+    margin-left: 0.7rem !important;
+    padding: 0.6rem 1rem !important;
+  }
+}
+
+/*--------------------------------------------------*/
 /* studies */
 /*--------------------------------------------------*/
 /* studies */
@@ -996,111 +1146,182 @@ background: radial-gradient(circle at center, #292929 0%, #000000 100%);
   opacity: 0.5;
 }
 
+
+
+
+
+
+
+
+
 /* offer section */
-
 .offers-section {
-  background: #000;
-  padding: 80px 20px;
+  width: 100vw;
+  background: radial-gradient(ellipse at 50% 0%, #202939 0%, #0b1017 90%) #090f16;
+  padding: 100px 0 90px 0;
+  position: relative;
+  overflow: hidden;
 }
 
+.offers-section::before {
+  /* Subtle glow overlay */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 40% at 50% 0%, #33ffe655 0%, transparent 80%);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 1;
+}
 .offers-container {
-  max-width: 1200px;
+  position: relative;
+  max-width: 900px;
   margin: 0 auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.offers-heading {
-  font-size: 48px;
-  font-weight: 700;
+.offers-headline {
   color: #fff;
-  font-family: 'Poppins', 'Inter', Arial, sans-serif;
-  margin-bottom: 18px;
+  font-size: 44px;
+  font-weight: 700;
   text-align: center;
+  margin-bottom: 14px;
+  letter-spacing: -1.2px;
 }
 
-.offers-subheading {
+.offers-subheadline {
+  color: #dde5ee;
   font-size: 20px;
-  font-weight: 300;
-  color: #cccccc;
-  max-width: 640px;
-  margin: 0 auto 48px auto;
-  line-height: 1.5;
+  margin-bottom: 60px;
   text-align: center;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }
 
 .offers-grid {
   display: flex;
-  gap: 32px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px;
+  z-index: 2;
 }
 
+/* Offer Card */
 .offer-card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(255,255,255,0.05);
-  padding: 40px 32px;
+  background: linear-gradient(120deg, rgba(20,40,64,0.98) 0%, rgba(12,18,30,0.94) 100%);
+  border: 1.5px solid rgba(204,255,255,0.19);
+  border-radius: 22px;
+  box-shadow:
+    0 2px 30px 0 #50d7ff2a,
+    0 0 0 1.5px rgba(255,255,255,0.12) inset;
+  padding: 44px 36px 40px 36px;
+  width: 350px;
+  max-width: 98vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 340px;
-  min-width: 0;
-  flex: 1 1 300px;
+  align-items: center;
+  position: relative;
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.offer-card:hover,
+.offer-card:focus-within {
+  transform: translateY(-6px) scale(1.025);
+  box-shadow:
+    0 4px 40px 0 #8cf6ff3c,
+    0 0 0 1.5px #fff7 inset;
+  border-color: #aaf6ff7d;
+}
+
+.offer-icon {
+  margin-bottom: 14px;
+  color: #aaffff;
+}
+
+.offer-icon .material-symbols-outlined {
+  font-size: 50px;
+  color: #cfffff;
+  filter: drop-shadow(0 0 14px #6eefff66);
 }
 
 .offer-title {
-  font-size: 28px;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 0.5em;
-}
-
-.offer-copy {
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-  margin-top: 12px;
-  margin-bottom: 28px;
-  flex: 1;
-}
-
-.offer-cta {
-  width: 100%;
-  background: #000;
   color: #fff;
-  font-size: 18px;
-  padding: 16px 0;
-  border: none;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: 
-    background 0.2s,
-    color 0.2s,
-    transform 0.2s;
-  font-family: inherit;
+  font-size: 24px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 0.03em;
 }
 
-.offer-cta:hover, .offer-cta:focus {
+.offer-desc {
+  color: #eaf8ff;
+  font-size: 17px;
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.offer-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  font-size: 19px;
+  font-weight: 500;
+  padding: 14px 0;
+  width: 90%;
+  min-width: 160px;
+  margin: 0 auto;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.16s;
+  box-shadow: 0 0 16px 0 #00f6ff22 inset;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  display: block;
+  outline: none;
+}
+
+.offer-btn:hover,
+.offer-btn:focus {
   background: #fff;
-  color: #000;
-  transform: scale(1.03);
-  border: 1px solid #000;
+  color: #0a111a;
+  border-color: #fff;
+  box-shadow: 0 0 8px 0 #a2ffe8aa;
 }
 
-@media (max-width: 768px) {
-  .offers-heading { font-size: 36px; }
-  .offers-grid { flex-direction: column; gap: 24px; }
-  .offer-card { width: 100%; }
+.offer-btn-filled {
+  background: linear-gradient(90deg, #aff8ff 0%, #c6eaff 100%);
+  color: #101d22;
+  border: 2px solid #dbf6ff;
+  font-weight: 700;
+  box-shadow: 0 0 16px 0 #9fffff44;
+}
+.offer-btn-filled:hover,
+.offer-btn-filled:focus {
+  background: #0c141c;
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 16px 0 #39e9ff88;
 }
 
-
-
-
-
-
-
-
+/* Responsive */
+@media (max-width: 900px) {
+  .offers-headline { font-size: 32px; }
+  .offers-grid { gap: 32px; }
+  .offer-card { width: 90vw; min-width: 0; padding: 32px 14px 28px 14px; }
+}
+@media (max-width: 600px) {
+  .offers-section { padding: 60px 0 50px 0; }
+  .offers-headline { font-size: 23px; }
+  .offers-subheadline { font-size: 15px; }
+  .offers-grid { gap: 20px; }
+  .offer-card { padding: 22px 4vw 16px 4vw; }
+}
 
 
 

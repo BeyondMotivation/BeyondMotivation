@@ -343,16 +343,20 @@ avg_pace
 
 
 <!-- IRL examples -->
-<section class="irl-section">
-  <div class="irl-card" id="irlCard">
-    <h2 id="irlTitle">IRL Example 1</h2>
-    <p id="irlDescription">
-      Here’s a real-life scenario where someone overcame procrastination using these principles.
-    </p>
+ <section ID="irlpeople-section"></section>
+<section class="irlpeople-section">
+  <div class="irlpeople-card" id="irlpeopleCard">
+    <div class="irlpeople-heading-row">
+      <span class="material-symbols-outlined" id="irlpeopleIcon">person</span>
+      <span class="irlpeople-label" id="irlpeopleLabel">CASE</span>
+    </div>
+    <h4 class="irlpeople-title" id="irlpeopleTitle"></h4>
+    <hr class="irlpeople-divider">
+    <span class="irlpeople-desc" id="irlpeopleDescription"></span>
+    <span class="irlpeople-number" id="irlpeopleNumber"></span>
   </div>
-
-  <button class="next-irl-button" onclick="goToNextIRL()">
-    <img src="images/Arrow.webp" alt="Next IRL Example" />
+  <button class="next-irlpeople-button" onclick="goToNextIrlperson()">
+    <span class="material-symbols-outlined">arrow_forward</span>
   </button>
 </section>
 
@@ -380,28 +384,27 @@ avg_pace
 <!-- offer section -->
 
 
-<section id="offers-section">
 <section class="offers-section">
   <div class="offers-container">
-    <h1 class="offers-heading">Our Premium Offers</h1>
-    <p class="offers-subheading">
+    <h2 class="offers-headline">Our Premium Offers</h2>
+    <div class="offers-subheadline">
       Unlock science-backed frameworks and practical guidance to transform your motivation and daily performance.
-    </p>
+    </div>
     <div class="offers-grid">
       <div class="offer-card">
-        <h3 class="offer-title">1:1 Coaching</h3>
-        <p class="offer-copy">Work directly with an expert to identify bottlenecks and reprogram your habits for sustained motivation and growth.</p>
-        <button class="offer-cta">Start Coaching</button>
+        <div class="offer-icon"><span class="material-symbols-outlined">insights</span></div>
+        <div class="offer-title">Phase Diagnostics</div>
+        <div class="offer-desc">Pinpoint exactly which motivation makes <b>vice</b> and why.</div>
+        <button class="offer-btn">Start Coaching</button>
       </div>
       <div class="offer-card">
-        <h3 class="offer-title">Self-Paced Course</h3>
-        <p class="offer-copy">Master the Beyond Motivation method at your own pace with interactive lessons, exercises, and exclusive resources.</p>
-        <button class="offer-cta">See Course</button>
+        <div class="offer-icon"><span class="material-symbols-outlined">forum</span></div>
+        <div class="offer-title">Habit Labs</div>
+        <div class="offer-desc">90-second experiments that lock new behaviors into the AMCC.</div>
+        <button class="offer-btn offer-btn-filled">See Course</button>
       </div>
-    
     </div>
   </div>
-</section>
 </section>
 
 
