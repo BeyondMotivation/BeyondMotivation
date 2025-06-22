@@ -1,61 +1,49 @@
+const phaseIcons = [
+  "flare",                  // Phase 1: Ignition Point
+  "local_fire_department",  // Phase 2: Flow Entry
+  "bolt",                   // Phase 3: Momentum Loop
+  "auto_awesome"            // Phase 4: Reset & Prime
+];
 
 const phases = [
- {
-    title: "Phase 1: Ignition Point",
+  {
+    title: "Phase 1: Ignition",
     description:
-      "Re-arm the brain’s reward system before work begins: clear one micro-goal, detach from high-stim distractions, and inject novelty so your nervous system chooses effort over escape. When clarity, curiosity, and perceived payoff align, the engine fires."
+      "Kick-start motivation by lifting baseline dopamine: purge high-stim distractions, claim one quick win, and add a spark of novelty. When curiosity, clarity, and reward expectation line up, action becomes the obvious next step."
   },
   {
     title: "Phase 2: Flow Entry",
     description:
-      "Guide the mind from stillness to traction. Use a 3-minute warm-up script, environmental anchors, and a single ultra-specific first action to lock attention. Distractions are quarantined; the prefrontal cortex takes the wheel and momentum starts to build."
+      "Shift from idle to deep focus. A short cognitive warm-up, a distraction-free environment, and one laser-specific first task hand the controls to your executive brain—traction replaces hesitation."
   },
   {
     title: "Phase 3: Momentum Loop",
     description:
-      "Convert progress into self-fueling chemistry. Stack micro-wins, surface visible feedback, and cycle brief movement or hydration resets to keep glucose and dopamine balanced. The work now rewards itself, stretching focus far past the old burnout line."
+      "Turn progress into chemistry. Chain micro-wins, surface instant feedback, and add brief movement or hydration resets to keep glucose and dopamine balanced. Effort now fuels itself, not burnout."
   },
   {
     title: "Phase 4: Reset & Prime",
     description:
-      "Close the session in a way that raises baseline energy for next time. Log what worked, plant tomorrow’s first micro-task, and step into active recovery (walk, breathwork, nutrition). You finish proud, not drained—so re-ignition is effortless."
+      "End on purpose: log wins, cue tomorrow’s first step, then switch to active recovery—walk, breathwork, nutrition. You close the loop with energy higher than you started, so the next ignition is effortless."
   }
 ];
 
 let currentPhase = 0;
 
-// ---- Draws the phase number on canvas ----
-function drawPhaseNumber(num) {
-  const canvas = document.getElementById("phaseCanvas");
-  const ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Draw shadowed large number (background watermark style)
-  ctx.font = "bold 120px Helvetica, Arial, sans-serif";
-  ctx.globalAlpha = 0.09;
-  ctx.fillStyle = "#fff";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText(num, canvas.width / 2, canvas.height / 2);
-  ctx.globalAlpha = 1;
-}
-
-// ---- Update Card (number, title, description) ----
 function updatePhaseCard() {
   const phase = phases[currentPhase];
+  document.getElementById("phaseIcon").textContent = phaseIcons[currentPhase];
   document.getElementById("phaseTitle").textContent = phase.title;
   document.getElementById("phaseDescription").textContent = phase.description;
-  let displayNum = (currentPhase + 1).toString().padStart(2, '0');
-  drawPhaseNumber(displayNum);
+  document.getElementById("phaseNumber").textContent = (currentPhase + 1).toString().padStart(2, '0');
+  document.getElementById("phaseLabel").textContent = `PHASE ${currentPhase + 1}`;
 }
 
-// ---- Next Button Handler ----
 function goToNextPhase() {
   currentPhase = (currentPhase + 1) % phases.length;
   updatePhaseCard();
 }
 
-// ---- Init on Load ----
 window.addEventListener("DOMContentLoaded", () => {
   updatePhaseCard();
 });

@@ -102,8 +102,6 @@ b{
 
 
 
-
-
 /*--------------------------------------------------*/
 /* HERO or TITLE AREA */
 /*--------------------------------------------------*/
@@ -167,8 +165,6 @@ margin-top: 10px;
 }
 
 
-
-
 /*--------------------------------------------------*/
 /* Intro Area */
 /*--------------------------------------------------*/
@@ -178,8 +174,9 @@ margin-top: 10px;
   max-width: 100%;
   margin: 0 auto;
   padding: 60px 20px;
-  background: #131313 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
+  background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
   background-size: 50px;
+  background-color: #000;
   padding: 1rem 2rem;
   text-align: center;
   padding-bottom: 70px;
@@ -296,9 +293,9 @@ text-align: center;
 /* Myth Vs Reality */
 /*--------------------------------------------------*/
 /* Cards */
-
+/* Myth Vs Reality Cards Section */
 .cards {
-  background-color: #fff;
+  background: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -312,34 +309,38 @@ text-align: center;
   border-radius: 24px;
   width: 420px;
   min-height: 420px;
-  box-shadow: none;
+  box-shadow: 7px 7px 0 #000;
   box-sizing: border-box;
   position: relative;
-  padding: 2.5rem 2rem 2.5rem 2rem;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
-
-  box-shadow: 7px 7px 0 #000;  /* Right and bottom hard-edged shadow */
-    transition: 
+  transition:
     transform 0.25s cubic-bezier(.33,1.2,.5,1),
     box-shadow 0.18s cubic-bezier(.33,1.2,.5,1);
 }
-
 .card:hover, .card:focus-within {
   transform: scale(1.10);
-  box-shadow: 0 12px 40px 0 rgba(60, 60, 60, 0.45), 0 2px 8px 0 rgba(0,0,0,0.18);
+  box-shadow: 0 12px 40px 0 rgba(60,60,60,0.45), 0 2px 8px 0 rgba(0,0,0,0.18);
   z-index: 2;
 }
 
-.myth-label {
-  font-family: inherit;
+.myth-label,
+.reality-label {
   font-weight: 700;
-  color: #555;
   letter-spacing: 2.5px;
   font-size: 1.15rem;
   margin-bottom: 1.25rem;
+}
+
+.myth-label,
+.reality-label {
+  color: #555;
+}
+.reality-label {
+  font-size: 1.05rem;
+  margin-bottom: 1.15rem;
 }
 
 .myth-quote {
@@ -354,16 +355,7 @@ text-align: center;
   width: 100%;
   border: none;
   border-top: 2px solid #ddd;
-  margin: 0 0 2.25rem 0;
-}
-
-.reality-label {
-  font-family: inherit;
-  font-weight: 700;
-  color: #555;
-  letter-spacing: 2.5px;
-  font-size: 1.05rem;
-  margin-bottom: 1.15rem;
+  margin-bottom: 2.25rem;
 }
 
 .reality-text {
@@ -371,8 +363,8 @@ text-align: center;
   color: #333;
   font-weight: 400;
   line-height: 1.4;
-  margin-bottom: 0;
   max-width: 94%;
+  margin-bottom: 0;
   z-index: 2;
 }
 
@@ -388,6 +380,21 @@ text-align: center;
   user-select: none;
 }
 
+/* Responsive for cards */
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 1rem !important;
+  }
+  .card {
+    width: 98vw !important;
+    max-width: 99vw !important;
+    padding: 1.2rem !important;
+    margin: 0 auto !important;
+  }
+}
+
 
 /*--------------------------------------------------*/
 /* core struggles */
@@ -395,22 +402,22 @@ text-align: center;
 /* Cards */
 /* Core struggles section */
 
-
+/* Material Symbols Outlined: keep only what's necessary */
 .material-symbols-outlined {
-  color: #fff;
   text-shadow:
-    0 4px 0 #000000,    /* solid offset */
-    0 6px 20px #000000, /* glow effect */
-    0 0px 8px #000000;      /* Centered, glowy */
+    0 4px 0 #000,
+    0 6px 20px #000,
+    0 0 8px #000;
   font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
 }
 
+/* Main section background and padding */
 .core-struggles-section {
-  background: #131313 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
+  background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
   padding: 80px 0;
   width: 100vw;
 }
@@ -432,6 +439,7 @@ text-align: center;
   margin-bottom: 56px;
 }
 
+/* Struggle Card */
 .struggle-card {
   background: #000;
   border: 1px solid rgba(255,255,255,0.4);
@@ -446,25 +454,41 @@ text-align: center;
   text-align: center;
   transition: box-shadow 0.18s cubic-bezier(.33,1.2,.5,1), transform 0.18s cubic-bezier(.33,1.2,.5,1);
   position: relative;
+  overflow: visible; /* For floated icons */
 }
-
-.struggle-card:hover, .struggle-card:focus-within {
+.struggle-card:hover,
+.struggle-card:focus-within {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 6px 32px 0 rgba(255,255,255,0.13), 0 2px 8px 0 rgba(255,255,255,0.10);
   z-index: 1;
 }
 
-.struggle-icon {
-  margin-bottom: 18px;
+/* Floated Icon at Top Center */
+.struggle-icon-top {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.struggle-icon-top .material-symbols-outlined {
+  font-size: 70px;
+  background: transparent;
+  line-height: 1;
 }
 
+/* Struggle title & description */
 .struggle-title {
   font-size: 35px;
-  color: #f1f1f1;
   font-weight: 600;
   margin-bottom: 12px;
   margin-top: 6px;
   letter-spacing: 0.1px;
+  /* color removed: inherits white from global */
 }
 
 .struggle-desc {
@@ -473,21 +497,20 @@ text-align: center;
   font-weight: 400;
   margin: 0;
   line-height: 1.55;
-  white-space: normal;    /* allow paragraph wrapping */
-  overflow: visible;      /* show all text */
-  text-overflow: unset;   /* default ellipsis off */
-  word-break: break-word; /* break long words if needed */
-  text-align: left;       /* or center if you prefer */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  word-break: break-word;
+  text-align: left;
 }
 
+/* CTA Link */
 .core-struggles-cta-wrap {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-
 .core-struggles-cta {
-  color: #fff;
   text-decoration: underline 1px solid #fff;
   text-underline-offset: 5px;
   font-size: 18px;
@@ -495,52 +518,16 @@ text-align: center;
   padding: 3px 0;
   transition: color 0.15s, text-decoration-color 0.15s;
   cursor: pointer;
+  /* color: #fff; is inherited globally */
 }
 
-.struggle-card .material-symbols-outlined {
-  font-size: 120px;    /* Or try 160px for even bigger */
-  color: #ff0000;      /* Custom color, or #fff for white */
-  margin-bottom: 18px;
-  display: block;
-  width: 100%;
-  text-align: center;
-  line-height: 1;
-}
-
-@media (max-width: 650px) {
-  .struggle-card .material-symbols-outlined {
-    font-size: 70px;
-  }
-}
+/* Responsive Adjustments */
 @media (max-width: 650px) {
   .core-struggles-section { padding: 60px 0; }
   .core-struggles-container { padding: 0 7vw; }
   .core-struggles-grid { flex-direction: column; gap: 24px; }
   .struggle-card { width: 100%; min-width: 0; }
-}
-
-.struggle-card {
-  position: relative; /* Needed for absolute child positioning */
-  overflow: visible;  /* Allow content to "stick out" */
-}
-
-.struggle-icon-top {
-  position: absolute;
-  top: -28px;        /* Amount it will stick out above the card */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  pointer-events: none; /* So it doesn't block hover/focus on card */
-}
-
-.struggle-icon-top .material-symbols-outlined {
-  font-size: 70px;   /* Adjust size to taste */
-  color: #ffffff;
-  background: #13131300;
-  line-height: 1;
+  .struggle-icon-top .material-symbols-outlined { font-size: 50px; }
 }
 
 
@@ -552,94 +539,130 @@ text-align: center;
 /* phases of motivation */
 /*--------------------------------------------------*/
 /* 4 part section */
+/* PHASE CARD: Use Myth vs Reality card style but wider & centered */
+/* PHASE SECTION: Card with Top-Left Inline Icon */
+
+/* PHASE SECTION: Horizontal icon + heading row, styled card, big button */
+
 .phase-section {
-  background: #131313 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   padding: 4rem 2rem;
-  background-color: #0e0e0e;
-  flex-wrap: wrap;
 }
 
+/* Phase Card — wide, modern card with left-aligned content */
 .phase-card {
+  width: 560px;
+  min-height: 420px;
   position: relative;
-  width: 520px;          /* ⬅️ increase width */
-  height: 420px;         /* ⬅️ increase height */
-  background: transparent;
-  border: 5px solid #fff;
-  border-radius: 18px;
-  color: #fff;
-  padding: 4.5rem 3rem 2.5rem 3rem;  /* ⬅️ more padding */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 2.5rem 2.5rem 2.5rem 2.2rem;
   box-sizing: border-box;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
+  background: #fff;
+  border: 3px solid #111;
+  border-radius: 24px;
+  box-shadow: 7px 7px 0 #000;
 }
 
-#phaseCanvas {
-  position: absolute;
-  top: 24px;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  pointer-events: none;
-  z-index: 0;
+/* Heading row: icon + label side-by-side */
+.phase-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 14px;
+  margin-top: 6px;
 }
 
-.phase-number {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  font-size: 8rem;
+/* Icon style */
+.phase-heading-row .material-symbols-outlined {
+  font-size: 54px;
+  color: #000;
+  filter: none !important;
+  text-shadow: none !important;
+  line-height: 1;
+  display: block;
+}
+
+/* Label style */
+.phase-heading-row .myth-label {
+  font-size: 2.1rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.3); /* 🔥 subtle background number */
-  z-index: 0;
-  user-select: none;
-  pointer-events: none;
+  letter-spacing: 2.5px;
+  color: #555;
+  margin-bottom: 0;
+  line-height: 1.15;
+  display: block;
 }
 
-.phase-card h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
+/* Other card elements: reuse your myth/reality card styles for title, divider, etc. */
 
-.phase-card p {
-  font-size: 1.125rem;
-  color: #ccc;
-}
-
+/* Next button: big, centered next to the card */
 .next-button {
+  padding: 1.1rem 1.4rem;
+  border-radius: 50%;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  margin-left: 2rem;
 }
 
-.next-button img {
-  width: 48px;
-  height: 48px;
-  transition: transform 0.2s ease;
+.next-button:hover {
+  background: #f4f4f4;
 }
 
-.next-button:hover img {
-  transform: scale(1.1);
+.next-button .material-symbols-outlined {
+  color: #000;
+  font-size: 72px !important;
+  filter: none !important;
+  text-shadow: none !important;
+  vertical-align: middle;
+  line-height: 1;
 }
 
-
-
-
-
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .phase-section {
+    gap: 1.2rem !important;
+    padding: 2rem 0.5rem !important;
+  }
+  .phase-card {
+    width: 96vw !important;
+    max-width: 99vw !important;
+    min-width: unset !important;
+    padding: 1.2rem !important;
+    margin: 0 auto !important;
+  }
+  .phase-heading-row .material-symbols-outlined {
+    font-size: 38px !important;
+  }
+  .phase-heading-row .myth-label {
+    font-size: 1.2rem !important;
+  }
+  .next-button .material-symbols-outlined {
+    font-size: 54px !important;
+  }
+  .next-button {
+    margin-left: 0.7rem !important;
+    padding: 0.6rem 1rem !important;
+  }
+}
 
 
 
 
 /*--------------------------------------------------*/
-/* pIRL SECTION */
+/* IRL SECTION */
 /*--------------------------------------------------*/
 /* irl real life examples */
 .irl-section {
