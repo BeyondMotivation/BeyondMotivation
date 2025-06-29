@@ -295,7 +295,7 @@ text-align: center;
 /* Cards */
 /* Myth Vs Reality Cards Section */
 .cards {
-  background: #fff;
+  background: #000000;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -304,12 +304,12 @@ text-align: center;
 }
 
 .card {
-  background: #fff;
-  border: 3px solid #111;
+  background: #000000;
+  border: 3px solid #ffffff;
   border-radius: 24px;
   width: 420px;
   min-height: 420px;
-  box-shadow: 7px 7px 0 #000;
+  box-shadow: 7px 7px 0 #ffffff;
   box-sizing: border-box;
   position: relative;
   padding: 2.5rem 2rem;
@@ -322,7 +322,7 @@ text-align: center;
 }
 .card:hover, .card:focus-within {
   transform: scale(1.10);
-  box-shadow: 0 12px 40px 0 rgba(60,60,60,0.45), 0 2px 8px 0 rgba(0,0,0,0.18);
+  box-shadow: 0 12px 40px 0 rgba(207, 207, 207, 0.45), 0 2px 8px 0 rgba(255, 255, 255, 0.18);
   z-index: 2;
 }
 
@@ -336,7 +336,7 @@ text-align: center;
 
 .myth-label,
 .reality-label {
-  color: #555;
+  color: #cccccc;
 }
 .reality-label {
   font-size: 1.05rem;
@@ -346,7 +346,7 @@ text-align: center;
 .myth-quote {
   font-size: 2rem;
   font-weight: 700;
-  color: #111;
+  color: #ffffff;
   margin-bottom: 2.5rem;
   line-height: 1.14;
 }
@@ -354,27 +354,29 @@ text-align: center;
 .myth-divider {
   width: 100%;
   border: none;
-  border-top: 2px solid #ddd;
-  margin-bottom: 2.25rem;
+  border-top: 2px solid #181818;
+  margin-bottom: 0.5rem;
 }
 
 .reality-text {
-  font-size: 1.18rem;
-  color: #333;
-  font-weight: 400;
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: 200;
   line-height: 1.4;
   max-width: 94%;
   margin-bottom: 0;
   z-index: 2;
 }
-
+.reality-text .b{
+  font-weight: 300;
+}
 .card-number {
   position: absolute;
   right: 2rem;
   bottom: 2rem;
   font-size: 5.2rem;
   font-weight: 700;
-  color: #222;
+  color: #e0e0e0;
   opacity: 0.07;
   pointer-events: none;
   user-select: none;
@@ -419,7 +421,7 @@ text-align: center;
 /* Main section background and padding */
 .core-struggles-section {
   background: #ffffff url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
-  padding: 80px 0;
+  padding: 30px 0;
   width: 100vw;
 }
 
@@ -495,8 +497,8 @@ text-align: center;
 }
 
 .struggle-desc {
-  font-size: 15px;
-  color: #3b3b3b;
+  font-size: 19px;
+  color: #131313;
   font-weight: 400;
   margin: 0;
   line-height: 1.55;
@@ -536,174 +538,6 @@ text-align: center;
 
 
 
-
-
-/*--------------------------------------------------*/
-/* phases of motivation */
-/*--------------------------------------------------*/
-/* 4 part section */
-/* PHASE CARD: Use Myth vs Reality card style but wider & centered */
-/* PHASE SECTION: Card with Top-Left Inline Icon */
-
-/* PHASE SECTION: Horizontal icon + heading row, styled card, big button */
-
-.phase-section {
-  background: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-  padding: 4rem 2rem;
-}
-
-/* Phase Card — wide, modern card with left-aligned content */
-.phase-card {
-  width: 560px;
-  min-height: 420px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-  padding: 2.5rem 2.5rem 2.5rem 2.2rem;
-  box-sizing: border-box;
-  background: #000000;
-  border: 3px solid #ffffff;
-  border-radius: 24px;
-  box-shadow: 7px 7px 0 #ffffff;
-}
-
-/* Heading row: icon + label side-by-side */
-.phase-heading-row {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 14px;
-  margin-top: 6px;
-}
-
-/* Icon style */
-.phase-heading-row .material-symbols-outlined {
-  font-size: 54px;
-  color: #ffffff;
-  filter: none !important;
-  text-shadow: none !important;
-  line-height: 1;
-  display: block;
-}
-
-/* Label style */
-.phase-heading-row .myth-label {
-  font-size: 2.1rem;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  color: #ffffff;
-  margin-bottom: 0;
-  line-height: 1.15;
-  display: block;
-  
-}
-
-.phase-subtitle {
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 0.7em;
-
-  letter-spacing: 0.02em;
-  width: 100%;
-  display: block;
-}
-
-/* Other card elements: reuse your myth/reality card styles for title, divider, etc. */
-
-/* Next button: big, centered next to the card */
-.next-button {
-  padding: 1.1rem 1.4rem;
-  border-radius: 50%;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.15s;
-  margin-left: 2rem;
-}
-
-#currentPhase, #phaseIcons{
-  text-align: center !important;
-}
-#phaseTitle, #phaseDescription {
-  color: #fff !important;
-}
-#phaseTitle {
-  margin-bottom: 8px !important;    /* Reduce spacing below the title */
-}
-.phase-driver-note {
-  margin-top: 1.3em;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.13rem;
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-  text-align: left;
-  width: 100%;
-}
-
-.myth-divider {
-  margin: 0 0 0px 0 !important;     /* Reduce spacing above and below the divider */
-}
-#subHeader{
-  color: #fff;
-}
-#phaseDescription {
- font-size: 22px;
- word-spacing: 102%;
-  margin-top: 0 !important;         /* Remove default paragraph spacing above */
-}
-.next-button:hover {
-  background: #f4f4f4;
-}
-
-.next-button .material-symbols-outlined {
-  color: #ffffff;
-  font-size: 72px !important;
-  filter: none !important;
-  text-shadow: none !important;
-  vertical-align: middle;
-  line-height: 1;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .phase-section {
-    gap: 1.2rem !important;
-    padding: 2rem 0.5rem !important;
-  }
-  .phase-card {
-    width: 96vw !important;
-    max-width: 99vw !important;
-    min-width: unset !important;
-    padding: 1.2rem !important;
-    margin: 0 auto !important;
-  }
-  .phase-heading-row .material-symbols-outlined {
-    font-size: 38px !important;
-  }
-  .phase-heading-row .myth-label {
-    font-size: 1.2rem !important;
-  }
-  .next-button .material-symbols-outlined {
-    font-size: 54px !important;
-  }
-  .next-button {
-    margin-left: 0.7rem !important;
-    padding: 0.6rem 1rem !important;
-  }
-}
 
 
 
@@ -1264,7 +1098,7 @@ text-align: center;
 /*--------------------------------------------------*/
 /* studies */
 .studies-section {
-background: radial-gradient(circle at center, #292929 0%, #000000 100%);
+background: radial-gradient(circle at center, #1d1d1d 0%, #000000 100%);
   color: #fff;
   text-align: center;
   padding: 5rem 2rem;
@@ -1344,70 +1178,40 @@ background: radial-gradient(circle at center, #292929 0%, #000000 100%);
 
 
 
-
-
-/* offer section */
+/* --- Offers Section --- */
 .offers-section {
   background: #000;
   position: relative;
   overflow: hidden;
-  padding: 100px 0 90px 0;
-    position: relative;
-  z-index: 3;
+  padding: 80px 0;
 }
-
-/* Image overlay */
 .offers-section::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url("images/Loopedbackgroundwebp.webp") repeat;
-  background-size: 1200px;
+  background-size: 900px;
   opacity: 0.33;
   z-index: 1;
   pointer-events: none;
 }
-
-/* Black fades: top and bottom */
-.offers-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  background: 
-    linear-gradient(to bottom, #000 70px, transparent 140px),
-}
-
-/* All content sits above the overlays */
-.offers-section > * {
-  position: relative;
-  z-index: 3;
-}
-
-
-
-
+.offers-section > * { position: relative; z-index: 2; }
 
 .offers-container {
-  position: relative;
   max-width: 900px;
   margin: 0 auto;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
 .offers-subheadline {
-  color: #dde5ee;
-  font-size: 25px;
-  margin-bottom: 60px;
+  color: #CFCFCF;
+  font-size: 24px;
+  font-weight: 500;
   text-align: center;
-  max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 40px auto;
+  max-width: 700px;
   line-height: 1.5;
 }
 
@@ -1416,110 +1220,83 @@ background: radial-gradient(circle at center, #292929 0%, #000000 100%);
   flex-wrap: wrap;
   justify-content: center;
   gap: 48px;
-  z-index: 2;
 }
 
-/* Offer Card */
 .offer-card {
-  background: linear-gradient(120deg, rgba(6, 13, 22, 0.98) 0%, rgba(0, 0, 0, 0.94) 100%);
-  border: 1.5px solid rgb(255, 255, 255);
-  border-radius: 22px;
-  box-shadow:
-    0 2px 30px 0 #ffffff2a,
-    0 0 0 1.5px rgba(255,255,255,0.52) inset;
-  padding: 44px 36px 40px 36px;
-  width: 390px;
-  max-width: 390px;      /* wider cards */
+  background: #000;
+  border: 1.5px solid #fff;
+  border-radius: 24px;
+  box-shadow: 0 0 12px 2px rgba(255,255,255,0.12);
+  color: #fff;
+  padding: 32px 24px 28px 24px;
+  max-width: 420px;
+  min-width: 260px;
+  flex: 1 1 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  transition: box-shadow 0.18s, transform 0.18s;
+  transition: box-shadow 0.17s, transform 0.18s;
 }
-
-.offer-card:hover,
-.offer-card:focus-within {
-  transform: translateY(-6px) scale(1.025);
-  box-shadow: 0 0 28px 2px rgba(255,255,255,0.24);
-  transform: translateY(-7px) scale(1.025);
-  border-color: #fff;
+.offer-card:hover, .offer-card:focus-within {
+  box-shadow: 0 0 36px 8px rgba(255,255,255,0.22);
+  transform: scale(1.035) translateY(-7px);
   z-index: 2;
 }
 
-.offer-icon {
-  margin-bottom: 14px;
-  color: #ffffff;
-}
-
-.offer-icon .material-symbols-outlined {
-  font-size: 50px;
-  color: #ffffff;
-    text-shadow: none !important;
-  filter: none !important;
-  box-shadow: none !important;
-}
-
-.offer-icon {
-  margin-bottom: 8px; /* less spacing below the icon */
-  color: #fff;
+.bm-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin-bottom: 7px;
+  border-radius: 8px;
+  display: block;
 }
 
 .offer-title {
   color: #fff;
   font-size: 24px;
   font-weight: 600;
-  margin-bottom: 12px;
-  margin-top: 0;    /* eliminate space above */
+  margin-bottom: 6px;
   text-align: center;
-  letter-spacing: 0.03em;
-}
-.offer-benefits li {
-  display: list-item;
-  list-style-position: inside;
-  margin: 15px 0;      /* Increase this number for more vertical space */
-  margin-bottom: 18px !important;
-  color: #eaf8ff;
-  font-size: 18px;
-  font-weight: 200 !important;
-
 }
 
 .offer-desc {
-  font-weight: 500 !important;
-  color: #ffffff;
-  font-size: 17px;
-  margin-bottom: 28px; /* reduced gap before main button */
+  color: #eaf8ff;
+  font-size: 18px;
   text-align: center;
   line-height: 1.6;
   max-width: 340px;
+  margin: 0 0 30px 0;
+  font-weight: 500;
+}
+
+.offer-btn {
+  border-radius: 32px;
+  cursor: pointer;
+  display: block;
+  width: 90%;
+  margin: 0 auto 18px auto;
 }
 
 .offer-btn-main {
-  background: #fff !important;
-  color: #101010 !important;
-  border: none !important;
-  box-shadow: none !important;
-  font-size: 20px;       /* Larger text */
-  font-weight: 800 !important;      /* Thicker, bolder weight */
-  padding: 15px 0;
-  border-radius: 32px;
-  width: 90%;
-  min-width: 120px;
-  margin: 0 auto 20px auto;
-  display: block;
-  transition: background 0.14s, color 0.14s;
-  cursor: pointer;
+  background: #fff;
+  color: #101010;
+  border: none;
+  font-size: 21px;
+  font-weight: 800;
+  padding: 17px 0;
+  box-shadow: none;
+  transition: background 0.13s, color 0.13s;
 }
-
 .offer-btn-main:hover,
 .offer-btn-main:focus {
-  background: #ededed !important;
-  color: #101010 !important;
+  background: #ededed;
+  color: #101010;
 }
 
 .offer-pricing {
   color: #fff;
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
   text-align: center;
   margin: 0 0 14px 0;
@@ -1527,27 +1304,21 @@ background: radial-gradient(circle at center, #292929 0%, #000000 100%);
 }
 
 .offer-benefits {
-  list-style: disc inside;
-  padding-left: 0;
-  color: #fff;
-  text-align: center;
-  margin: 0 0 18px 0;
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  line-height: 0.7 !important;
-}
-.offer-benefits li {
-  display: list-item;
-  list-style-position: inside;
-  margin: 2px 0;
-  color: #eaf8ff;
-  font-size: 18px;
+  /* Remove boldness and extra letter spacing from the list as a whole */
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-left: 20px;
 }
 
+.offer-benefits li {
+  font-weight: 500;         /* Normal weight */
+  letter-spacing: 0;        /* Reset to default */
+  margin-bottom: 18px;
+  line-height: 1.23;
+}
+
+
 .offer-btn-secondary {
-  margin-top: 2px;
-  margin-bottom: 0;
   font-size: 15px;
   padding: 7px 0;
   min-width: 90px;
@@ -1556,102 +1327,28 @@ background: radial-gradient(circle at center, #292929 0%, #000000 100%);
   color: #fff;
   border: 1px solid #fff;
   border-radius: 22px;
-  display: block;
   text-align: center;
-  transition: background 0.16s, color 0.16s, border-color 0.16s;
+  transition: background 0.15s, color 0.15s;
+  margin: 0 auto;
   cursor: pointer;
 }
 .offer-btn-secondary:hover,
 .offer-btn-secondary:focus {
   background: #fff;
-  color: #101d22;
-  border-color: #fff;
+  color: #000;
 }
 
-.bm-img{
-    width: 50px;
-  height: 50px;
-  object-fit: contain;
-  display: inline-block;
-  vertical-align: middle;
-  /* Optional: circular/corner radius */
-  border-radius: 8px; /* or 50% for a circle */
-
-}
-
-.offer-title {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  text-align: center;
-  letter-spacing: 0.03em;
-}
-
-.offer-desc {
-  color: #eaf8ff;
-  font-size: 17px;
-  margin-bottom: 40px;
-  text-align: center;
-  line-height: 1.6;
-  max-width: 340px;
-}
-
-.offer-btn {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 100px;
-  font-size: 19px;
-  font-weight: 500;
-  padding: 14px 0;
-  width: 90%;
-  min-width: 160px;
-  margin: 0 auto;
-  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.16s;
-  box-shadow: 0 0 16px 0 #00f6ff22 inset;
-  cursor: pointer;
-  letter-spacing: 0.01em;
-  display: block;
-  outline: none;
-}
-
-.offer-btn:hover,
-.offer-btn:focus {
-  background: #fff;
-  color: #0a111a;
-  border-color: #fff;
-  box-shadow: 0 0 8px 0 #a2ffe8aa;
-}
-
-.offer-btn-filled {
-  background: linear-gradient(90deg, #aff8ff 0%, #c6eaff 100%);
-  color: #101d22;
-  border: 2px solid #dbf6ff;
-  font-weight: 700;
-  box-shadow: 0 0 16px 0 #9fffff44;
-}
-.offer-btn-filled:hover,
-.offer-btn-filled:focus {
-  background: #0c141c;
-  color: #fff;
-  border-color: #fff;
-  box-shadow: 0 0 16px 0 #39e9ff88;
-}
-
-/* Responsive */
 @media (max-width: 900px) {
-  .offers-headline { font-size: 32px; }
   .offers-grid { gap: 32px; }
-  .offer-card { width: 90vw; min-width: 0; padding: 32px 14px 28px 14px; }
+  .offer-card { width: 90vw; min-width: 0; padding: 24px 10px 20px 10px; }
 }
 @media (max-width: 600px) {
   .offers-section { padding: 60px 0 50px 0; }
-  .offers-headline { font-size: 23px; }
-  .offers-subheadline { font-size: 15px; }
   .offers-grid { gap: 20px; }
-  .offer-card { padding: 22px 4vw 16px 4vw; }
+  .offer-card { padding: 18px 2vw 14px 2vw; }
+  .offers-subheadline { font-size: 16px; }
 }
+
 
 /* testimonals LAYOUT */
 
@@ -1921,146 +1618,103 @@ background: #000000 url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns=
   margin: 0 1rem;
 }
 
+
+
+
+
+
 /* faqqqqq */
 /* FAQ Section */
+/* FAQ Section */
+#faq-section,
+#faq-section *,
+.faq-item,
+.faq-question,
+.faq-answer,
+.faq-caret {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
 #faq-section {
-  background: #000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.32)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
-  padding: 100px 0 90px 0;
+  background: #000;
+  color: #fff;
+  padding: 10px 0 90px 0;
   width: 100vw;
 }
 .faq-container {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.faq-headline {
-  color: #fff;
-  font-size: 42px;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 12px;
-  letter-spacing: -0.8px;
-}
-
-.faq-subheadline {
-  color: #CFCFCF;
-  font-size: 20px;
-  max-width: 680px;
-  margin: 0 auto 42px auto;
-  text-align: center;
-  line-height: 1.5;
-}
-
-/* Accordion styles */
 .faq-accordion {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
-  width: 100%;
-  margin-bottom: 46px;
-}
-.faq-item {
-  background: #0a0a0a;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: none;
-  transition: box-shadow 0.28s;
-}
-.faq-item.open {
-  box-shadow: 0 0 12px 0 rgba(0,228,255,.25) inset;
 }
 
-/* FAQ Question (accordion header) */
+.faq-item {
+  background: #0a0a0a;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  box-shadow: none;
+  transition: box-shadow 0.19s;
+}
+
+
 .faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   background: none;
   border: none;
   outline: none;
   color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 24px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 22px;
+  font-weight: 400;
   cursor: pointer;
+  padding: 24px 32px;
+  border-radius: 20px;
+  transition: background 0.18s;
   text-align: left;
-  transition: background 0.16s;
 }
-.faq-question:hover,
-.faq-item.open .faq-question {
-  background: #111115;
-}
-
-/* Caret Icon */
 .faq-caret {
   color: #fff;
   opacity: 0.7;
-  font-size: 32px;
+  font-size: 28px;
   transition: transform 0.3s;
 }
 .faq-item.open .faq-caret {
   transform: rotate(180deg);
+  opacity: 1;
+  box-shadow: none !important;
 }
 
-/* FAQ Answer (accordion content) */
 .faq-answer {
   color: #BFBFBF;
-  font-size: 15px;
-  line-height: 1.6;
-  max-width: 680px;
-  padding: 0 32px 0 32px;
+  font-size: 17px;               /* Larger answer text */
+  padding: 0 32px 0 32px;        /* No bottom padding by default */
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding-bottom 0.3s;
-}
-.faq-item.open .faq-answer {
-  max-height: 600px;
-  padding-bottom: 24px;
+  transition: max-height 0.3s cubic-bezier(.46,.03,.52,.96), padding 0.2s;
+  line-height: 1.7;
+  box-shadow: none !important;
 }
 
-/* CTA Footer */
-.faq-footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 34px;
-}
-.faq-footer-line {
-  width: 90px;
-  height: 2px;
-  background: linear-gradient(90deg,#00e4ff55 0%,#fff2 90%);
-  border-radius: 1px;
-  margin-bottom: 14px;
-}
-.faq-footer-link {
-  color: #CFCFCF;
-  font-size: 16px;
-  text-decoration: none;
-  transition: text-decoration 0.16s;
-}
-.faq-footer-link:hover,
-.faq-footer-link:focus {
-  text-decoration: underline;
-  color: #fff;
+.faq-item.open .faq-answer {
+  max-height: 600px;
+  padding: 0 32px 24px 32px;     /* Add bottom padding when open */
+  box-shadow: 0 0 12px 0 rgba(0,228,255,0.12) inset;
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   #faq-section { padding: 70px 0 60px 0; }
-  .faq-headline { font-size: 32px !important; }
-  .faq-container { padding: 0 6vw; }
-}
-@media (max-width: 600px) {
-  .faq-subheadline, .faq-answer { font-size: 15px !important; }
-  .faq-question { font-size: 16px; padding: 18px 16px; }
-  .faq-answer { padding: 0 16px; }
+  .faq-container { padding: 0 5vw; }
+  .faq-question { font-size: 16px; padding: 19px 16px; }
+  .faq-answer { font-size: 14px; padding: 0 16px 16px 16px; }
 }
 
 
