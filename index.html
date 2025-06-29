@@ -13,8 +13,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bacasime+Antique&family=Inconsolata:wdth,wght@72.8,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@700"/>
 
 
 </head>
@@ -39,7 +41,6 @@
         <h1>is a system, not a feeling.</h1>
     </div>
     <div class="hero-bottom">
-      <p class="tagline">nothing changes if nothing changes</p>
       <p class="contact-email">themindliesofficial@gmail.com</p>
     </div>
   </header>
@@ -47,6 +48,9 @@
 
 
 <!-- Introduction area -->
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
 <div class="intro-wrapper">
   <section class="intro-split">
     <div class="intro-image">
@@ -56,13 +60,142 @@
       <h1>Motivation is something</h1><br>
       <h1 class="headerside"> you create, not wait for.</h1>
       <h4>
-       Your brain can generate endless drive, but modern life just keeps hijacking the signal.. Break the cycle of complacency with insights from neuroscience, evolutionary psychology, sociology, and philosophy.
+       Beyond Motivation teaches you to build drive on demand—using neuroscience, evolutionary psychology, and real-world habit design.
       </h4>
       <a href="#offers-section" class="button-outline-glow">Find Your Program</a>
     </div>
   </section>
 </div>
 
+
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+  <!-- seperation from ssegments -->
+<div class="separation">
+<h1>Core Struggles We solve</h1>
+<h3>Beyond Motivation teaches you how to solve these problems</h3>
+</div>
+
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+<!-- Core struggles section -->
+<section class="core-struggles-section">
+  <div class="core-struggles-container">
+    <div class="core-struggles-grid">
+      <!-- 1 -->
+      <div class="struggle-card">
+       <div class="struggle-icon-top">
+       <span class="material-symbols-outlined">mode_heat</span>
+       </div>
+        <div class="struggle-title">Burnout</div>
+        <div class="struggle-desc">Total mental & emotional exhaustion; drive drops to zero.</div>
+      </div>
+      <!-- 2 -->
+      <div class="struggle-card">
+  <div class="struggle-icon-top">
+    <span class="material-symbols-outlined">battery_alert</span>
+  </div>
+  <div class="struggle-title">Fatigue</div>
+  <div class="struggle-desc">Bone-deep tiredness that stalls progress—even after rest.</div>
+</div>
+      <!-- 3 -->
+      <div class="struggle-card">
+       <div class="struggle-icon-top">
+       <span class="material-symbols-outlined">foggy</span>
+       </div>
+        <div class="struggle-title">Brain Fog</div>
+        <div class="struggle-desc">Sluggish thinking, hazy focus, words slip mid-thought.</div>
+      </div>
+      <!-- 4 -->
+      <div class="struggle-card">
+      <div class="struggle-icon-top">
+<span class="material-symbols-outlined">
+avg_pace
+</span>
+      </div>
+        <div class="struggle-title">Inconsistency</div>
+        <div class="struggle-desc">Motivation spikes, crashes, then spikes again—no control.</div>
+      </div>
+      <!-- 5 -->
+      <div class="struggle-card">
+  <div class="struggle-icon-top">
+    <span class="material-symbols-outlined">light_off</span>
+  </div>
+        <div class="struggle-title">Creative Block</div>
+        <div class="struggle-desc">Blank page, zero spark—ideas feel locked away.</div>
+      </div>
+ <!-- 6 -->
+      <div class="struggle-card">
+  <div class="struggle-icon-top">
+    <span class="material-symbols-outlined">hdr_strong</span>
+  </div>
+        <div class="struggle-title">Split Focus</div>
+        <div class="struggle-desc">Attention pulled in six directions; nothing gets finished.</div>
+      </div>
+      <!-- 7 -->
+      <div class="struggle-card">
+  <div class="struggle-icon-top">
+    <span class="material-symbols-outlined">swap_driving_apps_wheel</span>
+  </div>
+        <div class="struggle-title">Empty Drive</div>
+        <div class="struggle-desc">Hollow, unmotivated, goal feels pointless.</div>
+      </div>
+      <!-- 8 -->
+      <div class="struggle-card">
+  <div class="struggle-icon-top">
+    <span class="material-symbols-outlined">360</span>
+  </div>
+        <div class="struggle-title">Anxious Avoidance</div>
+        <div class="struggle-desc">Heart races, mind stalls—so you scroll instead of start.</div>
+      </div>
+    </div>
+    <div class="core-struggles-cta-wrap">
+      <a href="#offers-section" class="core-struggles-cta">See How We Fix These &rarr;</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+  <!-- seperation from ssegments -->
+<div class="separation2">
+<h1>The 4 Phases of Motivation</h1>
+<h3>Motivation isn’t a mood—it’s a four-stage process. Most people fail because they don’t know which part they’re stuck in.</h3>
+</div>
+
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+<!-- Phases of Motivation -->
+
+<section class="phase-section">
+  <div class="card phase-card" id="phaseCard">
+    <div class="phase-heading-row">
+      <span class="material-symbols-outlined" id="phaseIcon">flare</span>
+      <span class="myth-label" id="phaseLabel">PHASE</span>
+    </div>
+    <h4 class="myth-quote" id="phaseTitle"></h4>
+    <hr class="myth-divider">
+    <div class="phase-subtitle" id="phaseSubtitle"></div>
+    <span class="reality-label" style="visibility:hidden;">_</span>
+    <p class="reality-text" id="phaseDescription"></p>
+    <div class="phase-driver-note" id="phaseDriverNote"></div>
+    <span class="card-number" id="phaseNumber"></span>
+  </div>
+  <button class="next-button" onclick="goToNextPhase()">
+    <span class="material-symbols-outlined">arrow_forward</span>
+  </button>
+</section>
+
+
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
 <!-- seperation from ssegments -->
 <div class="separation">
 <h1>Myth Vs Reality</h1>
@@ -70,10 +203,11 @@
 </div>
 
 
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
 <!-- Myth Vs Reality Cards -->
 <div class="cards">
-    
-
 <div class="card">
   <span class="myth-label">MYTH</span>
   <h4 class="myth-quote">“Procrastination means I’m lazy.”</h4>
@@ -111,138 +245,9 @@
   </section>
 
 
-  <!-- seperation from ssegments -->
-<div class="separation2">
-<h1>Core Struggles We solve</h1>
-<h3>Beyond Motivation teaches you how to solve these problems</h3>
-</div>
-
-
-
-
-<!-- Core struggles section -->
-<section class="core-struggles-section">
-  <div class="core-struggles-container">
-
-    <div class="core-struggles-grid">
-      <!-- 1 -->
-      <div class="struggle-card">
-
-       <div class="struggle-icon-top">
-       <span class="material-symbols-outlined">mode_heat</span>
-       </div>
-        <div class="struggle-title">Burnout</div>
-        <div class="struggle-desc">A state of complete mental, and emotional exhaustion.</div>
-      </div>
-
-      <!-- 2 -->
-      <div class="struggle-card">
-  <div class="struggle-icon-top">
-    <span class="material-symbols-outlined">battery_alert</span>
-  </div>
-  <div class="struggle-title">Fatigue</div>
-  <div class="struggle-desc">Tiredness, weariness, or lack of energy that can interfere with progress.</div>
-</div>
-
-
-      <!-- 3 -->
-      <div class="struggle-card">
-       <div class="struggle-icon-top">
-       <span class="material-symbols-outlined">foggy</span>
-       </div>
-
-        <div class="struggle-title">Brainfog</div>
-        <div class="struggle-desc">Mental confusion, sluggishness, and difficulty concentrating</div>
-      </div>
-
-      <!-- 4 -->
-      <div class="struggle-card">
-      <div class="struggle-icon-top">
-<span class="material-symbols-outlined">
-avg_pace
-</span>
-      </div>
-
-        <div class="struggle-title">Inconsistency</div>
-        <div class="struggle-desc">Motivation levels dipping and rising for uncertain reasons.</div>
-      </div>
-
-      <!-- 5 -->
-      <div class="struggle-card">
-  <div class="struggle-icon-top">
-    <span class="material-symbols-outlined">light_off</span>
-  </div>
-        <div class="struggle-title">Creative Block</div>
-        <div class="struggle-desc">Inability to generate new ideas, blank page, just static.</div>
-      </div>
-
- <!-- 6 -->
-      <div class="struggle-card">
-  <div class="struggle-icon-top">
-    <span class="material-symbols-outlined">hdr_strong</span>
-  </div>
-        <div class="struggle-title">Split Focus</div>
-        <div class="struggle-desc">“Inability to focus on a specific task</div>
-      </div>
-
-      <!-- 7 -->
-      <div class="struggle-card">
-  <div class="struggle-icon-top">
-    <span class="material-symbols-outlined">swap_driving_apps_wheel</span>
-  </div>
-        <div class="struggle-title">Empty Drive</div>
-        <div class="struggle-desc">Hollowness, numbness, or lack of fulfillment when moving towards a goal.</div>
-      </div>
-
-      <!-- 8 -->
-      <div class="struggle-card">
-  <div class="struggle-icon-top">
-    <span class="material-symbols-outlined">360</span>
-  </div>
-        <div class="struggle-title">Anxious Avoidance</div>
-        <div class="struggle-desc">Unease, frustration, and disctraction when starting a project.</div>
-      </div>
-
-
-    </div>
-
-    
-
-    <div class="core-struggles-cta-wrap">
-      <a href="#offers-section" class="core-struggles-cta">See How We Fix These &rarr;</a>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-  <!-- seperation from ssegments -->
-<div class="separation">
-<h1>The 4 Phases of Motivation</h1>
-<h3>Motivation isn’t a mood—it’s a four-stage process. Most people fail because they don’t know which part they’re stuck in.</h3>
-</div>
-
-<!-- Phases of Motivation -->
-
-<section class="phase-section">
-  <div class="card phase-card" id="phaseCard">
-    <div class="phase-heading-row">
-      <span class="material-symbols-outlined" id="phaseIcon">flare</span>
-      <span class="myth-label" id="phaseLabel">PHASE</span>
-    </div>
-    <h4 class="myth-quote" id="phaseTitle"></h4>
-    <hr class="myth-divider">
-    <span class="reality-label" style="visibility:hidden;">_</span>
-    <p class="reality-text" id="phaseDescription"></p>
-    <span class="card-number" id="phaseNumber"></span>
-  </div>
-  <button class="next-button" onclick="goToNextPhase()">
-    <span class="material-symbols-outlined">arrow_forward</span>
-  </button>
-</section>
-
+  <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
 
 <!-- seperation from ssegments -->
 <div class="separation2">
@@ -250,6 +255,10 @@ avg_pace
 <h3>Four modules, one outcome: reliable, self-fueling motivation built on neuroscience, evolutionary psychology, and real-world practice.</h3>
 </div>
 
+
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
 
 <!-- BMS SECTION -->
 <section class="bms-section">
@@ -328,12 +337,78 @@ avg_pace
 </section>
 
 
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+  <!-- seperation from segments -->
+<div class="separation">
+<h1>How the sytem fits in your life</h1>
+<h3>Four simple steps—built to fit busy schedules and guarantee implementation.</h3>
+</div>
+
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+<!--HOW IT WORKS -->
+<section id="how-course-works">
+  <div class="hcw-container">
+    <h2 class="hcw-headline">How the Course Works</h2>
+    <div class="hcw-subtext">
+      Each module is under 30 minutes and crafted to help you learn, absorb, and implement without overwhelming your day.
+    </div>
+    <!-- Pill strip -->
+    <div class="hcw-pill-strip">
+      <div class="hcw-pill">
+        <span class="material-symbols-outlined hcw-pill-icon">timer</span>
+        30 minutes per module
+      </div>
+      <div class="hcw-pill">
+        <span class="material-symbols-outlined hcw-pill-icon">flag</span>
+        Real-life pacing &amp; examples
+      </div>
+      <div class="hcw-pill">
+        <span class="material-symbols-outlined hcw-pill-icon">check_circle</span>
+        Actionable takeaways
+      </div>
+    </div>
+    <!-- Vertical steps -->
+    <div class="hcw-steps">
+      <div class="hcw-step">
+        <div class="hcw-step-header">
+          <span class="material-symbols-outlined hcw-step-icon">psychology</span>
+          <span class="hcw-step-title">First 10 Minutes — Learn</span>
+        </div>
+        <div class="hcw-step-desc">
+          We deep dive into the key science, psychology, or insight behind the module’s core topic. It’s straightforward, jargon-free, and designed to change how you think immediately.
+        </div>
+      </div>
+      <div class="hcw-step">
+        <div class="hcw-step-header">
+          <span class="material-symbols-outlined hcw-step-icon">lightbulb</span>
+          <span class="hcw-step-title">Middle 10 Minutes — Absorb</span>
+        </div>
+        <div class="hcw-step-desc">
+          This is where real-world examples, metaphors, and relatable scenarios lock in the concept. You’ll start to see how this applies directly to your life, without guesswork.
+        </div>
+      </div>
+      <div class="hcw-step">
+        <div class="hcw-step-header">
+          <span class="material-symbols-outlined hcw-step-icon">directions_run</span>
+          <span class="hcw-step-title">Final 10 Minutes — Implement</span>
+        </div>
+        <div class="hcw-step-desc">
+          We finish every video by walking through simple exercises, action steps, or mindset shifts so you leave knowing exactly what to do next—and how to do it right away.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
-
-
-
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
   <!-- seperation from segments -->
 <div class="separation">
 <h1>Real People. Real Patterns.</h1>
@@ -341,7 +416,9 @@ avg_pace
 </div>
 
 
-
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
 <!-- IRL examples -->
  <section ID="irlpeople-section"></section>
 <section class="irlpeople-section">
@@ -360,105 +437,393 @@ avg_pace
   </button>
 </section>
 
-
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
 <!-- Studies -->
 
 <section class="studies-section">
   <h2 class="studies-title">Studies & Scientific Backing</h2>
         <div class="stats">
+      <div><h3>2 Years</h3><p>in the making</p></div>
       <div><h3>45+</h3><p>Studies Cited</p></div>
       <div><h3>6+</h3><p>Hours of Course Material</p></div>
     </div>
   <p class="studies-description">
     All of the insights and frameworks shared here are grounded in real neuroscience, psychology, and behavioral research. Click below to explore the detailed studies, papers, and findings that support each phase.
   </p>
-  <a href="studies.html" class="studies-button">View Studies</a>
+  <a href="#how-course-works" class="studies-button">View Studies</a>
 </section>
 
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+  <!-- seperation from segments -->
+<div class="separation2">
+<h1>Our Premium Offers</h1>
+</div>
 
-
-
-
-
-
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
 <!-- offer section -->
-
 
 <section class="offers-section">
   <div class="offers-container">
-    <h2 class="offers-headline">Our Premium Offers</h2>
     <div class="offers-subheadline">
       Unlock science-backed frameworks and practical guidance to transform your motivation and daily performance.
     </div>
     <div class="offers-grid">
+
+       <!-- Coaching -->
       <div class="offer-card">
-        <div class="offer-icon"><span class="material-symbols-outlined">insights</span></div>
-        <div class="offer-title">Phase Diagnostics</div>
-        <div class="offer-desc">Pinpoint exactly which motivation makes <b>vice</b> and why.</div>
-        <button class="offer-btn">Start Coaching</button>
+  <img src="images/mm logo web.webp" alt="Description" class="bm-img">
+    <!-- or use <img src="..." class="offer-img-icon"> -->
+
+  <!-- Title, less spacing below icon -->
+  <div class="offer-title">Motivation Mentor</div>
+  <!-- Description -->
+  <div class="offer-desc">
+    1-on-1 mentorship that cares about your goals, struggles, feeling and time. We will tackle this together until the win is locked.</b>
+  </div>
+  <!-- Primary Button (form) -->
+  <button class="offer-btn offer-btn-main">Start Coaching Form</button>
+  <!-- Pricing (centered, below button) -->
+  <div class="offer-pricing">$249 / month</div>
+  <!-- Bulleted benefits (centered, large font, below pricing) -->
+  <ul class="offer-benefits">
+
+<li>24/7 direct text access</li>
+<li>Weekly 60-min video strategy sessions</li>
+<li>Daily accountability check-ins</li>
+<li>Deep diagnostic breakdown to uncover hidden blocks</li>
+<li>Personalised Success Roadmap—step-by-step actions toward your goals</li>
+<li>Rewiring of habits, mindset, routines, and trauma patterns</li>
+<li><b>Bonus: full Beyond Motivation course included</b></li>
+  </ul>
+  <!-- Secondary button (smaller, links elsewhere) -->
+  <a href="#faq-section" class="offer-btn offer-btn-secondary">Learn More</a>
       </div>
+
+
+ <!-- Beyond Motivation -->
       <div class="offer-card">
-        <div class="offer-icon"><span class="material-symbols-outlined">forum</span></div>
-        <div class="offer-title">Habit Labs</div>
-        <div class="offer-desc">90-second experiments that lock new behaviors into the AMCC.</div>
-        <button class="offer-btn offer-btn-filled">See Course</button>
+        <img src="images/homebutton.png" alt="Description" class="bm-img">
+       <!-- Title, less spacing below icon -->
+  <div class="offer-title">Beyond Motivation</div>
+  <!-- Description -->
+  <div class="offer-desc">
+    A science-backed, self-paced course that teaches you to build drive on demand—then turns insight into daily action. <br><br> <b>Comming out Aug 2025</b></b>
+  </div>
+  <!-- Primary Button (form) -->
+  <button class="offer-btn offer-btn-main">Get Notified</button>
+  <!-- Pricing (centered, below button) -->
+  <div class="offer-pricing" style="margin-bottom:0;">$39</div>
+<div class="offer-desc" style="margin-top:0;"><b>One-time Purchase (Lifetime Ownership)</b></div>
+  <!-- Bulleted benefits (centered, large font, below pricing) -->
+  <ul class="offer-benefits">
+<li>20 bite-sized modules • 5+ hours total</li>
+<li>45 peer-reviewed studies distilled into actionable, real-life strategies</li>
+<li>Printable implementation & scheduling plans in every lesson</li>
+<li>Self-paced: pause, resume, and revisit anytime for the busiest calendar</li>
+<li>Hoasted on Udemy with lifetime, cross-device access</li>
+<li>30-day 100% money-back guarantee</li>
+
+  </ul>
+  <!-- Secondary button (smaller, links elsewhere) -->
+  <a href="#how-course-works" class="offer-btn offer-btn-secondary">Learn More</a>
       </div>
     </div>
   </div>
+  <div class="offers-fade-bottom"></div>
 </section>
 
 
 
 
-<!-- warning section -->
-  <section class="warning">
-    <h1><span class="dim">[</span>disclaimer<span class="dim">]</span></h1>
-    <h3 style="color: #686868">This course doesn’t teach motivation.</h3>
-    <h3>
-       <br>
-      It rewires how you think. It makes you sharper. Hungrier. Obsessively focused. <br>
-       You’ll understand work in a way most never do. How your brain triggers motivation, responds to effort, and how to weaponize it to whats imporants.<br>
-       You’ll become more passionate, more disciplined, and more driven than you’ve ever been. <br>
 
-    <div class="warning2"><br><b>Warning:</b>it's uncomfortable. You’ll outpace your old self and outgrow people around you.<br>
-     You might feel a little lonely. A little intense. A little obsessed.<br>
-    This kind of change isn’t for everyone. It’s for the ones who are done pretending they’re fine with average.<br>
-    <b>Don't waste your time, you’re okay staying where you are, please don’t take this course.</b>
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+<!-- FAQ questions section -->
+
+<section id="faq-section">
+  <div class="faq-container">
+    <h2 class="faq-headline">Frequently Asked—Honestly Answered</h2>
+    <div class="faq-subheadline">
+      Still have questions? Here’s the straight science—no fluff, no sales fog.
     </div>
-    </h3>
- </section>
-
-
-  <!-- CLIENTS & TESTIMONIALS SECTION -->
-  <section class="testimonials">
-    <p class="subheading">TRUSTED BY DESIGN TEAMS AT</p>
-    <div class="logo-row">
-      <span>Solaris Energy</span>
-      <span>Codecraft</span>
-      <span>Magnolia</span>
-      <span>Refractional</span>
-      <span>45 Degrees</span>
-    </div>
-
-    <h2>Voices of satisfaction and success</h2>
-    <p class="desc">We take pride in building lasting partnerships and delivering solutions that exceed expectations.</p>
-
-    <div class="testimonial-card">
-      <img src="assets/images/placeholder1.jpg" alt="Client Photo" />
-      <div>
-        <p class="quote">Their understanding of our brand's essence helped us refine our identity.</p>
-        <p class="client-name">John Thompson</p>
-        <p class="client-role">IT Director at SecureNet Solutions</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="faq-accordion">
+      <!-- Item 1 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          How much time does the course take each week?
+          <span class="material-symbols-outlined faq-caret">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          Most members invest ~2 hours of focused study plus a few 10-minute Habit Labs. The system is built to run while you live your life.
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Will this work if I’ve tried other productivity courses?
+          <span class="material-symbols-outlined faq-caret">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          Yes—Beyond Motivation fixes the root (dopamine balance, identity loops, trauma suppression) instead of piling on more to-do lists.
+        </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Do I need any special apps or gear?
+          <span class="material-symbols-outlined faq-caret">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          Just a browser and a notebook. Optional: a timer and a willingness to test Habit-Lab experiments.
+        </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          What if I’m already busy—will this add stress?
+          <span class="material-symbols-outlined faq-caret">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          The program removes cognitive load by closing unfinished loops and re-calibrating energy. Most members report less stress by Week 2.
+        </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Is there a refund guarantee?
+          <span class="material-symbols-outlined faq-caret">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          Try every module for 30 days. If you’re not seeing measurable motivation gains, email us—full refund, no quiz.
+        </div>
+      </div>
+      <!-- Item 6 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          How is the coaching different from the course?
+          <span class="material-symbols-outlined faq-caret">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          Coaching is personalized deep-diagnostics over Zoom; we tackle your exact roadblocks. The course is self-paced with community support.
+        </div>
       </div>
     </div>
-
-    <div class="carousel-controls">
-      <button>&larr;</button>
-      <button>&rarr;</button>
+    <!-- CTA footer -->
+    <div class="faq-footer">
+      <div class="faq-footer-line"></div>
+      <a href="mailto:hello@yourdomain.com" class="faq-footer-link">Still stuck? Ask us directly &rarr;</a>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all others
+    document.querySelectorAll('.faq-item.open').forEach(openItem => {
+      if(openItem !== item) openItem.classList.remove('open');
+    });
+    // Toggle current
+    item.classList.toggle('open', !isOpen);
+  });
+});
+</script>
+
+
+
+<!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+ <!-- ---------------------------------------------------- -->
+<!-- sticky footer -->
+
+<div id="sticky-cta" class="sticky-cta-hidden">
+  <div class="sticky-cta-inner">
+    <button class="sticky-cta-btn">
+      Start Building Motivation &rarr;
+    </button>
+    <a class="sticky-cta-link" href="/quiz">Take the free assessment</a>
+    <span class="sticky-cta-close" id="stickyCtaClose">&times;</span>
+  </div>
+</div>
+
+<script>
+(function(){
+  let dismissed = false;
+  const bar = document.getElementById('sticky-cta');
+  const close = document.getElementById('stickyCtaClose');
+  
+  // Show after scroll 50vh
+  function checkStickyCta() {
+    if (dismissed) return;
+    if (window.scrollY > window.innerHeight * 0.5) {
+      bar.classList.add('sticky-cta-visible');
+      bar.classList.remove('sticky-cta-hidden');
+    } else {
+      bar.classList.remove('sticky-cta-visible');
+      // Don't hide by display:none if not dismissed, just let it fade out
+    }
+  }
+
+  close.addEventListener('click', function(){
+    dismissed = true;
+    bar.classList.remove('sticky-cta-visible');
+    bar.classList.add('sticky-cta-hidden');
+  });
+
+  window.addEventListener('scroll', checkStickyCta);
+  window.addEventListener('resize', checkStickyCta);
+})();
+</script>
+
 
   <script src="script.js"></script>
+
+
+
+
+
+  <section id="testimonials">
+  <div class="testimonials-container">
+    <h2 class="testimonials-headline">Real People · Real Shifts</h2>
+    <div class="testimonials-subheadline">
+      From burnout to breakthrough—see what happens when motivation becomes a system, not a mood.
+    </div>
+    <div class="swiper testimonials-swiper">
+      <div class="swiper-wrapper">
+        <!-- Example slide 1 -->
+        <div class="test-card swiper-slide">
+          <div class="test-card-header">
+            <img src="jared.jpg" alt="Jared P." class="test-card-avatar">
+            <div>
+              <div class="test-card-name">Jared P.</div>
+              <div class="test-card-tag">Burnout Loop · Phase 3</div>
+              <div class="test-card-stars">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+              </div>
+            </div>
+          </div>
+          <div class="test-card-quote">Focus finally sticks.</div>
+          <div class="test-card-body">
+            <div class="test-card-before">Before: 2-PM crashes, endless YouTube.</div>
+            <div class="test-card-after">After: 4-hour flow blocks, zero guilt.</div>
+          </div>
+        </div>
+        <!-- Example slide 2 -->
+        <div class="test-card swiper-slide">
+          <div class="test-card-header">
+            <img src="maya.jpg" alt="Maya L." class="test-card-avatar">
+            <div>
+              <div class="test-card-name">Maya L.</div>
+              <div class="test-card-tag">Creative Block · Phase 1</div>
+              <div class="test-card-stars">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+              </div>
+            </div>
+          </div>
+          <div class="test-card-quote">Ideas turned into action.</div>
+          <div class="test-card-body">
+            <div class="test-card-before">Before: Vision boards—no follow-through.</div>
+            <div class="test-card-after">After: Podcast launched in 6 weeks.</div>
+          </div>
+        </div>
+        <!-- Example slide 3 -->
+        <div class="test-card swiper-slide">
+          <div class="test-card-header">
+            <img src="eli.jpg" alt="Eli B." class="test-card-avatar">
+            <div>
+              <div class="test-card-name">Eli B.</div>
+              <div class="test-card-tag">Empty Drive · Identity Shift</div>
+              <div class="test-card-stars">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+              </div>
+            </div>
+          </div>
+          <div class="test-card-quote">Purpose regained.</div>
+          <div class="test-card-body">
+            <div class="test-card-before">Before: Numb after quitting his job.</div>
+            <div class="test-card-after">After: Shipped a digital product + daily momentum.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Swiper Nav + Dots -->
+      <div class="swiper-button-prev testimonial-chevron"></div>
+      <div class="swiper-button-next testimonial-chevron"></div>
+      <div class="swiper-pagination testimonial-dots"></div>
+    </div>
+    <div class="testimonials-cta-wrap">
+      <a href="#offers-section" class="testimonials-cta">
+        Ready for your shift? Choose your path &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+const swiper = new Swiper('.testimonials-swiper', {
+  slidesPerView: 3,
+  spaceBetween: 32,
+  centeredSlides: false,
+  loop: true,
+  autoHeight: true,
+  speed: 600,
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  keyboard: { enabled: true },
+  breakpoints: {
+    0:    { slidesPerView: 1, spaceBetween: 20 },
+    768:  { slidesPerView: 2, spaceBetween: 20 },
+    1024: { slidesPerView: 3, spaceBetween: 32 }
+  }
+});
+</script>
 </body>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="images/homebutton.png" alt="Beyond Motivation Logo" />
+    </div>
+    <div class="footer-links">
+      <a href="studies.html">Studies</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2024 Beyond Motivation. All rights reserved.
+    </div>
+  </div>
+</footer>
 </html>

@@ -7,25 +7,38 @@ const phaseIcons = [
 
 const phases = [
   {
-    title: "Phase 1: Ignition",
-    description:
-      "Kick-start motivation by lifting baseline dopamine: purge high-stim distractions, claim one quick win, and add a spark of novelty. When curiosity, clarity, and reward expectation line up, action becomes the obvious next step."
-  },
-  {
-    title: "Phase 2: Flow Entry",
-    description:
-      "Shift from idle to deep focus. A short cognitive warm-up, a distraction-free environment, and one laser-specific first task hand the controls to your executive brain—traction replaces hesitation."
-  },
-  {
-    title: "Phase 3: Momentum Loop",
-    description:
-      "Turn progress into chemistry. Chain micro-wins, surface instant feedback, and add brief movement or hydration resets to keep glucose and dopamine balanced. Effort now fuels itself, not burnout."
-  },
-  {
-    title: "Phase 4: Reset & Prime",
-    description:
-      "End on purpose: log wins, cue tomorrow’s first step, then switch to active recovery—walk, breathwork, nutrition. You close the loop with energy higher than you started, so the next ignition is effortless."
-  }
+    title: "Ignition",
+  subHeader: "Your pre-work motivation level",
+  description:
+    "This is what most people mean by motivation: the surge of energy, curiosity, and hype you feel just before you begin—whether that means opening a laptop, stepping onto a treadmill, or picking up a paintbrush.",
+  driverNote:
+    "Fueled by baseline dopamine, cognitive freshness, belief alignment, and supportive habits."
+
+    },
+{
+  title: "Launch Window",
+  subHeader: "The first 10–30 minutes on task",
+  description:
+    "Here motivation either locks in or leaks out. A quick cognitive warm-up, one laser-specific first action, and a distraction-proof environment hand control to your executive brain—turning intention into real traction.",
+  driverNote:
+    "Stabilised by task clarity, novelty, environmental cues, and Executive-Control activation."
+},
+{
+  title: "Sustain & Protect",
+  subHeader: "Hour 1–3 of the work session",
+  description:
+    "Glucose dips, dopamine slopes, and decision fatigue threaten momentum. Chain micro-wins, surface instant feedback, and weave in 60-second resets so effort refuels itself instead of sliding into burnout.",
+  driverNote:
+    "Maintained by micro-wins, visible feedback loops, movement breaks, and balanced neurochemistry."
+},
+{
+  title: "Close Loop & Seed Next",
+  subHeader: "The final five minutes before you stop",
+  description:
+    "Wrap up on purpose: log today’s wins, plant tomorrow’s first step, then switch to active recovery—walk, breathwork, nutrients. You finish proud, not drained, priming an effortless next ignition.",
+  driverNote:
+    "Strengthens self-trust through reflection, next-step priming, and a parasympathetic reset."
+}
 ];
 
 let currentPhase = 0;
@@ -34,7 +47,10 @@ function updatePhaseCard() {
   const phase = phases[currentPhase];
   document.getElementById("phaseIcon").textContent = phaseIcons[currentPhase];
   document.getElementById("phaseTitle").textContent = phase.title;
+document.getElementById("phaseSubtitle").textContent = phase.subHeader || '';
+
   document.getElementById("phaseDescription").textContent = phase.description;
+  document.getElementById("phaseDriverNote").textContent = phase.driverNote || '';
   document.getElementById("phaseNumber").textContent = (currentPhase + 1).toString().padStart(2, '0');
   document.getElementById("phaseLabel").textContent = `PHASE ${currentPhase + 1}`;
 }
@@ -101,3 +117,6 @@ function goToNextIrlperson() {
 window.addEventListener("DOMContentLoaded", () => {
   updateIrlpeopleCard();
 });
+
+
+
