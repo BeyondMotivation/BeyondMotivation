@@ -50,6 +50,23 @@ body {
   opacity: 1 !important;
 }
 
+.sib-form input[type="text"],
+.sib-form input[type="email"],
+.sib-form input[type="tel"],
+.sib-form textarea,
+.sib-form select {
+  color: #1a1a1a !important;          /* Dark gray or use #000 for pure black */
+  background: #fff !important;        /* White background for the field */
+  caret-color: #101010 !important;    /* Optional: darker caret for better visibility */
+}
+
+/* Also ensure placeholder text is visible (medium gray) */
+.sib-form input::placeholder,
+.sib-form textarea::placeholder {
+  color: #888 !important;
+  opacity: 1 !important;
+}
+
   @font-face {
     font-display: block;
     font-family: Roboto;
