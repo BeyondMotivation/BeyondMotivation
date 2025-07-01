@@ -26,6 +26,21 @@
     src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
   }
 
+  #sib-container input,
+#sib-container textarea,
+#sib-container select {
+  color: #111 !important;       /* Makes typed text black/dark */
+  background: #fff !important;  /* Ensures the background stays white */
+  caret-color: #101010 !important; /* Black caret for visibility */
+}
+
+/* For placeholder text color (gray, readable) */
+#sib-container input::placeholder,
+#sib-container textarea::placeholder {
+  color: #888 !important;
+  opacity: 1 !important;
+}
+
   #sib-container input:-ms-input-placeholder {
     text-align: left;
     font-family: Helvetica, sans-serif;
