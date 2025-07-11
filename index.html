@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@700"/>
 
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 
 </head>
@@ -32,9 +33,9 @@
       <div class="nav-links">
         <a href="#Intro">Home</a>
         <a href="studies.html">Studies</a>
-        <a href="contact_form.html">Contact</a>
-        <a href="#offers">Mentorship</a>
-        <a href="#faq-section">FaQ</a>
+        <a href="contact_form.html" >Contact</a>
+        <a href="#offers" class="hide-mobile">Mentorship</a>
+        <a href="#faq-section" class="hide-mobile">FaQ</a>
       </div>
     </nav>
 
@@ -191,7 +192,7 @@ avg_pace
 
  <hr style="color: white; width: 800px; height: 5px;">
     <h1 style="margin-top: 60px;">We make it easy</h1>
-        <p>
+        <p style="text-align: center;">
       Each module is broken into three bite-size lessons you can complete in under 30 minutes—easy to follow and flexible enough for any schedule
     </p>
 
@@ -264,7 +265,7 @@ avg_pace
     HMAM is a neuroscientific framework showing how motivation is created. These five neurological filters decide if you’ll act, stall, or sabotage. The result? A step-by-step, scientific method for building motivation that lasts.
   </p>
 
-<div>
+<div class="hmam-math-equation">
   <p style="color: black;">
     $$
     \text{Motivation} = \frac{\text{Reward}}{\text{Effort}}
@@ -312,14 +313,13 @@ avg_pace
 
 
      <!-- Fun Facts -->
-  <div class="hmam-funfact-box">
-  <div class="hmam-funfact-title">Fun Fact</div>
-  <div class="hmam-funfact-content">
+<div class="hmam-funfact-box">
+  <div class="hmam-funfact-title">FUN FACT</div>
+  <div class="hmam-funfact-row">
     <div class="hmam-funfact-img">
-      <img src="images/rat swimming.webp" alt="Brain Fun Fact" />
+      <img src="images/rat swimming.webp" alt="Rats swimming" />
     </div>
     <div class="hmam-funfact-text">
-      <h4>Did you know?</h4>
       <p>
         In the 1950s, Curt Richter found that wild rats drowned within minutes—unless he briefly rescued them first. After just a moment of “hope,” the same rats could swim for hours or days. Endurance wasn’t about strength—it was about belief.
       </p>
@@ -342,7 +342,7 @@ avg_pace
     </div>
 
 
-    <p class="hmam-studies-description" style="color: black;">
+    <p class="hmam-studies-description" style="color: black; text-align: center; padding-left: 20px; padding-right: 20px;">
       <b>Click below to explore the detailed studies, papers, and findings that support Beyond Motivation.</b>
     </p>
     <a href="studies.html" class="hmam-studies-button">View Studies</a>
@@ -446,6 +446,12 @@ document.querySelectorAll('.roadmap-dropdown-toggle').forEach(btn => {
  <!-- ---------------------------------------------------- -->
  <!-- ---------------------------------------------------- -->
 
+ <!-- seperation from ssegments -->
+<div class="separation">
+<h1>About</h1>
+</div>
+
+
 <section class="about-creator-modern" id="about-creator-modern">
   <div class="about-creator-modern-wrap">
     <!-- Left: About Text -->
@@ -470,10 +476,15 @@ document.querySelectorAll('.roadmap-dropdown-toggle').forEach(btn => {
 <!-- ---------------------------------------------------- -->
  <!-- ---------------------------------------------------- -->
  <!-- ---------------------------------------------------- -->
+<!-- seperation from ssegments -->
+<div class="separation2">
+<h1></h1>
+</div>
 
 
 <section class="mini-testimonial-section">
   <div class="mini-testimonial-inner">
+
     <div class="mini-t-name">Irina M</div>
     <div class="mini-t-location">Madrid, Spain</div>
     <div class="mini-t-desc">
@@ -496,19 +507,6 @@ document.querySelectorAll('.roadmap-dropdown-toggle').forEach(btn => {
 
     <div class="mini-t-note">This is an audio testimonial</div>
 
-
-  </div>
-    <div class="mini-testimonial-inner">
-    <div class="mini-t-name">Irina M</div>
-    <div class="mini-t-location">Madrid, Spain</div>
-    <div class="mini-t-desc">
-      after 2 weeks
-    </div>
-
-    <img src="images/TextMessage.PNG" style="max-width: 200px;">
-
-    <div class="mini-t-note"></div>
-  </div>
 </section>
 
 <script>
