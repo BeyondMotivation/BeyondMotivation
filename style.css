@@ -810,8 +810,8 @@ text-align: center;
   .courseinfo-section img {
     padding-left: 5vw !important;
     padding-right: 5vw !important;
-    max-width: 65px !important;
-    width: 65px !important;
+    max-width: 200px !important;
+    width: 200px !important;
     display: block;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -843,45 +843,64 @@ text-align: center;
     min-width: 88px;
     border-radius: 10px;
   }
-  .block-pair,
-  .block-pair.reverse {
-    flex-direction: column !important;
-    gap: 13px !important;
+}
+@media (max-width: 700px) {
+  .block-pair, .block-pair.reverse {
+    display: flex !important;
+    flex-direction: row !important;  /* Always side by side */
+    align-items: center;
+    justify-content: center;
+    gap: 2px !important;
     max-width: 99vw !important;
-    align-items: center !important;
-    margin-bottom: 17px;
+    width: 99vw !important;
+    margin-bottom: 15px;
+  }
+  .block-pair.reverse {
+    flex-direction: row-reverse !important;
   }
   .block-pair-img {
-    max-width: 220px !important;
-    height: 130px !important;
-    margin: 0 auto 8px auto !important;
+    flex: 0 0 195px !important;
+    max-width: 195px !important;
+    width: 195px !important;
+    height: 195px !important;
+    margin: 0 !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .block-pair-img img {
-    max-width: 100% !important;
+    width: 100% !important;
     height: 100% !important;
-    border-radius: 10px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    border-radius: 8px !important;
+    object-fit: cover;
   }
   .block-pair-text {
-    max-width: 97vw !important;
-    padding: 7px 4vw !important;
-    font-size: 1.01rem !important;
-    align-items: center !important;
+    flex: 1 1 0;
+    max-width: 100vw !important;
+    padding: 0 0vw !important;
+    font-size: 0.97rem !important;
     text-align: center !important;
+    align-items: flex-start !important;
     height: auto !important;
   }
   .block-pair-text h2 {
-    font-size: 1.22rem !important;
-    margin-bottom: 9px !important;
-    margin-top: 4px !important;
+    font-size: 1.07rem !important;
+    margin-bottom: 7px !important;
+    margin-top: 0 !important;
   }
   .block-pair-text p {
-    font-size: 0.98rem !important;
+    font-size: 0.97rem !important;
+    margin: 0;
   }
 }
 @media (max-width: 700px) {
   .separation2 .courseinfo-title-img{
-    width: 15px !important;
-    max-width: 15px !important;
+    width: 370px !important;
+    max-width: 370px !important;
     height: auto !important;
     display: block !important;
     margin-left: auto !important;
@@ -1158,6 +1177,20 @@ text-align: center;
   box-shadow: 0 0px 30px #fff;
   padding: 0 28px 18px 28px;  /* <-- left/right padding added here */
 }
+.hmam-img {
+  display: block;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto 32px auto;
+  height: auto;
+}
+@media (max-width: 700px) {
+  .hmam-img {
+    max-width: 96vw;
+    width: 96vw;
+    min-width: 0;
+  }
+}
 @media (max-width: 700px) {
   .hmam-funfact-box {
     max-width: 97vw;
@@ -1203,6 +1236,7 @@ text-align: center;
   .hmam-filter-desc {
     font-size: 0.91rem;
   }
+
 }
 
 /* Small screens: Stack fun fact row */
@@ -1210,9 +1244,6 @@ text-align: center;
   .hmam-funfact-row { flex-direction: column; align-items: center; gap: 7px; }
   .hmam-funfact-img { width: 30px; height: 30px; }
 }
-
-
-
 
 
 /* Studies / Scientific Backing */
@@ -1289,8 +1320,34 @@ text-align: center;
   .hmam-funfact-img { width: 75px; height: 75px; margin: 0 auto; }
   .hmam-vignette-profile { padding-left: 2vw; }
   .hmam-profile-details { gap: 12px; font-size: 0.98rem; }
+
+}
+.hmam-math-equation {
+  color: #000;
+  max-width: 100vw;
+  overflow-x: auto;
+  text-align: center;
+  margin: 0 auto 18px auto;
+  padding: 0 2vw;
+  /* Prevents scroll bars on parent */
+  box-sizing: border-box;
 }
 
+/* Tighter for mobile */
+@media (max-width: 700px) {
+  .hmam-math-equation {
+    max-width: 98vw;
+    font-size: 0.65rem !important;
+    padding: 0 1vw !important;
+  }
+  /* This directly targets the rendered MathJax output */
+  .hmam-math-equation .mjx-chtml {
+    font-size: 0.85rem !important;
+    /* Prevents text from overflowing */
+    word-break: break-word;
+    white-space: normal !important;
+  }
+}
 
 /* ==========================================================================
    #6 Roadmap
