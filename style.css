@@ -2038,3 +2038,246 @@ text-align: center;
   text-align: center;
   margin-top: 6px;
 }
+
+/* ---- Custom overrides and new sections from ChatGPT modifications ---- */
+
+/* Shrink Solvable Pains cards by 20% */
+.core-struggles-section .struggle-card {
+  width: 192px;
+  min-height: 192px;
+  padding: 26px 16px 22px 16px;
+}
+.core-struggles-section .struggle-icon-top .material-symbols-outlined {
+  font-size: 56px;
+}
+.core-struggles-section .struggle-title {
+  font-size: 28px;
+}
+.core-struggles-section .struggle-desc {
+  font-size: 15px;
+}
+
+/* Program Overview Section */
+.program-overview-section {
+  background-color: #000;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 8px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 8px);
+  padding: 68px 0 80px 0;
+  width: 100vw;
+}
+.program-overview-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.program-overview-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.program-overview-desc {
+  font-size: 1.2rem;
+  color: #ddd;
+  line-height: 1.7;
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+.pain-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  justify-content: center;
+}
+.pain-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 22px;
+  width: 200px;
+  min-height: 200px;
+  padding: 28px 20px 26px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.pain-card .material-symbols-outlined {
+  font-size: 54px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.pain-card .pain-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.pain-card .pain-desc {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+/* Dream sections */
+.dream-viewer-section, .dream-scenario-section {
+  background-color: #0a0a0a;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 6px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 6px);
+  padding: 70px 0;
+  width: 100vw;
+}
+.dream-section-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 28px;
+  text-align: center;
+}
+.dream-section-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.dream-section-desc {
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.dream-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 32px;
+}
+.dream-item {
+  font-size: 1.02rem;
+  color: #bbb;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+}
+
+/* Membership Plans Section */
+.membership-plans-section {
+  background-color: #000;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 10px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 10px);
+  padding: 80px 0;
+  width: 100vw;
+}
+.plans-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.plan-card {
+  background: #181818;
+  border: 1px solid #3a3a3a;
+  border-radius: 26px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  padding: 42px 34px 36px 34px;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.plan-card .plan-tier {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.plan-card .plan-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.plan-card .plan-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ccc;
+  margin-bottom: 22px;
+}
+.plan-features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+.plan-features-grid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 90px;
+  max-width: 120px;
+  padding: 12px 8px;
+  border-radius: 18px;
+  background: #242424;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+  font-size: 0.88rem;
+  color: #e5e5e5;
+}
+.plan-features-grid > div .material-symbols-outlined {
+  font-size: 32px;
+  margin-bottom: 6px;
+  color: #f5f5f5;
+}
+.plan-button {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 24px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.plan-button:hover {
+  background: #eaeaea;
+  color: #000;
+}
+.plan-policy-row {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
+  font-size: 0.85rem;
+  color: #999;
+}
+.plan-policy-row > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+.plan-policy-row .material-symbols-outlined {
+  font-size: 20px;
+  color: #999;
+}
