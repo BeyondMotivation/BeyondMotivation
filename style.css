@@ -96,32 +96,23 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   line-height: 1.4;
   color: #e4e4e4;
 }
-/*
- * Floating button: sticks to the bottom right of the viewport and is
- * always visible. Styled with a white background, black text and
- * a clear black border to contrast against any background.  The
- * transition properties ensure a subtle hover effect.
- */
 .floating-button {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  /* Force white background and black text with explicit border.
-     The !important declarations ensure these values override any
-     inheritance from the global colour rules on anchors. */
-  background-color: #ffffff !important;
-  color: #000000 !important;
-  padding: 0.8rem 1.6rem;
-  border-radius: 4px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  border: 2px solid #000000;
   font-weight: 600;
   text-decoration: none;
   z-index: 1000;
-  border: 2px solid #000000 !important;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 .floating-button:hover {
-  background-color: #f5f5f5;
+  background-color: #eeeeee;
   color: #000000;
 }
 
@@ -161,13 +152,12 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   flex: 1 1 calc(20% - 2rem);
   max-width: 240px;
   color: #000000;
-  /* Elevate the card with a stronger shadow for a harder cast */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  /* Harder shadow for more pronounced depth */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 .pain-card h3 {
-  /* Make pain card headings larger and easier to read */
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
   font-weight: 700;
 }
 .pain-card p {
@@ -269,14 +259,14 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   text-align: left;
 }
 .signs-list li {
-  /* Increase the size, weight and spacing for clearer, bolder statements */
-  font-size: 1.5rem;
-  margin-bottom: 1.6rem;
+  /* Increase size and spacing for bolder, more impactful statements */
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
   padding-left: 2rem;
   position: relative;
   color: #333333;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 .signs-list li::before {
   content: '{';
@@ -289,88 +279,6 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 }
 
 /* Do It Section (Image 6) */
-.do-it-section {
-  background-color: #0a0a0a;
-  color: #ffffff;
-  padding: 8rem 2rem 6rem;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-}
-.do-it-image {
-  max-width: 450px;
-  margin: 0 auto;
-}
-.do-it-image img {
-  width: 100%;
-  border-radius: 12px;
-}
-.blurred-text {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Bacasime Antique', serif;
-  font-size: 12vw;
-  color: rgba(255, 255, 255, 0.1);
-  filter: blur(3px);
-  white-space: nowrap;
-  pointer-events: none;
-}
-.do-it-section h3 {
-  /* Enlarge the heading in the Do‑It section for more impact */
-  font-size: 2.6rem;
-  margin-top: 3rem;
-  color: #ffffff;
-  font-weight: 700;
-}
-.do-it-section p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 1rem auto 0 auto;
-  color: #cccccc;
-  line-height: 1.5;
-}
-
-/* Features Section (Image 7) */
-.features-section {
-  background-color: #ffffff;
-  color: #000000;
-  padding: 5rem 2rem;
-  text-align: center;
-}
-.features-section h2 {
-  font-family: 'Bacasime Antique', serif;
-  font-size: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 3rem;
-}
-.features-list {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-}
-.features-item {
-  margin-bottom: 2rem;
-}
-.features-item h4 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #000000;
-}
-.features-item p {
-  font-size: 1rem;
-  color: #555555;
-}
-.features-note {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-top: 3rem;
-  color: #333333;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 /* Rules Section (Image 8) */
 .rules-section {
@@ -452,26 +360,119 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   color: #000000 !important;
 }
 
+/* Footer pure black background and white text */
+.site-footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 2rem 1rem;
+}
+.site-footer * {
+  color: #ffffff;
+}
+
+/* Apply the same grid texture used in .section-dark to the pricing section for consistency */
+.pricing-section {
+  background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.2)' stroke-width='0.3'/%3E%3C/svg%3E") repeat;
+  color: #ffffff;
+}
+/* Apply grid texture to all custom dark sections for consistency */
+.one-percent-section,
+  .hmam-deepdive-section {
+  /* Provide ample breathing room above the HMAM content so it doesn't collide with preceding sections */
+  margin-top: 4rem;
+  background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.2)' stroke-width='0.3'/%3E%3C/svg%3E") repeat;
+  color: #ffffff;
+}
+
+/* Hide duplicate HMAM deep dive sections (retain only the moved instance) */
+.hmam-deepdive-section:not(.moved-hmam) {
+  display: none !important;
+}
+
+/* Make the studies content within the HMAM section easier to read on dark backgrounds */
+.hmam-deepdive-section .courseinfo-facts2,
+.hmam-deepdive-section .hmam-closing-paragraph,
+.hmam-deepdive-section .hmam-studies-description {
+  background-color: #ffffff;
+  color: #000000 !important;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem auto;
+  max-width: 800px;
+}
+
+/* Specific styling for the dedicated studies section (light background) */
+.hmam-deepdive-section.studies {
+  /* Ensure the overall text is dark on light backgrounds */
+  color: #000000;
+}
+.hmam-deepdive-section.studies .courseinfo-facts2,
+.hmam-deepdive-section.studies .hmam-closing-paragraph,
+.hmam-deepdive-section.studies .hmam-studies-description {
+  background-color: #ffffff;
+  color: #000000 !important;
+}
+.hmam-deepdive-section .hmam-studies-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Values section styling based on reference image */
+.values-section {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.values-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+.value-item {
+  flex: 1 1 200px;
+  max-width: 20%;
+  padding: 2rem 1rem;
+  position: relative;
+  text-align: left;
+  border-right: 1px solid #dddddd;
+}
+.value-item:last-child {
+  border-right: none;
+}
+.value-item h3 {
+  font-family: 'Playfair', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+.value-item p {
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 2.5rem;
+}
+.value-number {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 2.5rem;
+  font-family: 'Playfair', serif;
+  color: #cccccc;
+}
+
 /* Specific font sizes */
 p {
   font-size: 1.2rem;
   font-weight: 100;
-}
-
-/* -------------------------------------------------- */
-/* Studies heading
- * This custom heading appears above the scientific studies section. It
- * uses Playfair for a refined look and centres the text on the page.
- */
-.studies-heading {
-  text-align: center;
-  margin: 4rem 0 2rem 0;
-}
-.studies-heading h2 {
-  font-family: 'Playfair', serif;
-  font-size: 3rem;
-  color: #000;
-  margin: 0;
 }
 
 /* Use Playfair for all headings to match the new brand aesthetic */
@@ -711,11 +712,149 @@ margin-top: 10px;
 
 
 /*--------------------------------------------------*/
-/* Intro Area (removed) */
+/* Intro Area */
 /*--------------------------------------------------*/
-/* The legacy intro section and its responsive styles were removed since
-   that part of the page is no longer displayed.  All related classes
-   and media queries have been deleted to declutter the stylesheet. */
+
+/* Intro explaining area */
+.intro-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
+  background-size: 50px;
+  background-color: #000;
+  padding: 1rem 2rem;
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.headerside {
+padding-left: 7rem !important; 
+}
+
+.intro-split {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: nowrap;
+  padding: 2rem 1rem;
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 600px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.intro-text {
+  flex: 1;
+  max-width: 900px;
+  padding: 0; /* Optional to reset spacing */
+  text-align: left;
+  margin: 0 0 1rem 0;
+  overflow: hidden;
+}
+.intro-text h4{
+  flex: 1;
+  max-width: 900px;
+  text-align: left;
+  margin: 3rem 3rem 3rem 3rem;
+  overflow: hidden;
+}
+
+
+.button-outline-glow {
+  display: block;
+  background: transparent;
+  border: 1px solid #fff;
+  max-width: 300px;
+  border-radius: 8px;
+  padding: 1rem 2.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1;
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 1rem 3rem; /* centers the button horizontally */
+}
+
+.button-outline-glow:hover,
+.button-outline-glow:focus {
+  box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #fff;
+}
+/* Desktop: show h1, hide mobile text */
+.intro-mobile-text { display: none; }
+.intro-desktop-text { display: inline; }
+
+@media (max-width: 700px) {
+    .intro-desktop-text { display: none !important; }
+  .intro-mobile-text { 
+    display: block !important;
+    font-size: 1.08rem;
+    text-align: center;
+    margin: 0 auto 18px auto;
+    padding-left: 0;
+    padding-right: 0;
+    color: #fff;
+  }
+  .intro-split {
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 0 0 0 0 !important;
+    align-items: center !important;
+  }
+  .intro-image {
+    width: 100vw !important;
+    max-width: 78vw !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .intro-image img {
+    width: 96vw !important;
+    max-width: 310px !important;
+    height: auto !important;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+  }
+.intro-text {
+    text-align: center !important;
+    margin: 0 auto 20px auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    
+  }
+  .intro-text h1,
+  .intro-text .headerside {
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 auto !important;
+    display: block;
+    font-size: 50px;
+  }
+  .intro-text h4 {
+    font-size: 1.2rem !important;
+    margin: 10px 0 15px 0 !important;
+    text-align: left !important;
+  }
+  .button-outline-glow {
+    margin: 1rem 0 !important;
+    width: 100%;
+    max-width: 370px;
+    font-size: 1.13rem;
+    padding: 1rem 0.8rem !important;
+  }
+}
 /*--------------------------------------------------*/
 /* Seperations */
 /*--------------------------------------------------*/
@@ -956,8 +1095,6 @@ text-align: center;
   flex-direction: column;
   align-items: center;
   padding: 0 0 56px 0;
-  /* Add top margin for spacing above the HMAM section so images have room */
-  margin-top: 3rem;
 }
 
 .hmam-deepdive-title {
@@ -2724,7 +2861,7 @@ text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   padding: 2rem;
-  width: 280px;
+  width: 340px;
   text-align: center;
   color: #ffffff;
 }
@@ -2743,15 +2880,33 @@ text-align: center;
   margin-bottom: 1rem;
   color: #cccccc;
 }
+/* Hide the old list as tools are now displayed in custom cards */
 .pricing-card .pricing-features {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.2rem;
-  font-size: 0.9rem;
-  color: #bbbbbb;
+  display: none;
 }
-.pricing-card .pricing-features li {
-  margin-bottom: 0.4rem;
+.tools-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+.tool-card {
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+}
+.tool-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+}
+.tool-card p {
+  font-size: 0.85rem;
+  color: #dddddd;
+  margin: 0;
 }
 .pricing-card .pricing-button {
   display: inline-block;
