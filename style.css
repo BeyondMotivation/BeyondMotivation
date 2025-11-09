@@ -876,122 +876,83 @@ padding: 7px;
   color: var(--accent-color);
   font-weight: 600;
 }
-
-/* -----------------------------------------------------------------------------*/
-/* Pricing Section                                                              */
-/* -----------------------------------------------------------------------------*/
-
-
-.pricing-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+/* ============== PRICING / CTA SECTION ============== */
+.plans {
+      background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
+  background-size: 50px;
+  background-color: #000;
+ color: #fff; padding: 4rem 1.5rem 6rem;
 }
+.plans-head { max-width: 980px; margin: 0 auto 2rem; text-align: center;}
+.plans-head h2 { font-size: 4rem; margin-bottom: .4rem;   font-family: 'Playfair', serif;}
+.plans-head .sub { color: #cccccc; font-size: 1.2rem; }
 
-.pricing-card {
-  background-color: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
-  padding: 2rem;
-  flex: 1 1 400px;
-  min-width: 300px;
-  color: var(--text-light);
+.plan-cards {
+  display: grid; grid-template-columns: 1fr; gap: 1rem;
+  max-width: 980px; margin: 1.5rem auto 1rem;
 }
-
-.pricing-tier {
-  font-family: 'Playfair', serif;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+.plan-card {
+  background: #0d0d0d; border: 1px solid #1f1f1f; border-radius: 12px;
+  padding: 1.25rem 1.25rem 1.5rem;
 }
+.plan-card header h3 { font-size: 1.4rem; margin: 0 0 .25rem; }
+.plan-card .tagline { color: #cfcfcf; margin: 0 0 .75rem; }
+.plan-card .price { color: #a583ff; font-weight: 700; margin-bottom: .5rem; }
+.plan-card .bullets { list-style: none; padding: 0; margin: .25rem 0 1rem; }
+.plan-card .bullets li { margin: .35rem 0; color: #dcdcdc; list-style-type: circle; margin-left: 10px; }
+.plan-card .btn { display: inline-block; margin-top: .5rem; }
 
-.pricing-price {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.plan-plus { position: relative; border-color: #3a2e62; box-shadow: 0 0 0 1px #3a2e62 inset, 0 8px 30px #6f55ff22; }
+.plan-plus .badge {
+  position: absolute; top: -10px; right: 12px; background: linear-gradient(90deg,#b480ff,#7353ea);
+  color:#fff; font-size: .75rem; padding:.25rem .5rem; border-radius: 999px; letter-spacing:.02em;
 }
 
-.pricing-desc {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  color: #cccccc;
+/* Reusable buttons (use your site’s button style if you have it) */
+.btn {
+  background:#7a5cff; color:#fff; text-decoration:none; font-weight:700;
+  padding:.8rem 1.2rem; border-radius:8px; transition:transform .15s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-2px); opacity:.95; }
+.btn-plus { background: linear-gradient(90deg,#b480ff,#7353ea); }
+
+/* Grid comparison (desktop/tablet) */
+.comparison {
+  max-width: 980px; margin: 1.5rem auto 0;
+  display: none; /* hidden on small screens, enabled above 800px */
+}
+.comp-row { display: grid; grid-template-columns: 1.6fr .7fr .7fr; align-items: center; }
+.comp-head { border-bottom: 2px solid #1f1f1f; font-weight: 700; padding: .75rem 0; }
+.comp-row:not(.comp-head) { border-bottom: 1px solid #141414; }
+.comp-row .col { padding: .9rem 0; }
+.comp-row .feature .feat { display:block; }
+.comp-row .feature .hint { display:block; color:#9e9e9e; font-size:.9rem; margin-top:.15rem; }
+.comp-row .plus { color:#b480ff; font-weight:700; }
+
+/* Mobile details and sticky cta */
+.mobile-details {
+  max-width: 980px; margin: 1.25rem auto 0; color:#d8d8d8;
+}
+.mobile-details details { background:#0d0d0d; border:1px solid #1f1f1f; border-radius:10px; padding:.9rem 1rem; margin-bottom:.6rem; }
+.mobile-details summary { cursor:pointer; font-weight:700; color:#fff; }
+.mobile-details ul { margin:.6rem 0 0 1.1rem; }
+.mobile-details li { margin:.4rem 0; }
+
+.sticky-cta {
+  position: sticky; bottom: 0; left: 0; right: 0;
+  display: flex; gap:.6rem; justify-content:center; padding: .75rem;
+  background: linear-gradient(0deg, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  backdrop-filter: blur(3px);
 }
 
-.tools-list {
-  margin-bottom: 1rem;
-}
-.tool-card {
-  margin-bottom: 1rem;
-}
-.tool-card h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.2rem;
-}
-.tool-card p {
-  font-size: 0.9rem;
-  color: #bbbbbb;
+/* Responsive */
+@media (min-width: 800px) {
+  .plan-cards { grid-template-columns: 1fr 1fr; }
+  .comparison { display: block; }
+  .mobile-details { display: none; }
+  .sticky-cta { display:none; }
 }
 
-.pricing-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.8rem 1.6rem;
-  background-color: var(--accent-color);
-  color: var(--text-light);
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-.pricing-button:hover {
-  background-color: #6422b0;
-}
-
-.pricing-note {
-  font-size: 0.9rem;
-  margin-top: 2rem;
-  color: #cccccc;
-  text-align: center;
-}
-
-/* -----------------------------------------------------------------------------*/
-/* Final Call to Action                                                         */
-/* -----------------------------------------------------------------------------*/
-.final-cta {
-  /* inherits backgrounds from section-light */
-  text-align: center;
-}
-
-.final-cta p {
-  max-width: 700px;
-  margin: 0 auto 1.5rem;
-  font-size: 1.1rem;
-  color: #333333;
-}
-
-.final-cta-button {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.8rem 1.6rem;
-  background-color: var(--accent-color);
-  color: var(--text-light);
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-.final-cta-button:hover {
-  background-color: #6422b0;
-}
-
-.final-cta-urgency {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #cc0000;
-  font-weight: 600;
-}
 
 /* -----------------------------------------------------------------------------*/
 /* Guarantee Section                                                            */
@@ -1008,11 +969,6 @@ padding: 7px;
   margin: 0 auto;
 }
 
-.guarantee-icon {
-  font-size: 3rem;
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-}
 
 .guarantee-title {
   font-family: 'Playfair', serif;
@@ -1021,8 +977,8 @@ padding: 7px;
 }
 
 .guarantee-desc {
-  font-size: 1.1rem;
-  color: #333333;
+  font-size: 1.3rem;
+  color: #161616;
 }
 
 /* -----------------------------------------------------------------------------*/
@@ -1130,4 +1086,48 @@ padding: 7px;
     align-items: center;
     text-align: center;
   }
+}
+
+/* === Injected by ChatGPT: CTA price and slots styling, and comparison legibility tweaks === */
+.plan-card .cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  margin-top: .6rem;
+}
+
+.plan-card .price-tag {
+  font-weight: 800;
+  white-space: nowrap;
+  font-size: 1.05rem;
+  color: #a583ff; /* matches card glow/purple accent */
+}
+
+.plan-card .slots-note {
+  text-align: center;
+  margin-top: .6rem;
+  font-size: .95rem;
+  color: #a583ff; /* same purple accent */
+  text-shadow: 0 0 10px rgba(165, 131, 255, 0.25);
+}
+
+/* Comparison grid: larger headers and features, bigger emoji icons */
+.comparison .comp-head .col {
+  font-size: 1.3rem; /* headers: Feature, Base, Plus+ */
+}
+
+.comparison .feature .feat {
+  font-size: 1.1rem; /* bump feature label text */
+}
+
+.comparison .feature .hint {
+  font-size: .95rem; /* keep hint readable but secondary */
+}
+
+/* Double the size of the emoji in the Base/Plus columns (non-header rows) */
+.comparison .comp-row:not(.comp-head) .base,
+.comparison .comp-row:not(.comp-head) .plus {
+  font-size: 1.8rem; /* roughly ~2x typical body size */
+  line-height: 1.1;
 }
