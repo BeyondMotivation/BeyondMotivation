@@ -267,106 +267,6 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   }
 }
 
-  /* Hook section: display two cards per row instead of a long vertical stack. */
-  .pain-card {
-    flex: 1 1 calc(50% - 1rem);
-    max-width: none;
-  }
-
-  /* Values section: scale down oversized headings and numbers for readability. */
-  .values-title {
-    font-size: 2.2rem;
-  }
-  .values-section h3 {
-    font-size: 1.4rem;
-  }
-  .value-item h3 {
-    font-size: 1.4rem;
-  }
-  .value-item p {
-    font-size: 0.9rem;
-  }
-  .value-number {
-    font-size: 2.5rem;
-    left: 0.5rem;
-  }
-
-  /* Signs section: shrink the heading and adjust the poem text. */
-  .signs-section h2 {
-    font-size: 2.2rem;
-  }
-  .square-copy {
-    font-size: 1rem;
-    line-height: 1.3;
-    white-space: pre-wrap;
-  }
-  .signs-section span {
-    font-size: 1.1rem;
-    padding: 4px;
-  }
-
-  /* HMAM section: adjust headings and text sizes, and prevent overflow. */
-  .hmam-deepdive-section h2 {
-    font-size: 2.5rem;
-  }
-  .hmam-deepdive-desc {
-    font-size: 1rem;
-  }
-  .hmam-math-equation {
-    font-size: 1rem;
-    overflow-x: auto;
-  }
-  .hmam-funfact-title {
-    font-size: 1.8rem;
-  }
-  .hmam-funfact-text {
-    font-size: 1rem;
-  }
-  .hmam-studies-heading {
-    font-size: 2rem;
-  }
-  .courseinfo-facts2 {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .courseinfo-fact2 {
-    width: 100%;
-  }
-
-  /* Fun fact row: ensure the image scales nicely on small screens. */
-  .hmam-funfact-img img {
-    max-width: 80%;
-  }
-  /* Adjust the button spacing in the HMAM section for better stacking */
-  .hmam-studies-button {
-    margin-bottom: 2rem;
-  }
-
-
-.floating-button {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  background-color: var(--text-light);
-  color: var(--text-dark);
-  padding: 1.2rem 2.4rem;
-  font-size: 1.3rem;
-  border-radius: 8px;
-  border: 2px solid var(--text-dark);
-  font-weight: 600;
-  text-decoration: none;
-  z-index: 2000;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  /* NOTE: This button should always remain fixed in the bottom-right corner of
-     the viewport.  Keeping `position: fixed` here ensures the button follows
-     the user as they scroll.  Do not alter these positioning properties
-     (bottom/right/fixed) when updating styles elsewhere. */
-}
-
-.floating-button:hover {
-  background-color: #eeeeee;
-  color: var(--text-dark);
-}
 
 /* -----------------------------------------------------------------------------*/
 /* Hook / Pain Points Section                                                   */
@@ -445,17 +345,65 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   color: #313131;
 }
 
-@media (max-width: 800px) {
+/* === Mobile Optimization for Hook Section === */
+@media (max-width: 700px) {
+
+  /* Make the hook image take full screen width */
+  .hook-image {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Adjust pain cards into two columns */
+  .pain-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    padding: 0 0.5rem;
+  }
+
+  /* Shrink cards slightly so two fit side-by-side cleanly */
   .pain-card {
-    flex: 1 1 calc(45% - 1rem);
+    width: 100%;
+    max-width: 160px;
+    padding: 1rem;
+    margin: 0;
   }
 }
 
-@media (max-width: 500px) {
-  .pain-card {
-    flex: 1 1 100%;
+/* Optional: stack into one column on very narrow phones */
+@media (max-width: 400px) {
+  .pain-cards {
+    grid-template-columns: 1fr;
   }
 }
+
+/* Additional mobile tweaks for the hook section
+   Placed directly after the existing mobile hook rules for clarity. */
+@media (max-width: 700px) {
+  /* Center the hook image on mobile and ensure it is a block element */
+  .hook-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Reduce card padding and text size so cards aren’t overly tall */
+  .pain-card {
+    padding: 0.8rem 0.8rem 0.6rem;
+  }
+  .pain-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  .pain-card p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+}
+
 
 /* -----------------------------------------------------------------------------*/
 /* One Percent / About Me Section                                               */
@@ -534,6 +482,44 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   }
 }
 
+/* Mobile-specific layout adjustments for the One Percent / About Me section */
+.about-mobile-title {
+  /* Hidden by default on larger screens */
+  display: none;
+  font-family: 'Playfair', serif;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  /* Display the mobile About Me heading on small screens */
+  .about-mobile-title {
+    display: block;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-light);
+  }
+  /* Hide the original About Me heading in the center column */
+  .one-percent-center h3 {
+    display: none;
+  }
+  /* Stack the three columns vertically and define a custom order */
+  .one-percent-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .one-percent-left {
+    order: 2;
+  }
+  .one-percent-right {
+    order: 3;
+  }
+  .one-percent-center {
+    order: 4;
+  }
+}
+
 /* -----------------------------------------------------------------------------*/
 /* Signs Section                                                                */
 /* -----------------------------------------------------------------------------*/
@@ -568,6 +554,36 @@ font-weight: 500;
 font-size: 25px;
 background: #111111;
 padding: 7px;
+}
+
+/* Mobile-only title for the signs section (hidden by default) */
+.signs-title-mobile {
+  display: none;
+  font-family: 'Playfair', serif;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  /* Hide the desktop title inside the signs section */
+  .signs-section h2 {
+    display: none;
+  }
+  /* Display the simplified mobile title */
+  .signs-title-mobile {
+    display: block;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  /* Reduce the size of the body copy and allow normal wrapping */
+  .square-copy {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    white-space: normal;
+    padding: 0 1rem;
+  }
 }
 
 /* -----------------------------------------------------------------------------*/
@@ -647,6 +663,58 @@ padding: 7px;
   }
   .hmam-funfact-img img {
     max-width: 100%;
+  }
+}
+
+/* Mobile-specific title for the HMAM deep dive section */
+.hmam-deepdive-title-mobile {
+  display: none;
+  font-family: 'Playfair', serif;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  /* Reduce padding for the HMAM section */
+  .hmam-deepdive-section {
+    padding: 3rem 1.5rem;
+  }
+  /* Hide only the desktop HMAM title (with the dash) and show the simplified mobile version */
+  .hmam-deepdive-title {
+    display: none;
+  }
+  .hmam-deepdive-title-mobile {
+    display: block;
+    font-size: 2.6rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  /* Ensure the HMAM graphic is fully visible and centered on mobile */
+  .hmam-deepdive-section .hmam-img {
+    max-width: 90%;
+    width: 90%;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+  /* Remove the fun fact image on mobile and shrink the text */
+  .hmam-funfact-img {
+    display: none;
+  }
+  .hmam-funfact-text {
+    font-size: 1rem;
+    line-height: 1.35;
+    text-align: left;
+  }
+  /* Shrink the fun fact title slightly */
+  .hmam-funfact-title {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+  }
+  /* Increase the size of the studies button on mobile */
+  .hmam-studies-button {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
   }
 }
 
@@ -788,6 +856,33 @@ padding: 7px;
   color: var(--text-dark);
 }
 
+/* Hide the mobile values title by default */
+.values-title-mobile {
+  display: none;
+  font-family: 'Playfair', serif;
+  font-weight: 700;
+}
+
+/* Mobile optimizations for the Values section */
+@media (max-width: 700px) {
+  /* Reduce padding on the container to save space */
+  .values-section {
+    padding: 3rem 1.5rem;
+  }
+  /* Hide the desktop version of the title and show the mobile-friendly one */
+  .values-title {
+    display: none;
+  }
+  .values-title-mobile {
+    display: block;
+    font-size: 2.4rem;
+    line-height: 1.15;
+    max-width: 90%;
+    margin: 0 auto 1rem;
+    color: var(--text-dark);
+  }
+}
+
 /* -----------------------------------------------------------------------------*/
 /* Rules Section                                                                */
 /* -----------------------------------------------------------------------------*/
@@ -813,6 +908,44 @@ padding: 7px;
   font-size: 1.5rem;
   font-style: italic;
   color: rgba(255,255,255,0.7);
+}
+
+/* Mobile-specific heading for the rules section; hidden by default */
+.rules-heading-mobile {
+  display: none;
+  font-family: 'Playfair', serif;
+  font-weight: 700;
+}
+/* Mobile-specific subtitle for the rules section */
+.rules-tag-mobile {
+  font-family: 'Playfair', serif;
+  font-style: italic;
+  display: none;
+}
+
+@media (max-width: 700px) {
+  /* Reduce vertical spacing on the rules section */
+  .rules-section {
+    padding: 3rem 1.5rem;
+  }
+  /* Hide the desktop heading and show the mobile version */
+  .rules-heading {
+    display: none;
+  }
+  .rules-heading-mobile {
+    display: block;
+    font-size: 2.6rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    text-align: center;
+  }
+  .rules-tag-mobile {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.7);
+    margin-left: 0.4rem;
+  }
 }
 
 /* Ensure the rules title stays on its own line */
@@ -945,6 +1078,32 @@ padding: 7px;
   text-align: center;
   align-content: center;
   color: var(--text-light);
+}
+
+/* Mobile-only title for the authority section (hidden by default) */
+.authority-title-mobile {
+  display: none;
+  font-family: 'Playfair', serif;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  /* Reduce padding on the authority section */
+  .authority-section {
+    padding: 4rem 1.5rem;
+  }
+  /* Hide the desktop authority title and show the mobile-friendly version */
+  .authority-title {
+    display: none;
+  }
+  .authority-title-mobile {
+    display: block;
+    font-size: 2.4rem;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--text-light);
+  }
 }
 
 .authority-story {
