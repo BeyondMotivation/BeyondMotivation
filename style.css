@@ -408,7 +408,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 
 .signs-section h2 {
   font-family: 'Playfair', serif;
-  font-size: 4.5rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -656,51 +656,91 @@ padding: 7px;
   background-color: var(--dark-bg);
   color: var(--text-light);
   padding: 4rem 2rem;
+  /* Align the content to the left to match the reference design */
   text-align: center;
 }
 
 .rules-section h2 {
+  /* Increase the size of the rules heading to mirror the reference design */
   font-family: 'Playfair', serif;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+/* Smaller subtitle inside the rules heading */
+.rules-tag {
+  font-family: 'Playfair', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Ensure the rules title stays on its own line */
+.rules-heading {
+  display: block;
 }
 
 .rules-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1200px;
   margin: 0 auto;
+  /* Add top margin to separate from the heading */
+  margin-top: 2rem;
 }
 
 .rule-item {
-  background-color: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 8px;
-  padding: 2rem;
+  /* Remove card styling so items sit flush against the dark background */
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   flex: 1 1 300px;
-  min-width: 260px;
+  min-width: 280px;
   text-align: left;
+  color: var(--text-light);
 }
 
 .rule-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.3rem;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
   font-weight: 700;
+  color: var(--text-light);
 }
 
 .rule-item h4 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: var(--accent-color);
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  font-style: italic;  
 }
 
 .rule-item p {
-  font-size: 0.95rem;
-  color: #e4e4e4;
-  line-height: 1.5;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* Style the rule numbers at the top of each item */
+.rule-number {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+}
+
+/* Horizontal separator between the subheading and the description */
+.rule-separator {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255,255,255,0.3);
+  margin: 1rem 0;
+  border: none;
 }
 
 /* -----------------------------------------------------------------------------*/
