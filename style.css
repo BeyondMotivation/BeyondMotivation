@@ -185,7 +185,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   object-fit: cover;
   border-radius: 8px;
   display: block;
-  margin-top: 50px !important;
+  margin: 50px auto 0 auto !important; /* centers horizontally */
 }
 
 .new-hero-title {
@@ -428,7 +428,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   /* Style the 1% section on the left to mirror the design reference.
      The large number should be grey and much larger than the surrounding
      text.  We also center the content vertically and horizontally. */
-  font-size: 6rem;
+  font-size: 5rem;
   line-height: 1;
   text-align: center;
   color: #ffffffef;
@@ -438,9 +438,9 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   justify-content: center;
 }
 .one-percent-left span {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   /* Make the descriptive text a softer grey and place it on its own line */
-  color: #ffffff5e;
+  color: #ffffff75;
   margin: 0.5rem 0;
   display: block;
 }
@@ -1180,6 +1180,140 @@ padding: 7px;
   background-size: 50px;
   background-color: #000;
  color: #fff; padding: 4rem 1.5rem 6rem;
+}
+
+/* -----------------------------------------------------------------------------*/
+/* Who Section (Combined Who It’s For / Not For)                                */
+/* -----------------------------------------------------------------------------*/
+.who-section {
+  background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
+  background-size: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  gap: 4rem;
+}
+
+.who-left {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.who-left img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.who-center {
+  flex: 2 1 100px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+.who-points li {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  letter-spacing: 3px;
+  list-style-type: kannada;
+  align-content: center;
+}
+.who-points b {
+  color: #fff;
+  font-weight: 500;
+}
+
+
+.who-center h2 {
+  font-family: 'Playfair', serif;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-light);
+}
+
+.who-right {
+  flex: 1 1 300px;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-align: center;
+  color: #ffffff94;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.who-right span {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin: 0.5rem 0;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .who-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .who-left, .who-center, .who-right {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .who-right {
+    font-size: 2.5rem;
+  }
+}
+
+/* -----------------------------------------------------------------------------*/
+/* Buy Section (What Happens After You Buy)                                     */
+/* -----------------------------------------------------------------------------*/
+/* The buy section reuses the .values-row and .value-item styles from the
+   values section, so no additional declarations are necessary here.  */
+
+/* -----------------------------------------------------------------------------*/
+/* Chat Section                                                                 */
+/* -----------------------------------------------------------------------------*/
+.chat-section {
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.chat-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.chat-icons img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.chat-description {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+@media (max-width: 700px) {
+  .chat-icons {
+    gap: 1rem;
+  }
+  .chat-description {
+    font-size: 1rem;
+  }
 }
 .plans-head { max-width: 980px; margin: 0 auto 2rem; text-align: center;}
 .plans-head h2 { font-size: 4rem; margin-bottom: .4rem;   font-family: 'Playfair', serif;}
