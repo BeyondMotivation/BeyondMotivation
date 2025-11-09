@@ -416,17 +416,17 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 
 .square-copy{
   white-space: pre;
-  line-height: 1.35;
+  line-height: 1;
   align-content: center;
   margin: 0 auto;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
 }
 .signs-section span {
   font-family: 'Playfair', serif;
 color: #ffffff;
 font-weight: 500;
-font-size: 33px;
+font-size: 25px;
 background: #111111;
 padding: 7px;
 }
@@ -769,44 +769,72 @@ padding: 7px;
 /* -----------------------------------------------------------------------------*/
 /* Authority Section                                                             */
 /* -----------------------------------------------------------------------------*/
+.authority-section {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  padding: 6rem 2rem;
+}
 
-
-.authority-content {
+.authority-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
-  max-width: 1000px;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.authority-video {
-  flex: 1 1 400px;
+.authority-image {
+  flex: 1 1 350px;
+  text-align: center;
 }
-.authority-video iframe {
-  width: 100%;
-  height: 250px;
+.authority-image img {
+  max-width: 100%;
   border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
 }
 
-.authority-text {
-  flex: 1 1 400px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.authority-note {
-  margin-top: 1rem;
-  font-style: italic;
-  color: var(--accent-color);
+.authority-content {
+  flex: 1 1 500px;
 }
 
-@media (max-width: 800px) {
-  .authority-content {
+.authority-title {
+  font-family: 'Playfair', serif;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  align-content: center;
+  color: var(--text-light);
+}
+
+.authority-story {
+  font-size: 1.3rem;
+  font-weight: 100;
+  color: rgba(219, 219, 219, 0.9);
+  line-height: 1.5;
+}
+.authority-story b{
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background-color: #222222;
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .authority-container {
     flex-direction: column;
     text-align: center;
   }
-  .authority-video iframe {
-    height: 200px;
+  .authority-quote {
+    border-left: none;
+    border-top: 2px solid var(--accent-color);
+    padding-left: 0;
+    padding-top: 1rem;
   }
 }
 
