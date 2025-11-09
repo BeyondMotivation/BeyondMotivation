@@ -1033,7 +1033,7 @@ padding: 7px;
 
 .section-title {
   font-family: 'Playfair', serif;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -1239,7 +1239,7 @@ padding: 7px;
   font-size: 1.5rem;
   line-height: 1;
   text-align: center;
-  color: #ffffff94;
+  color: #ffffff4d;
   display: flex;
   flex-direction: column;
   align-items: center;
