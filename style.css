@@ -435,14 +435,21 @@ padding: 7px;
 /* HMAM Deep Dive & Studies Section                                             */
 /* -----------------------------------------------------------------------------*/
 .hmam-deepdive-section {
-  background-color: var(--dark-bg);
-  color: var(--text-light);
+  /* Invert the HMAM section to a light theme: white background and dark text. */
+  background-color: var(--light-bg);
+  color: var(--text-dark);
   padding: 4rem 2rem;
   text-align: center;
 }
-
+.hmam-deepdive-section h2{
+    font-family: 'Playfair', serif;
+  font-size: 4rem;
+  margin-bottom: 0rem;
+  text-align: center;
+  color: var(--text-dark);
+}
 .hmam-deepdive-section .hmam-img {
-  max-width: 220px;
+  max-width: 420px;
   margin: 0 auto 1.5rem;
 }
 
@@ -450,18 +457,19 @@ padding: 7px;
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto 1.5rem;
-  color: #cccccc;
+  color: var(--text-dark);
   line-height: 1.6;
 }
 
 .hmam-math-equation {
   font-size: 1.3rem;
   margin-bottom: 2rem;
+  color: var(--text-dark);
 }
 
 .hmam-funfact-box {
-  background-color: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.15);
+  background-color: var(--light-bg);
+  border: 3px solid #000000;
   border-radius: 8px;
   padding: 1rem;
   max-width: 800px;
@@ -470,9 +478,10 @@ padding: 7px;
 
 .hmam-funfact-title {
   font-family: 'Playfair', serif;
-  font-size: 1.4rem;
+  font-size: 2.6rem;
   margin-bottom: 0.8rem;
-  color: var(--accent-color);
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
 .hmam-funfact-row {
@@ -488,8 +497,8 @@ padding: 7px;
 
 .hmam-funfact-text {
   flex: 1;
-  font-size: 1rem;
-  color: #e4e4e4;
+  font-size: 1.3rem;
+  color: var(--text-dark);
 }
 
 @media (max-width: 700px) {
@@ -506,6 +515,7 @@ padding: 7px;
   font-family: 'Playfair', serif;
   font-size: 2.5rem;
   margin: 2rem 0 1rem;
+  color: var(--text-dark);
 }
 
 .courseinfo-facts2 {
@@ -516,92 +526,127 @@ padding: 7px;
 }
 
 .courseinfo-fact2 {
-  background-color: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
+  background-color: var(--light-bg);
+  border: 3px solid #8d8d8d;
   border-radius: 6px;
   padding: 0.8rem 1.2rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-dark);
 }
 
 .hmam-closing-paragraph {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 1rem;
-  color: #e4e4e4;
+  color: var(--text-dark);
 }
 
 .hmam-studies-description {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 1rem;
-  color: #e4e4e4;
+  color: var(--text-dark);
 }
 
 .hmam-studies-button {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.8rem 1.6rem;
-  background-color: var(--accent-color);
-  color: var(--text-light);
+  background-color: var(--light-bg);
+  color: var(--text-dark);
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.2s ease;
+  border: 1px solid var(--text-dark);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .hmam-studies-button:hover {
-  background-color: #6422b0;
+  background-color: var(--text-dark);
+  color: var(--text-light);
 }
 
 /* -----------------------------------------------------------------------------*/
 /* Values Section                                                               */
 /* -----------------------------------------------------------------------------*/
 .values-section {
+  /* The values section stays on a light background with dark text.  The
+     layout mimics the provided design reference: a simple white row
+     with evenly‑spaced columns separated by vertical rules. */
   background-color: var(--light-bg);
   color: var(--text-dark);
   padding: 4rem 2rem;
   text-align: center;
 }
-
+.values-section h3{
+  font-family: 'Playfair', serif;
+  font-size: 2.5rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: rgb(122, 122, 122);
+  
+}
 .values-row {
+  /* Display the values in a single row.  We remove gaps so the vertical
+     dividers align flush between items.  The container width is capped
+     so the content doesn’t stretch too wide on large screens. */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;
+  gap: 0;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .value-item {
-  background-color: var(--text-light);
-  border-radius: 8px;
+  /* Remove card styling so the items sit directly on the white background.
+     Each item fills the available space equally in the row. */
+  background-color: transparent;
+  border-radius: 0;
   padding: 2rem;
-  flex: 1 1 calc(33% - 2rem);
+  flex: 1 1 20%;
   position: relative;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  min-width: 260px;
+  box-shadow: none;
+  min-width: 200px;
 }
 
 .value-item h3 {
   font-family: 'Playfair', serif;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.3rem;
+  margin-bottom: 0.75rem;
   color: var(--text-dark);
 }
 
 .value-item p {
   font-size: 1rem;
-  color: #555555;
+  color: #2c2c2c;
+  max-width: 95%;
+  margin: 0 auto;
 }
 
 .value-number {
   position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  font-size: 2rem;
+  bottom: 0rem;
+  left: 1rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: var(--accent-color);
-  opacity: 0.2;
+  color: var(--text-dark);
+  opacity: 0.3;
+}
+
+/* Add vertical dividers between value items except for the first one */
+.value-item:not(:first-child) {
+  border-left: 1px solid var(--text-dark);
+}
+
+/* Style the values title to stand out above the row */
+.values-title {
+  font-family: 'Playfair', serif;
+  font-size: 4rem;
+  margin-bottom: 0rem;
+  text-align: center;
+  color: var(--text-dark);
 }
 
 /* -----------------------------------------------------------------------------*/
@@ -684,9 +729,7 @@ padding: 7px;
 /* -----------------------------------------------------------------------------*/
 /* Authority Section                                                             */
 /* -----------------------------------------------------------------------------*/
-.authority-section {
-  /* inherits dark/light backgrounds via section-dark or section-light */
-}
+
 
 .authority-content {
   display: flex;
@@ -730,9 +773,7 @@ padding: 7px;
 /* -----------------------------------------------------------------------------*/
 /* Testimonials Section                                                         */
 /* -----------------------------------------------------------------------------*/
-.testimonials-section {
-  /* inherits backgrounds from section-light/dark */
-}
+
 
 .testimonials-grid {
   display: flex;
@@ -771,9 +812,7 @@ padding: 7px;
 /* -----------------------------------------------------------------------------*/
 /* Pricing Section                                                              */
 /* -----------------------------------------------------------------------------*/
-.pricing-section {
-  /* inherits dark background via section-dark */
-}
+
 
 .pricing-grid {
   display: flex;
