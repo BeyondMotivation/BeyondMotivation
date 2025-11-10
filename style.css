@@ -1155,7 +1155,10 @@ padding: 7px;
   background-color: var(--text-light);
   color: var(--text-dark);
   border-radius: 8px;
-  padding: 1.5rem;
+  /* Reduce the vertical padding on testimonials so the cards don't take up
+     excessive height.  The updated padding is slightly smaller than
+     originally specified. */
+  padding: 1rem;
   flex: 1 1 300px;
   min-width: 260px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -1564,4 +1567,167 @@ padding: 7px;
 .comparison .comp-row:not(.comp-head) .plus {
   font-size: 1.8rem; /* roughly ~2x typical body size */
   line-height: 1.1;
+}
+
+/* -----------------------------------------------------------------------------*/
+/* CTA Buttons and Layout Enhancements                                          */
+/* These rules define the new call-to-action buttons embedded in the hero and  */
+/* studies sections.  The hero button presents a dark background with light    */
+/* text, while the studies/mentorship group aligns buttons neatly on desktop   */
+/* and stacks them gracefully on mobile.                                       */
+/* -----------------------------------------------------------------------------*/
+
+/* Hero mentorship button within the hero section */
+.hero-mentorship-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--dark-bg);
+  color: var(--text-light) !important;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border: 1px solid var(--text-light);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-mentorship-button:hover {
+  background-color: var(--text-light);
+  color: var(--dark-bg);
+}
+
+/* Group container for the studies and mentorship buttons in the HMAM section */
+.hmam-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Ensure the secondary mentorship button inherits the same styling as the
+   studies button but can be targeted separately if needed */
+
+
+/* Place testimonial images side by side within testimonial cards */
+.testimonial-card img {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 4%;
+}
+.testimonial-card img:last-child {
+  margin-right: 0;
+}
+
+/* -----------------------------------------------------------------------------*/
+/* Mobile-Specific Adjustments (max-width: 700px)                               */
+/* These rules respond to the user's requested changes for phone layouts.       */
+/* They refine spacing, sizing, and positioning to improve readability and     */
+/* overall aesthetics on smaller screens such as the Galaxy S25 Ultra.         */
+/* -----------------------------------------------------------------------------*/
+
+@media (max-width: 700px) {
+  /* Adjust hero image positioning so the full headshot is visible */
+  .new-hero-image {
+    margin-top: 1rem;
+  }
+  /* Enlarge the hero title by ~20% and lift it slightly to overlap the image */
+  .new-hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    bottom: 30% !important;
+  }
+  /* Bring the tagline closer to the title to reduce excessive blank space */
+  .new-hero-tagline {
+    bottom: 10% !important;
+  }
+  /* Center the hook image properly on mobile */
+  .hook-image {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+  /* Who section: reduce title spacing and fix list alignment */
+  .who-center h2 {
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .who-points {
+    padding-left: 1.5rem;
+    margin-left: 0;
+  }
+  .who-points li {
+    list-style-position: inside;
+    padding-left: 0.2rem;
+    letter-spacing: normal;
+  }
+  /* Shrink the right column text and reduce margins */
+  .who-right {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+  }
+  .who-right span {
+    font-size: 1.5rem;
+  }
+  /* Buy section: show the H2, hide the H3, and drop the value numbers slightly */
+  .buy-section .values-title {
+    display: block;
+  }
+  .buy-section h3:first-of-type {
+    display: none;
+  }
+  .buy-section .value-number {
+    bottom: -0.5rem;
+  }
+  /* Values (How Change Happens) section tweaks */
+  .values-section .values-title-mobile {
+    font-size: 3rem;
+  }
+  .values-section > h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+  /* HMAM deep dive tweaks: increase spacing below the title and shrink the equation */
+  .hmam-deepdive-title-mobile {
+    margin-bottom: 1rem;
+  }
+  .hmam-deepdive-section .hmam-math-equation {
+    font-size: 0.8rem;
+    overflow-wrap: break-word;
+  }
+  /* About Me: enlarge the mobile title and shrink the 1% quote */
+  .about-mobile-title {
+    font-size: 3rem;
+  }
+  .one-percent-left {
+    font-size: 1.75rem;
+    margin: 0 0.5rem;
+  }
+  .one-percent-left span {
+    font-size: 1.2rem;
+  }
+  /* Rules section duplicate title fix and body copy adjustments */
+  .rules-heading {
+    display: none !important;
+  }
+  .rules-heading-mobile {
+    display: block !important;
+  }
+  .rules-section .rule-item p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+/* Additional desktop tweaks */
+/* Add spacing beneath the HMAM title so it doesn’t sit flush against the image */
+.hmam-deepdive-title {
+  margin-bottom: 1rem;
 }
