@@ -48,7 +48,9 @@
 <p class="new-hero-tagline">
 Motivation coaching for when nothing else works.<br/>
 </p>
-<!-- Call‑to‑action button embedded directly in the hero; hidden on larger screens via CSS when appropriate. -->
+<!-- Inline mentorship CTA for the hero.  This button replaces the former
+     floating button and anchors the CTA within the hero itself.  It
+     scrolls to the mentorship plans section when clicked. -->
 <a href="#mentorship-plans" class="hero-mentorship-button">View Mentorship Options</a>
 </section>
 <!-- ---------------------------------------------------- -->
@@ -274,8 +276,13 @@ The result is a repeatable, research-driven system for building motivation that 
 <p class="hmam-closing-paragraph">
       If you want to explore the research for yourself, you’re in the right place. Click below to view all 50+ papers on neuroscience, psychology, evolutionary motivation, emotional processing, and more.<br/><br/>
 </p>
-<a class="hmam-studies-button" href="studies.html">View Studies</a>
-<a class="hmam-studies-button" href="#mentorship-plans">View Mentorship Options</a>
+<!-- Group the studies and mentorship buttons together so they sit side by side on
+     desktop and stack vertically on mobile.  The new mentorship button
+     reuses the existing styling to ensure visual consistency. -->
+<div class="hmam-button-group">
+  <a class="hmam-studies-button" href="studies.html">View Studies</a>
+  <a class="hmam-studies-button mentorship-secondary" href="#mentorship-plans">View Mentorship Options</a>
+</div>
 </section>
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
@@ -734,6 +741,8 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 </script>
 
+<!-- Removed the global floating mentorship button per user request.
+     CTAs are now embedded within the hero and studies sections. -->
 </body>
 <footer class="site-footer">
 <div class="footer-content">
