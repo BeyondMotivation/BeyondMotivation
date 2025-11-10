@@ -119,24 +119,32 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 }
 
 @media (max-width: 700px) {
+  /* On small screens, collapse the name and keep the nav items in a single row. */
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 8px 8vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
   }
+  /* Reduce logo height on mobile */
   .navbar-logo img {
-    height: 40px !important;
-    margin-bottom: 8px;
+    height: 36px !important;
+    margin: 0;
   }
+  /* Hide the name in the navbar on mobile to save vertical space */
+  .navbar p {
+    display: none;
+  }
+  /* Keep nav links in a row and tighten spacing */
   .nav-links {
     flex-direction: row;
     align-items: center;
-    gap: 2vw;
+    gap: 1rem;
   }
   .nav-links a {
     margin: 0;
-    font-size: 1.1rem;
-    padding: 6px 0;
+    font-size: 1rem;
+    padding: 0.5rem 0;
   }
 }
 
@@ -204,6 +212,32 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   color: #ffffff;
 }
 
+/* Primary button inside the hero section to link to mentorship plans */
+.hero-mentorship-button {
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 2rem;
+  /* Center horizontally */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile adjustments for the hero button */
+@media (max-width: 600px) {
+  .hero-mentorship-button {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 1rem;
+    display: block;
+  }
+}
+
 /*
  * ---------------------------------------------------------------------------
  * Mobile-specific tweaks
@@ -227,11 +261,12 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   }
 
 .new-hero-image {
-   height: 20vh; 
-   width: 100%; 
-   object-fit: 
-   
-   cover; margin: 0; 
+   height: 20vh;
+   width: 100%;
+   object-fit: cover;
+   /* Push the hero image downward slightly so it is fully visible */
+   margin-top: 1.5rem;
+   margin-bottom: 0;
    border-radius: 0;
 
    }
@@ -239,11 +274,11 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   .new-hero-title {
     position: absolute;
     left: 50%;
-    bottom: 22%;            /* slightly lower than before */
+    bottom: 20%;            /* raise the title slightly to overlap the image more */
     transform: translateX(-50%);
     margin: 0;
-    font-size: clamp(1.8rem, 7.2vw, 2.6rem);  /* smaller on mobile */
-    line-height: 1.15;
+    font-size: clamp(2rem, 8.5vw, 3rem);  /* enlarge the title by roughly 20% */
+    line-height: 1.2;
     color: #fff;
     text-shadow: 0 2px 10px rgba(0,0,0,.55);
     z-index: 1;
@@ -346,17 +381,19 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 }
 
 /* === Mobile Optimization for Hook Section === */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
-  /* Make the hook image take full screen width */
+  /* Make the hook image fit within the viewport and remain centered */
   .hook-image {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     border-radius: 0 !important;
+    display: block;
   }
 
-  /* Adjust pain cards into two columns */
+  /* Adjust pain cards into two columns on larger phones */
   .pain-cards {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
@@ -368,7 +405,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   /* Shrink cards slightly so two fit side-by-side cleanly */
   .pain-card {
     width: 100%;
-    max-width: 160px;
+    max-width: 180px;
     padding: 1rem;
     margin: 0;
   }
@@ -383,7 +420,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 
 /* Additional mobile tweaks for the hook section
    Placed directly after the existing mobile hook rules for clarity. */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   /* Center the hook image on mobile and ensure it is a block element */
   .hook-image {
     display: block;
@@ -518,6 +555,24 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   .one-percent-center {
     order: 4;
   }
+
+  /* Increase the size of the mobile About Me heading while reducing vertical padding */
+  .about-mobile-title {
+    font-size: 2.6rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  /* Shrink the padding on the one‑percent section itself to fit more neatly on phone screens */
+  .one-percent-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  /* Reduce font size of the descriptive paragraph to conserve space */
+  .one-percent-center p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
 }
 
 /* -----------------------------------------------------------------------------*/
@@ -595,6 +650,30 @@ padding: 7px;
   color: var(--text-dark);
   padding: 4rem 2rem;
   text-align: center;
+}
+
+/* Adjust spacing above and below the HMAM title to prevent excess white space */
+.hmam-deepdive-title,
+.hmam-deepdive-title-mobile {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  /* Decrease the font size slightly for the mobile HMAM title and tighten spacing */
+  .hmam-deepdive-title-mobile {
+    font-size: 2.4rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+  }
+  /* Provide extra breathing room between the HMAM heading and the graphic */
+  .hmam-deepdive-section .hmam-img {
+    margin-bottom: 1.5rem;
+  }
+  /* Scale down the math equation on mobile so it fits the screen width */
+  .hmam-math-equation {
+    font-size: 0.8rem;
+  }
 }
 .hmam-deepdive-section h2{
     font-family: 'Playfair', serif;
@@ -875,11 +954,51 @@ padding: 7px;
   }
   .values-title-mobile {
     display: block;
-    font-size: 2.4rem;
-    line-height: 1.15;
+    /* Increase the mobile values heading size for improved readability */
+    font-size: 2.6rem;
+    line-height: 1.2;
     max-width: 90%;
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.75rem;
     color: var(--text-dark);
+  }
+}
+
+/* Reduce size of the subtitle under the 'How Change Happens' section on mobile */
+@media (max-width: 900px) {
+  #values h3 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+}
+
+/* Adjust the spacing and typography for the ‘How We Begin’ (buy) section on smaller screens */
+@media (max-width: 900px) {
+  /* Reduce vertical padding for the buy section */
+  .buy-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  /* Tweak the main heading inside the buy section */
+  .buy-section .values-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-size: 2.2rem;
+  }
+  /* Shrink the subheading (usually an h3) underneath the main heading */
+  .buy-section h3 {
+    font-size: 1.2rem !important;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  /* Ensure the numbered background labels don’t overlap the descriptive text */
+  .buy-section .value-number {
+    bottom: -0.5rem;
+    left: 0.5rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -1107,6 +1226,24 @@ padding: 7px;
   }
 }
 
+/* Additional mobile adjustments for the authority section */
+@media (max-width: 900px) {
+  /* Enlarge the mobile authority title slightly for emphasis */
+  .authority-title-mobile {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+  /* Shrink the portrait image by 20% on small screens */
+  .authority-image img {
+    max-width: 80%;
+  }
+  /* Reduce font size and line height of the authority story text */
+  .authority-story {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+}
+
 .authority-story {
   font-size: 1.3rem;
   font-weight: 100;
@@ -1151,14 +1288,32 @@ padding: 7px;
   margin: 0 auto;
 }
 
+/* Reduce spacing around the Client Success Stories title on mobile */
+@media (max-width: 900px) {
+  .testimonials-section .section-title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+}
+
+/* Ensure multiple images inside a testimonial card sit side by side */
+.testimonial-card img {
+  display: inline-block;
+  width: 48%;
+  margin-right: 2%;
+  vertical-align: top;
+}
+.testimonial-card img:last-child {
+  margin-right: 0;
+}
+
 .testimonial-card {
   background-color: var(--text-light);
   color: var(--text-dark);
   border-radius: 8px;
-  /* Reduce the vertical padding on testimonials so the cards don't take up
-     excessive height.  The updated padding is slightly smaller than
-     originally specified. */
-  padding: 1rem;
+  padding: 1.5rem;
   flex: 1 1 300px;
   min-width: 260px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -1267,8 +1422,29 @@ padding: 7px;
     flex: 1 1 100%;
     text-align: center;
   }
+  /* On mobile, reduce the overall font size of the right‑hand callout text */
   .who-right {
-    font-size: 2.5rem;
+    font-size: 1.3rem;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .who-right span {
+    font-size: 1.8rem;
+    margin: 0.3rem 0;
+  }
+  /* Tighten the heading spacing and line height */
+  .who-center h2 {
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  /* Ensure list bullets stay within the viewport */
+  .who-points {
+    padding-left: 1rem;
+  }
+  .who-points li {
+    list-style-position: inside;
+    font-size: 1.2rem;
+    line-height: 1.4;
   }
 }
 
@@ -1567,167 +1743,4 @@ padding: 7px;
 .comparison .comp-row:not(.comp-head) .plus {
   font-size: 1.8rem; /* roughly ~2x typical body size */
   line-height: 1.1;
-}
-
-/* -----------------------------------------------------------------------------*/
-/* CTA Buttons and Layout Enhancements                                          */
-/* These rules define the new call-to-action buttons embedded in the hero and  */
-/* studies sections.  The hero button presents a dark background with light    */
-/* text, while the studies/mentorship group aligns buttons neatly on desktop   */
-/* and stacks them gracefully on mobile.                                       */
-/* -----------------------------------------------------------------------------*/
-
-/* Hero mentorship button within the hero section */
-.hero-mentorship-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1.5rem;
-  padding: 1rem 2rem;
-  background-color: var(--dark-bg);
-  color: var(--text-light) !important;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.2rem;
-  border: 1px solid var(--text-light);
-  transition: background-color 0.2s ease, color 0.2s ease;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-mentorship-button:hover {
-  background-color: var(--text-light);
-  color: var(--dark-bg);
-}
-
-/* Group container for the studies and mentorship buttons in the HMAM section */
-.hmam-button-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-/* Ensure the secondary mentorship button inherits the same styling as the
-   studies button but can be targeted separately if needed */
-
-
-/* Place testimonial images side by side within testimonial cards */
-.testimonial-card img {
-  width: 48%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 4%;
-}
-.testimonial-card img:last-child {
-  margin-right: 0;
-}
-
-/* -----------------------------------------------------------------------------*/
-/* Mobile-Specific Adjustments (max-width: 700px)                               */
-/* These rules respond to the user's requested changes for phone layouts.       */
-/* They refine spacing, sizing, and positioning to improve readability and     */
-/* overall aesthetics on smaller screens such as the Galaxy S25 Ultra.         */
-/* -----------------------------------------------------------------------------*/
-
-@media (max-width: 700px) {
-  /* Adjust hero image positioning so the full headshot is visible */
-  .new-hero-image {
-    margin-top: 1rem;
-  }
-  /* Enlarge the hero title by ~20% and lift it slightly to overlap the image */
-  .new-hero-title {
-    font-size: clamp(2rem, 8vw, 3rem);
-    bottom: 30% !important;
-  }
-  /* Bring the tagline closer to the title to reduce excessive blank space */
-  .new-hero-tagline {
-    bottom: 10% !important;
-  }
-  /* Center the hook image properly on mobile */
-  .hook-image {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-  }
-  /* Who section: reduce title spacing and fix list alignment */
-  .who-center h2 {
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-  .who-points {
-    padding-left: 1.5rem;
-    margin-left: 0;
-  }
-  .who-points li {
-    list-style-position: inside;
-    padding-left: 0.2rem;
-    letter-spacing: normal;
-  }
-  /* Shrink the right column text and reduce margins */
-  .who-right {
-    font-size: 1rem;
-    margin: 0 0.5rem;
-  }
-  .who-right span {
-    font-size: 1.5rem;
-  }
-  /* Buy section: show the H2, hide the H3, and drop the value numbers slightly */
-  .buy-section .values-title {
-    display: block;
-  }
-  .buy-section h3:first-of-type {
-    display: none;
-  }
-  .buy-section .value-number {
-    bottom: -0.5rem;
-  }
-  /* Values (How Change Happens) section tweaks */
-  .values-section .values-title-mobile {
-    font-size: 3rem;
-  }
-  .values-section > h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
-  }
-  /* HMAM deep dive tweaks: increase spacing below the title and shrink the equation */
-  .hmam-deepdive-title-mobile {
-    margin-bottom: 1rem;
-  }
-  .hmam-deepdive-section .hmam-math-equation {
-    font-size: 0.8rem;
-    overflow-wrap: break-word;
-  }
-  /* About Me: enlarge the mobile title and shrink the 1% quote */
-  .about-mobile-title {
-    font-size: 3rem;
-  }
-  .one-percent-left {
-    font-size: 1.75rem;
-    margin: 0 0.5rem;
-  }
-  .one-percent-left span {
-    font-size: 1.2rem;
-  }
-  /* Rules section duplicate title fix and body copy adjustments */
-  .rules-heading {
-    display: none !important;
-  }
-  .rules-heading-mobile {
-    display: block !important;
-  }
-  .rules-section .rule-item p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-}
-
-/* Additional desktop tweaks */
-/* Add spacing beneath the HMAM title so it doesn’t sit flush against the image */
-.hmam-deepdive-title {
-  margin-bottom: 1rem;
 }
