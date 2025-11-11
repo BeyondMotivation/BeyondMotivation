@@ -119,11 +119,17 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 }
 
 @media (max-width: 700px) {
+@media (max-width: 700px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 8px 8vw;
+    flex-direction: row;      /* keep one line */
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 8px 4vw;         /* optional: reduce padding to create space */
   }
+  .nav-links { margin-left: auto; gap: 1rem; }
+  .nav-links a { font-size: .95rem; }     /* optional: tiny shrink for fit */
+  .navbar-logo img { height: 32px; margin-bottom: 0; } /* optional */
+}
   .navbar-logo img {
     height: 40px !important;
     margin-bottom: 8px;
@@ -221,12 +227,13 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   .new-hero {
     position: relative;
     padding: 0;
-    height: 30vh;           /* taller hero */
+    height: 25vh;           /* taller hero */
     min-height: 320px;      /* safety floor for small phones */
     overflow: hidden;
   }
 
 .new-hero-image {
+   margin-top: 70px !important;
    height: 20vh; 
    width: 100%; 
    object-fit: 
@@ -243,7 +250,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
     transform: translateX(-50%);
     margin: 0;
     font-size: clamp(1.8rem, 7.2vw, 2.6rem);  /* smaller on mobile */
-    line-height: 1.15;
+    line-height: 0;
     color: #fff;
     text-shadow: 0 2px 10px rgba(0,0,0,.55);
     z-index: 1;
