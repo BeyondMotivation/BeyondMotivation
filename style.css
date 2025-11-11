@@ -1782,3 +1782,79 @@ padding: 7px;
     margin-bottom: 1.75rem;
   }
 }
+
+/* ===================== Mobile optimization overrides (2025-11-10) ===================== */
+/* Navbar: hide centered site name on mobile */
+@media (max-width: 700px) {
+  .navbar .site-name { display: none !important; }
+}
+
+/* Hero tagline: tighten spacing and lift on mobile */
+.new-hero-tagline { margin: 0.5rem auto; }
+@media (max-width: 600px) {
+  .new-hero-tagline { bottom: 12% !important; }
+}
+
+/* Hook image: ensure fully centered and never overflows on phones */
+@media (max-width: 700px) {
+  .hook-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* Pain cards: slightly shorter overall + smaller title variant for long words */
+.pain-card { padding: 1.2rem 1.2rem 0.4rem; }
+@media (max-width: 700px) {
+  .pain-card { padding: 0.7rem 0.7rem 0.4rem; }
+}
+.pain-card h3.small-title { font-size: 1.3rem; }
+
+/* HMAM: add breathing room beneath the section title on all devices */
+.hmam-deepdive-title { margin-bottom: 2rem; }
+@media (max-width: 700px) {
+  .hmam-deepdive-title-mobile { margin-bottom: 2.5rem !important; }
+}
+/* ===================================================================== */
+/* Hook image: ensure fully centered and never overflows on phones */
+@media (max-width: 700px) {
+  .hook-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* Pain cards: slightly shorter overall */
+.pain-card { padding: 1.2rem 1.2rem 0.4rem; }
+@media (max-width: 700px) {
+  .pain-card { padding: 0.7rem 0.7rem 0.4rem !important; }
+}
+/* Long word fix just for the Procrastination title */
+.pain-card h3.small-title { font-size: 1.3rem; }
+
+/* HMAM title spacing so header doesn’t touch image/text */
+.hmam-deepdive-title { margin-bottom: 2rem; }
+@media (max-width: 700px) {
+  .hmam-deepdive-title-mobile { margin-bottom: 2.5rem !important; }
+}
+/* ================================================================== */
+@media (max-width: 700px) {
+  .pain-card { padding: 0.7rem 0.7rem 0.4rem; }
+}
+/* Smaller title just for long words like "Procrastination" */
+.pain-card h3.small-title { font-size: 1.3rem; }
+
+/* HMAM: add spacing under title so it doesn't touch image/text */
+.hmam-deepdive-title { margin-bottom: 2rem; }
+@media (max-width: 700px) {
+  .hmam-deepdive-title-mobile { margin-bottom: 2.5rem !important; }
+}
+/* ===================================================================== */
