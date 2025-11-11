@@ -1724,183 +1724,61 @@ padding: 7px;
     font-size: 0.85rem;
     line-height: 1.4;
   }
+}
 
-  /* Hide the personal name in the navbar on small screens.  This frees
-     vertical space so the nav links can sit at the very top. */
-  .navbar p {
-    display: none;
-  }
-
-  /* Adjust the hero call‑to‑action button on mobile: place it below all
-     text and shrink it so it doesn't overlap other elements.  We remove
-     absolute positioning inherited from desktop styles, center the button,
-     and reduce padding and font size. */
+/* -----------------------------------------------------------------------------*/
+/* Expanded Mobile Adjustments (max-width: 900px)                                 */
+/* These rules extend our mobile enhancements to slightly larger devices, such as */
+/* the Galaxy S25 Ultra. They hide unnecessary elements, refine layouts, and      */
+/* ensure content scales gracefully across wider phone screens.                   */
+/* -----------------------------------------------------------------------------*/
+@media (max-width: 900px) {
+  /* Hide the CTA button in the hero on mobile devices to prevent overlap */
   .hero-mentorship-button {
-    position: static;
-    transform: none;
-    margin: 1rem auto 0 auto;
-    display: inline-block;
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
-    width: auto;
+    display: none !important;
   }
-
-  /* Override the absolute positioning on the hero title and tagline so
-     they stack naturally above the button.  This prevents the call‑to‑action
-     from overlapping the text on small devices. */
-  .new-hero-title,
-  .new-hero-tagline {
-    position: static;
-    transform: none;
-    margin-top: 1rem;
-  }
-
-  .new-hero-tagline {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  /* Expand the hero container height to fit its contents when absolute
-     positioning is removed. */
-  .new-hero {
-    height: auto;
-    min-height: unset;
-    padding: 1rem 1rem 2rem;
-  }
-
-  /* Ensure the hero image fills the width of the container without causing
-     horizontal scrolling on mobile. */
-  .new-hero-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 0;
-  }
-
-  /* Center and scale down the hook image so it never overflows off screen. */
-  .hook-image {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    border-radius: 0;
-    display: block;
-  }
-
-  /* Force the pain cards into two columns on wider mobile devices.  This
-     ensures cards do not stack in a single, tall column on phones like
-     the Galaxy S25 Ultra. */
+  /* Ensure the hook cards display in two columns instead of one long stack */
   .pain-cards {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 1rem;
     justify-items: center;
     padding: 0 0.5rem;
   }
-
   .pain-card {
     width: 100%;
-    max-width: 170px;
-    padding: 1rem;
-    margin: 0;
+    max-width: none !important;
+    padding: 0.9rem;
   }
-
-  /* Buy (How We Begin) section: tighten spacing around the title and
-     shrink the value numbers to prevent overlap with text. */
-  .buy-section .values-title {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    line-height: 1.2;
+  /* Hide decorative titles and show simplified versions in the values section (excluding buy-section) */
+  .values-section:not(.buy-section) .values-title {
+    display: none !important;
   }
-
-  .buy-section .value-item {
-    padding-bottom: 3rem;
+  .values-section:not(.buy-section) .values-title-mobile {
+    display: block !important;
   }
-
-  .buy-section .value-number {
-    font-size: 2.2rem;
-    bottom: 0.5rem;
-    opacity: 0.25;
+  .rules-heading {
+    display: none !important;
   }
-
-  /* About Me: enlarge the mobile About Me heading while reducing its
-     top/bottom margins.  Also shrink paragraph text slightly for better
-     readability on small screens. */
-  .about-mobile-title {
-    font-size: 3.2rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  .rules-heading-mobile {
+    display: block !important;
   }
-
-  .one-percent-center p {
-    font-size: 1rem;
-    line-height: 1.5;
+  /* Also hide the desktop version of the values heading in the rules section, if any */
+  .rules-section .rules-heading {
+    display: none !important;
   }
-
-  /* Increase the size of the "How Change Happens" section title on mobile
-     so it stands out more prominently. */
-  .values-title-mobile {
-    font-size: 3.2rem;
-  }
-
-  /* HMAM section: reduce top margin and add bottom spacing to separate
-     the title from the graphic. */
-  .hmam-deepdive-title-mobile {
-    margin-top: 0;
-    margin-bottom: 1.2rem;
-  }
-
-  /* Authority section: enlarge the mobile title, shrink the portrait
-     slightly, and reduce the body text size and line height to fit
-     comfortably on mobile screens. */
-  .authority-title-mobile {
-    font-size: 2.8rem;
-  }
-
-  .authority-image img {
-    width: 80%;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .authority-story {
-    font-size: 1.05rem;
-    line-height: 1.45;
-  }
-
-  .authority-story b {
-    font-size: 1.05rem;
-    line-height: 1.45;
-  }
-
-  /* Testimonials section: reduce spacing around the title on mobile */
-  .testimonials-section .section-title {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-  }
-}
-
-/* =========================================================================== */
-/* Global tweaks applied regardless of viewport width                          */
-/* These rules affect how certain elements behave on all screen sizes.         */
-/* =========================================================================== */
-
-/* Always display testimonial images side‑by‑side rather than stacking them
-   vertically.  Each image takes roughly half of the card’s width. */
-.testimonial-card img {
-  display: inline-block;
-  width: 49%;
-  margin-right: 2%;
-  vertical-align: top;
-}
-.testimonial-card img:last-child {
-  margin-right: 0;
 }
 
 /* Additional desktop tweaks */
-/* Add spacing beneath the HMAM title so it doesn’t sit flush against the image */
+/* Add spacing beneath the HMAM title so it doesn’t sit flush against the image.  
+   We set a slightly larger default margin and override it on mobile for extra breathing room. */
 .hmam-deepdive-title {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* On mobile, increase the spacing beneath the HMAM title so the text doesn’t touch the image */
+@media (max-width: 900px) {
+  .hmam-deepdive-title {
+    margin-bottom: 1.75rem;
+  }
 }
