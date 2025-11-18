@@ -184,12 +184,37 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   filter: drop-shadow(0 0 3rem rgba(0, 0, 0, 1));
 }
 
+/* Background image that sits behind the headshot in the hero.
+   By default it's hidden on larger screens and is only revealed on mobile. */
+.new-hero-bg-image {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  display: none;
+  margin: 50px auto 0 auto;
+}
+
+    /* Desktop hero photo styling.  Ensure the image fills its container
+       responsively while preserving its aspect ratio. */
+    .hero-desktop-image {
+      width: 100%;
+      max-width: 1400px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      margin: 50px auto 0 auto;
+    }
+
 .new-hero-image {
   width: 100%;
   max-width: 1400px;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
+  /* Always show the headshot on desktop.  On mobile this is repositioned via media queries. */
   display: block;
   margin: 50px auto 0 auto !important; /* centers horizontally */
 }
@@ -210,6 +235,119 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   color: #ffffff;
 }
 
+/* ---------------------------------------------------------------------------*/
+/* Hero: responsive layout tweaks                                              */
+/* The mobile variant shows two photos (a background and a headshot) layered   */
+/* together. The title and tagline are repositioned on top of the images.      */
+/* Larger screens retain a single headshot photo with ample padding.          */
+.hide-desktop { display: none; }
+@media (max-width: 700px) {
+   .hide-desktop { display: block !important; }
+  .hide-mobile { display: none !important; }
+
+  /* Stack and layer mobile images */
+       .hero-mobile-bg {
+         width: 100%;
+         height: auto;
+         display: block;
+         /* Use contain so the entire mobile hero photo is visible without cropping */
+         object-fit: contain;
+         border-radius: 0;
+         position: relative;
+         z-index: 0;
+       }
+
+       .hero-mobile-headshot {
+         /* Scale the headshot proportionally and avoid clipping. */
+         width: 80%;
+         max-width: 400px;
+         display: block;
+         /* Use a positive margin to separate the overlay instead of pulling it upward */
+         margin: 1rem auto 0 auto;
+         object-fit: contain;
+         z-index: 1;
+         position: relative;
+       }
+
+  .new-hero-title {
+    position: absolute;
+    left: 50%;
+    bottom: 18%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,.6);
+    z-index: 2;
+  }
+       .new-hero {
+         padding: 0;
+         /* Let the mobile hero section grow to fit the full height of its image(s). */
+         height: auto;
+         min-height: 0;
+       }
+  /* Reveal the background photo on mobile and overlay both images */
+  .new-hero-bg-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    z-index: 0;
+  }
+  .new-hero-image {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    z-index: 1;
+  }
+  /* Position the heading on top of both images */
+  .new-hero-title {
+    position: absolute;
+    left: 50%;
+    bottom: 22%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: clamp(1.8rem, 7.2vw, 2.6rem);
+    line-height: 0.9;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    z-index: 2;
+  }
+  .new-hero-tagline {
+    position: absolute;
+    left: 50%;
+    bottom: 2.5%;
+    transform: translateX(-50%);
+    width: 94vw;
+    max-width: none;
+    margin: 0;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: clamp(0.98rem, 3.8vw, 1.15rem);
+    line-height: 1.35;
+    color: #fff;
+    text-shadow: 0 1px 6px rgb(0, 0, 0);
+    z-index: 2;
+  }
+       /* Hide the CTA button on mobile to prevent overlap with images */
+       .hero-mentorship-button {
+         display: none !important;
+       }
+
+       /* On mobile, remove the hero title and tagline so only the image is shown. */
+       .new-hero-title,
+       .new-hero-tagline {
+         display: none !important;
+       }
+}
 /*
  * ---------------------------------------------------------------------------
  * Mobile-specific tweaks
@@ -222,57 +360,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
  * desktop/tablet design.  Feel free to tune the breakpoints further as the
  * design evolves.
  */
-/* Mobile hero layout */
-@media (max-width: 600px) {
-  .new-hero {
-    position: relative;
-    padding: 0;
-    height: 25vh;           /* taller hero */
-    min-height: 320px;      /* safety floor for small phones */
-    overflow: hidden;
-  }
-
-.new-hero-image {
-   margin-top: 70px !important;
-   height: 20vh; 
-   width: 100%; 
-   object-fit: 
-   
-   cover; margin: 0; 
-   border-radius: 0;
-
-   }
-
-  .new-hero-title {
-    position: absolute;
-    left: 50%;
-    bottom: 22%;            /* slightly lower than before */
-    transform: translateX(-50%);
-    margin: 0;
-    font-size: clamp(1.8rem, 7.2vw, 2.6rem);  /* smaller on mobile */
-    line-height: 0;
-    color: #fff;
-    text-shadow: 0 2px 10px rgba(0,0,0,.55);
-    z-index: 1;
-  }
-
-  .new-hero-tagline {
-    position: absolute;
-    left: 50%;
-    bottom: 2.5%;           /* at the very bottom of hero */
-    transform: translateX(-50%);
-    width: 94vw;            /* almost full width */
-    max-width: none;
-    margin: 0;
-    padding: 0 .5rem;      /* a touch of breathing room */
-    text-align: center;
-    font-size: clamp(0.98rem, 3.8vw, 1.15rem); /* slightly smaller */
-    line-height: 1.35;
-    color: #fff;
-    text-shadow: 0 1px 6px rgb(0, 0, 0);
-    z-index: 1;
-  }
-}
+/* Removed old mobile hero layout styles (replaced with consolidated hero mobile block). */
 
 
 /* -----------------------------------------------------------------------------*/
@@ -352,54 +440,42 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   color: #313131;
 }
 
-/* === Mobile Optimization for Hook Section === */
+/* Shorten very long card titles (e.g., "Procrastination") on all devices */
+.pain-card h3.small-title {
+  font-size: 1.3rem;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* Hook Section: mobile layout refinements                                     */
+/* On smaller screens we reduce the vertical padding on the hook section,      */
+/* convert the pain cards into a grid, shrink their dimensions, and ensure     */
+/* the section’s image spans full width without extra margins.                 */
 @media (max-width: 700px) {
-
-  /* Make the hook image take full screen width */
-  .hook-image {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
+  .hook-section {
+    /* Halve the top and bottom padding compared to desktop for a tighter feel */
+    padding: 3rem 1rem;
   }
-
-  /* Adjust pain cards into two columns */
+  .hook-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 0;
+    display: block;
+  }
   .pain-cards {
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     justify-items: center;
     padding: 0 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
   }
-
-  /* Shrink cards slightly so two fit side-by-side cleanly */
   .pain-card {
-    width: 100%;
-    max-width: 160px;
-    padding: 1rem;
-    margin: 0;
-  }
-}
-
-/* Optional: stack into one column on very narrow phones */
-@media (max-width: 400px) {
-  .pain-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Additional mobile tweaks for the hook section
-   Placed directly after the existing mobile hook rules for clarity. */
-@media (max-width: 700px) {
-  /* Center the hook image on mobile and ensure it is a block element */
-  .hook-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* Reduce card padding and text size so cards aren’t overly tall */
-  .pain-card {
-    padding: 0.8rem 0.8rem 0.6rem;
+    width: 100% !important;
+    max-width: 160px !important;
+    padding: 0.8rem 0.8rem 0.6rem !important;
+    margin: 0 !important;
   }
   .pain-card h3 {
     font-size: 1.2rem;
@@ -410,6 +486,13 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
     line-height: 1.3;
   }
 }
+@media (max-width: 400px) {
+  .pain-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Removed scattered hook and pain-card mobile tweaks; see consolidated hook section mobile styles below. */
 
 
 /* -----------------------------------------------------------------------------*/
@@ -1676,25 +1759,8 @@ padding: 4px;
 /* -----------------------------------------------------------------------------*/
 
 @media (max-width: 700px) {
-  /* Adjust hero image positioning so the full headshot is visible */
-  .new-hero-image {
-    margin-top: 1rem;
-  }
-  /* Enlarge the hero title by ~20% and lift it slightly to overlap the image */
-  .new-hero-title {
-    font-size: clamp(2rem, 8vw, 3rem);
-    bottom: 30% !important;
-  }
-  /* Bring the tagline closer to the title to reduce excessive blank space */
-  .new-hero-tagline {
-    bottom: 10% !important;
-  }
-  /* Center the hook image properly on mobile */
-  .hook-image {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-  }
+  /* Removed scattered hero adjustments; see consolidated hero mobile block above for these styles. */
+  /* Removed duplicate hook centering; handled in hook section mobile block above. */
   /* Who section: reduce title spacing and fix list alignment */
   .who-center h2 {
     line-height: 1.2;
@@ -1780,6 +1846,13 @@ padding: 4px;
   .hero-mentorship-button {
     display: none !important;
   }
+
+      /* Also hide the hero title and tagline on mid-size devices so the hero image
+         remains uncluttered. */
+      .new-hero-title,
+      .new-hero-tagline {
+        display: none !important;
+      }
   /* Ensure the hook cards display in two columns instead of one long stack */
   .pain-cards {
     display: grid !important;
@@ -1833,71 +1906,6 @@ padding: 4px;
 }
 
 /* Hero tagline: tighten spacing and lift on mobile */
-.new-hero-tagline { margin: 0.5rem auto; }
-@media (max-width: 600px) {
-  .new-hero-tagline { bottom: 12% !important; }
-}
+/* Removed duplicate hero tagline margin adjustments.  Consolidated in hero mobile block. */
 
-/* Hook image: ensure fully centered and never overflows on phones */
-@media (max-width: 700px) {
-  .hook-image {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-    border-radius: 0 !important;
-  }
-}
-
-/* Pain cards: slightly shorter overall + smaller title variant for long words */
-.pain-card { padding: 1.2rem 1.2rem 0.4rem; }
-@media (max-width: 700px) {
-  .pain-card { padding: 0.7rem 0.7rem 0.4rem; }
-}
-.pain-card h3.small-title { font-size: 1.3rem; }
-
-/* HMAM: add breathing room beneath the section title on all devices */
-.hmam-deepdive-title { margin-bottom: 2rem; }
-@media (max-width: 700px) {
-  .hmam-deepdive-title-mobile { margin-bottom: 2.5rem !important; }
-}
-/* ===================================================================== */
-/* Hook image: ensure fully centered and never overflows on phones */
-@media (max-width: 700px) {
-  .hook-image {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-    border-radius: 0 !important;
-  }
-}
-
-/* Pain cards: slightly shorter overall */
-.pain-card { padding: 1.2rem 1.2rem 0.4rem; }
-@media (max-width: 700px) {
-  .pain-card { padding: 0.7rem 0.7rem 0.4rem !important; }
-}
-/* Long word fix just for the Procrastination title */
-.pain-card h3.small-title { font-size: 1.3rem; }
-
-/* HMAM title spacing so header doesn’t touch image/text */
-.hmam-deepdive-title { margin-bottom: 2rem; }
-@media (max-width: 700px) {
-  .hmam-deepdive-title-mobile { margin-bottom: 2.5rem !important; }
-}
-/* ================================================================== */
-@media (max-width: 700px) {
-  .pain-card { padding: 0.7rem 0.7rem 0.4rem; }
-}
-/* Smaller title just for long words like "Procrastination" */
-.pain-card h3.small-title { font-size: 1.3rem; }
-
-/* HMAM: add spacing under title so it doesn't touch image/text */
-.hmam-deepdive-title { margin-bottom: 2rem; }
-@media (max-width: 700px) {
-  .hmam-deepdive-title-mobile { margin-bottom: 2.5rem !important; }
-}
-/* ===================================================================== */
+/* Removed duplicate hook, pain-card and HMAM mobile overrides; see consolidated blocks above. */
