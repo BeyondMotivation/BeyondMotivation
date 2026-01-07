@@ -172,17 +172,77 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 /* -----------------------------------------------------------------------------*/
 /* New Hero (Top Section)                                                       */
 /* This section introduces the visitor to the coaching practice.                */
+/* Aggressive Minimalism: CSS-only "Key vs Sledge" animation + neuro-pulse     */
 /* -----------------------------------------------------------------------------*/
+:root {
+  --neuro-glow: 0 0 15px rgba(255,255,255,0.35);
+  --neuro-ink: rgba(255,255,255,0.95);
+  --neuro-muted: rgba(255,255,255,0.08);
+}
+
 .new-hero {
-  background: url("images/Loopedbackgroundwebp.webp") repeat;
-  background-size: 1200px;
+  background: linear-gradient(180deg, #000 0%, #000 100%);
   position: relative;
   color: var(--text-light);
   text-align: center;
-  padding: 2rem 2rem;
-  overflow: hidden;
-  filter: drop-shadow(0 0 3rem rgba(0, 0, 0, 1));
+  padding: 6rem 2rem 6rem 2rem;
+  overflow: visible;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
 }
+
+/* Neuro overlay (1px border pulses on idle) */
+.neuro-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgba(255,255,255,0.02);
+  transition: box-shadow 0.35s ease, opacity 0.35s ease;
+  z-index: 9999;
+  opacity: 0.9;
+}
+body.idle .neuro-overlay {
+  animation: neuroPulse 1.8s infinite;
+}
+@keyframes neuroPulse {
+  0% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+  50% { box-shadow: 0 0 8px rgba(255,255,255,0.08); }
+  100% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+}
+
+/* Hero animation elements */
+.hero-anim { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.sledge, .neuro-key { position: absolute; left: 50%; transform: translateX(-50%); }
+.sledge {
+  width: 220px; height: 84px; border-radius: 6px; background: linear-gradient(180deg,#0b0b0b,#2b2b2b);
+  top: -40%; box-shadow: 0 20px 60px rgba(0,0,0,0.8); filter: blur(6px);
+  transition: transform 0.7s cubic-bezier(.2,.9,.3,1), filter .2s ease;
+}
+.neuro-key {
+  top: 48%; width: 1px; height: 0%; background: var(--neuro-ink); opacity: 0; box-shadow: var(--neuro-glow);
+  transition: height .35s ease, opacity .35s ease, transform .35s ease;
+}
+
+/* Headline styling: massive + tight spacing for the key phrase */
+.new-hero-title {
+  font-family: 'Playfair', serif;
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  margin-top: 0.2rem;
+  letter-spacing: 0; /* overridden for .tight */
+}
+.new-hero-title .tight { letter-spacing: -2px; }
+.new-hero-tagline { font-size: clamp(1rem, 2.6vw, 1.2rem); max-width: 900px; margin: 1rem auto 1.5rem; }
+
+/* Active state (triggered via JS when user scrolls) */
+.new-hero.active .sledge { top: 18%; transform: translateX(-50%) translateY(18vh); filter: blur(2px); }
+.new-hero.active .neuro-key { opacity: 1; height: 100%; top: 0; }
+.new-hero.active { transform: translateY(-36vh); transition: transform .9s cubic-bezier(.2,.9,.36,1); }
+
+/* Use sharp 90deg cuts for transitions (no rounding) */
+* { border-radius: 0 !important; }
+
+/* Keep the navbar glass effect (neuro glass) */
+.navbar { backdrop-filter: blur(10px); }
+
 
 /* Background image that sits behind the headshot in the hero.
    By default it's hidden on larger screens and is only revealed on mobile. */
@@ -466,11 +526,98 @@ display: block;
 .mercury-liquid {
   width: 100%;
   height: 0%; /* JS Controlled */
-  background: linear-gradient(to top, #ffffff, #999999, #666666);
+  background: linear-gradient(to top, #ffffff, #bfbfbf, #8d8d8d);
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
-  transition: height 0.1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  transition: height 0.12s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   border-radius: 10px 10px 5px 5px;
+  will-change: transform, height, filter;
 }
+
+/* Grid overlay / hiss overlay placed above the section background to allow distortion */
+.vial-mirror-section { position: relative; overflow: visible; }
+.vial-mirror-section .grid-overlay {
+  position: absolute; inset: 0; background: inherit; opacity: 0.2; pointer-events: none; transform-origin: center; transition: transform 0.25s linear, opacity 0.25s linear; z-index: 1;
+}
+.vial-mirror-section .hiss-overlay {
+  position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' preserveAspectRatio='none'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04' fill='%23fff'/%3E%3C/svg%3E");
+  opacity: 0; pointer-events: none; transition: opacity 0.25s ease, transform 0.3s ease; z-index: 2;
+}
+
+/* Shake animations for mercury - intensity increases with class */
+@keyframes mercury-shake-small { 0% { transform: translateX(0) } 50% { transform: translateX(1px) } 100% { transform: translateX(0) } }
+@keyframes mercury-shake-med   { 0% { transform: translateX(0) } 50% { transform: translateX(2px) } 100% { transform: translateX(0) } }
+@keyframes mercury-shake-high  { 0% { transform: translateX(0) } 50% { transform: translateX(4px) } 100% { transform: translateX(0) } }
+@keyframes mercury-shake-crit  { 0% { transform: translateX(0) rotate(0) } 50% { transform: translateX(6px) rotate(-0.8deg) } 100% { transform: translateX(0) rotate(0) } }
+.mercury-liquid.shake-low { animation: mercury-shake-small 0.18s linear infinite; }
+.mercury-liquid.shake-med { animation: mercury-shake-med 0.14s linear infinite; }
+.mercury-liquid.shake-high { animation: mercury-shake-high 0.12s linear infinite; }
+.mercury-liquid.shake-critical { animation: mercury-shake-crit 0.09s linear infinite; filter: drop-shadow(0 0 12px rgba(255,255,255,0.35)); }
+
+/* Flow line connecting vial to pillars */
+.flow-line {
+  position: absolute; width: 1px; background: linear-gradient(180deg, #fff, #bfbfbf); z-index: 5; left: 50%; top: 0; height: 0; opacity: 0; transition: height 0.35s ease, opacity 0.3s ease, box-shadow 0.2s ease;
+}
+.flow-line.active { box-shadow: var(--neuro-glow); }
+
+/* Pillars: background color switch and sequential glow on .value-item */
+.pillars-section { transition: background-color 0.35s ease; }
+.pillars-section.active { background-color: #05070a; }
+.values-section .value-item { border: 1px solid rgba(255,255,255,0.06); padding: 1.25rem; border-radius: 6px; transition: box-shadow .25s ease, border-color .25s ease; }
+.values-section .value-item.glow { border-color: rgba(255,255,255,0.95); box-shadow: var(--neuro-glow); }
+
+/* Bottleneck highway graphic */
+.bottleneck { height: 48px; max-width: 100%; margin-bottom: 1.25rem; background: repeating-linear-gradient(90deg, #d0d0d0 0 12px, transparent 12px 24px); mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%); }
+.pillars-section.active .bottleneck { background: repeating-linear-gradient(90deg, #d0d0d0 0 8px, transparent 8px 16px); }
+
+/* Proof compare styles */
+.proof-container { max-width: 980px; margin: 1.5rem auto; }
+.proof-compare { position: relative; height: 220px; background: #0f0f0f; overflow: hidden; }
+.proof-compare .compare-left, .proof-compare .compare-right { position: absolute; top:0; bottom:0; height: 100%; transition: width .12s linear; }
+.proof-compare .compare-left { left: 0; width: 50%; background: linear-gradient(180deg,#0b0b0b,#151515); color: rgba(255,255,255,0.95); filter: grayscale(1) blur(1px); padding: 2rem; }
+.proof-compare .compare-right { right: 0; width: 50%; background: linear-gradient(180deg,#fff,#efefef); color: #000; padding: 2rem; }
+.splitter { position: absolute; top: 0; left: 50%; height: 100%; width: 2px; transform: translateX(-50%); display:flex; align-items:center; justify-content:center; cursor:ew-resize; z-index: 6; }
+.splitter span { display:block; width:12px; height:12px; border-radius:50%; background:#fff; box-shadow: var(--neuro-glow); }
+
+/* Offer card / application feel: invert on hover, status light */
+.plan-card { border: 1px solid rgba(255,255,255,0.07); box-shadow: none; }
+.plan-card:hover { background: #fff; color: #000; }
+.plan-card:hover a.btn { background: #000; color: #fff; }
+.system-status { display:flex; gap:0.6rem; align-items:center; justify-content:center; color: rgba(255,255,255,0.9); margin-bottom:0.6rem; }
+.status-light { width:12px; height:12px; border-radius:999px; background: #3cec66; box-shadow: 0 0 6px rgba(60, 236, 102, 0.4); animation: blink 2s infinite; }
+@keyframes blink { 0% { opacity: 1 } 50% { opacity: 0.25 } 100% { opacity: 1 } }
+
+/* Safety hover reveal */
+.rule-item { position: relative; cursor: pointer; }
+.rule-item p { max-height: 0; overflow: hidden; transition: max-height .35s ease, opacity .2s ease; opacity: 0; }
+.rule-item:hover p { max-height: 400px; opacity: 1; }
+
+/* Signature block */
+.signature-block { padding: 2rem 1.5rem; background: #000; color: #fff; border-top: 1px solid rgba(255,255,255,0.04); text-align:center; }
+.signature { font-family: 'Bacasime Antique', cursive; font-size: 1.6rem; display:inline-block; margin-bottom: 0.5rem; }
+.digital-seal { display:inline-block; margin-left: .6rem; padding: .5rem .6rem; border-radius: 999px; border: 1px solid #fff; box-shadow: var(--neuro-glow); }
+.seal-text { display:block; font-size: .85rem; color: rgba(255,255,255,0.7); margin-top: .4rem; }
+
+/* Story: background words */
+.story-section { position: relative; overflow: visible; }
+.story-section .bg-words { position: absolute; inset: 0; display:flex; flex-direction:column; justify-content:center; align-items:center; z-index: 0; pointer-events:none; }
+.bg-word { font-size: clamp(5rem, 18vw, 12rem); color: rgba(255,255,255,0.08); font-weight:900; line-height: .9; transform: translateY(0); transition: opacity .5s ease, transform .6s ease; }
+.bg-word.fade-out { opacity: 0; transform: translateY(-18px); }
+.bg-word-clarity.hidden { opacity: 0; transform: translateY(8px); }
+.bg-word-clarity { color: rgba(255,255,255,0.08); font-weight:900; font-size: clamp(4rem,10vw,9rem); }
+
+.story-sentence { font-size: 1.4rem; max-width: 680px; margin: 3rem auto; opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; line-height: 1.9; text-align:left; }
+.story-section.active .story-sentence { opacity: 1; transform: translateY(0); }
+.story-section .story-sentence:nth-of-type(1) { transition-delay: .1s; }
+.story-section .story-sentence:nth-of-type(2) { transition-delay: .25s; }
+.story-section .story-sentence:nth-of-type(3) { transition-delay: .45s; }
+.story-section .story-sentence:nth-of-type(4) { transition-delay: .6s; }
+.story-section .story-sentence:nth-of-type(5) { transition-delay: .8s; }
+.story-section .story-sentence:nth-of-type(6) { transition-delay: 1.0s; }
+.story-section .story-sentence:nth-of-type(7) { transition-delay: 1.2s; }
+.story-sentence b{ background-color: transparent; padding:0; }
+
+/* Global sharpness: no rounded corners, hard cuts by default */
+* { border-radius: 0 !important; }
 
 
 /* TEXT CONTENT */
@@ -628,8 +775,6 @@ display: block;
     order: 4;
   }
 }
-
-/* signs-section removed per request */
 
 /* -----------------------------------------------------------------------------*/
 /* HMAM Deep Dive & Studies Section                                             */
@@ -815,8 +960,6 @@ display: block;
   background-color: var(--text-dark);
   color: var(--text-light);
 }
-
-/* values-section removed per request */
 
 /* -----------------------------------------------------------------------------*/
 /* Rules Section                                                                */
@@ -1135,8 +1278,6 @@ display: block;
   background-color: #000;
  color: #fff; padding: 3rem 1.5rem 6rem;
 }
-
-/* who-section removed per request */
 
 /* -----------------------------------------------------------------------------*/
 /* Buy Section (What Happens After You Buy)                                     */
@@ -1508,7 +1649,6 @@ display: block;
   /* Removed scattered hero adjustments; see consolidated hero mobile block above for these styles. */
   /* Removed duplicate hook centering; handled in hook section mobile block above. */
   /* Who section: reduce title spacing and fix list alignment */
-  /* Removed who-section mobile rules (section deleted in HTML) */
   /* Buy section: show the H2, hide the H3, and drop the value numbers slightly */
   .buy-section .values-title {
     display: block;
@@ -1519,7 +1659,6 @@ display: block;
   .buy-section .value-number {
     bottom: -1rem;
   }
-  /* values-section rules removed (section deleted) */
   /* HMAM deep dive tweaks: increase spacing below the title and shrink the equation */
   .hmam-deepdive-title-mobile {
     margin-bottom: 1rem;
@@ -1584,7 +1723,6 @@ display: block;
     max-width: none !important;
     padding: 0.9rem;
   }
-  /* values-section rules removed (section deleted) */
   .rules-heading {
     display: none !important;
   }
