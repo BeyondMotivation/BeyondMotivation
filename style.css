@@ -1,12 +1,166 @@
+/* --- FONT FACES --- */
+@font-face {
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica.woff') format('woff'),
+       url('fonts/Helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica-Bold.woff') format('woff'),
+       url('fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica-Oblique.woff') format('woff'),
+       url('fonts/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica-BoldOblique.woff') format('woff'),
+       url('fonts/Helvetica-BoldOblique.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueRoman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueThin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueLightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueMediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueHeavy.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueHeavyItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueBlack.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueBlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Compressed';
+  src: url('fonts/helvetica-compressed-5871d14b6903a.woff') format('woff'),
+       url('fonts/helvetica-compressed-5871d14b6903a.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('fonts/helvetica-light-587ebe5a59211.woff') format('woff'),
+       url('fonts/helvetica-light-587ebe5a59211.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Rounded';
+  src: url('fonts/helvetica-rounded-bold-5871d05ead8de.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 /* --- ROOT VARIABLES --- */
 :root {
   --bg-core: #000000;
   --bg-card: #0a0a0a;
-  --text-main: #ffffff;
-  --text-muted: #888888;
+  --text-main: #FFFFFF;
+  --text-muted: #A1A1A1;
   --border: rgba(255, 255, 255, 0.15);
   --accent: #ffffff;
-  --font-main: 'Helvetica', 'Arial', sans-serif;
+  --font-main: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 /* --- GLOBAL RESETS --- */
@@ -30,28 +184,33 @@ body {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  color: var(--text-main);
+  color: #FFFFFF;
   margin-bottom: 1rem;
   line-height: 1.1;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-p {
-  color: var(--text-muted);
+p, span, li {
+  color: #A1A1A1;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 section {
-  padding: 60px 20px;
+  padding: 100px 5%;
   border-bottom: 1px solid var(--border);
-  background-color: var(--bg-core) !important;
+  background-color: #000000 !important;
+  overflow: visible;
+  position: relative;
 }
 
 /* --- NAVBAR --- */
@@ -103,31 +262,25 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 80px 20px; /* slightly taller top/bottom */
+  padding: 60px 20px 140px;
   background-color: var(--bg-core) !important;
-  /* Add background image, scaled and not repeated */
-  background-image: url("images/backgrouund V2.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .new-hero-title {
-  font-size: clamp(2rem, 8vw, 4rem);
-  color: var(--text-main);
+  font-size: calc(clamp(2rem, 8vw, 4rem) + 3px);
+  color: #FFFFFF;
   max-width: 1200px;
   margin-bottom: 1rem;
   margin-top: 0;
   position: static !important; 
   transform: none !important;
   letter-spacing: -0.02em;
-  /* Subtle Apple-style outer glow */
-  text-shadow: 0 0 18px rgba(255,255,255,0.25), 0 0 42px rgba(255,255,255,0.12);
+  text-shadow: 0 0 12px rgba(255,255,255,0.15);
 }
 
 .new-hero-tagline {
-  font-size: 1rem;
-  color: var(--text-muted);
+  font-size: calc(1rem + 3px);
+  color: #FFFFFF;
   max-width: 600px;
   margin: 0 auto 1.5rem;
   position: static !important;
@@ -142,7 +295,7 @@ section {
   border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: calc(1rem + 3px);
 }
 
 .new-hero-bg-image, .hero-mobile-bg, .hero-mobile-headshot, .new-hero-image {
@@ -180,8 +333,14 @@ section {
 
 .vial-container {
   width: 100%;
-  max-width: 100px;
+  max-width: 250px;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .vial-container {
+    max-width: 150px;
+  }
 }
 
 .vial-base-img {
@@ -241,24 +400,116 @@ section {
   color: var(--text-muted);
 }
 
-/* --- PILLARS / METHOD --- */
-.pillars-section, .values-section {
+/* --- LOGIC SECTION (formerly pillars) --- */
+.logic-section {
   background-color: var(--bg-core) !important;
 }
 
+.logic-section .hmam-img {
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logic-section .hmam-img {
+    max-width: 300px;
+  }
+}
+
+/* --- PILLARS SECTION (formerly values) --- */
+.pillars-section {
+  background-color: #F5F5F5;
+  padding: 80px 5%;
+}
+
+.pillars-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .pillars-row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.pillar-item {
+  background: transparent;
+  padding: 0;
+}
+
+.pillar-number {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1rem;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  font-weight: normal;
+}
+
+.pillar-title {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
+}
+
+.pillar-subtitle {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  color: #FFFFFF;
+  margin: 0 0 20px 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #D0D0D0;
+}
+
+.pillar-method {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  margin: 20px 0 15px 0;
+  font-style: italic;
+}
+
+.pillar-description {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1rem;
+  color: #FFFFFF;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Legacy values styling - keep for compatibility */
 .values-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .values-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .value-item {
   background: var(--bg-card);
   border: 1px solid var(--border);
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 0;
+  z-index: 1;
+  transform: none !important;
+  opacity: 1 !important;
+  transition: none !important;
 }
 
 .value-item h3 { 
@@ -404,7 +655,7 @@ section {
 .chat-description {
   max-width: 600px;
   margin: 0 auto;
-  font-size: 1rem;
+  font-size: calc(1rem + 3px);
   color: var(--text-muted);
 }
 
@@ -500,4 +751,79 @@ section {
   .story-title, .story-title-mobile { 
     font-size: 1.5rem;
   }
+}
+/* --- PIVOT MANIFESTO SECTION --- */
+#pivot-manifesto {
+  background-color: #000000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* --- GLOBAL TITLE SECTION --- */
+.global-title-section {
+  background-color: #000000;
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.global-title-section h2 {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: bold;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+
+.pivot-text {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: bold;
+  font-size: clamp(2rem, 8vw, 5rem);
+  color: rgba(255, 255, 255, 0.1);
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0);
+  transition: color 1.5s ease-out, text-shadow 1.5s ease-out;
+}
+
+#pivot-manifesto.is-active .pivot-text {
+  color: rgba(255, 255, 255, 1.0);
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+/* Settle to softer glow after initial reveal */
+#pivot-manifesto.is-active .pivot-text {
+  animation: pivot-settle 2s ease-out 1.5s forwards;
+}
+
+@keyframes pivot-settle {
+  to {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* --- DIGITAL SEAL (FOOTER) --- */
+.digital-seal {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  color: var(--accent);
+}
+
+/* --- FOOTER LOGO --- */
+.footer-logo img {
+  width: 32px;
+  height: auto;
 }
