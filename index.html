@@ -7,24 +7,18 @@
 <title>Beyond Motivation</title>
 <link href="style.css" rel="stylesheet"/>
 <link href="/images/homebutton.png" rel="icon" type="images/homebutton.png"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Bacasime+Antique&amp;family=Inconsolata:wdth,wght@72.8,200..900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@700" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<!-- Removed duplicate viewport meta tag to prevent conflicting scaling rules on mobile -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
+
+
+
+
+
 </link></link></link></head>
 <body>
-<!-- Navbar -->
+
 <header class="hero">
 <nav class="navbar">
-<a class="navbar-logo" href="index.html"> 
+<a class="navbar-logo" href="index.html">
 <img alt="Logo" src="images/homebutton.png"/>
 </a>
 <p class="site-name">Drewen Schoon</p>
@@ -32,16 +26,21 @@
       <a href="index.html">Home</a>
       <a href="contactform.html">Contact</a>
       <a href="studies.html">Studies</a>
-      <!-- Contact and mentorship links removed per update -->
+
       <a class="hide-mobile" href="#faq-section">FAQ</a>
 </div>
 </nav>
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
+
+
+
 </header>
-<!-- New Hero Section (CSS Key vs Sledge) -->
-<!-- The hero is purely CSS-driven; JS toggles the `.active` state on scroll -->
+
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Hero Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="new-hero" id="hero">
   <div class="hero-anim" aria-hidden="true">
     <div class="sledge" aria-hidden="true"></div>
@@ -51,16 +50,20 @@
   <p class="new-hero-tagline">A 10-lane highway still gets 1-lane traffic jams. More force won’t help, just clear the wreck.</p>
   <a href="#offer-section" class="hero-mentorship-button">Apply</a>
 </section>
-<!-- Neuro-pulse overlay (idle heartbeat glow around viewport) -->
+
 <div class="neuro-overlay" aria-hidden="true"></div>
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- Hook Section (Image 2) -->
-<section class="vial-mirror-section" id="diagnostic-trigger" style="background: #000000 url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'50\' height=\'50\' fill=\'none\' stroke=\'rgba(221,221,221,0.35)\' stroke-width=\'0.23\'/%3E%3C/svg%3E') repeat; background-size:50px; color:#f8f8f8; padding:120px 8%; border-bottom:2px solid #333;">
-  <div class="grid-overlay" aria-hidden="true"></div>
-  <div class="hiss-overlay" aria-hidden="true"></div>
-  <h2 class="diagnostic-title" style="text-align:center; font-family: 'Playfair', serif;">System Diagnosis: <br><span>The Friction Levels</span></h2>
+
+
+
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Hook / Diagnostic Section -->
+  <!-- ----------------------------------------------------------------------------- -->
+<section class="vial-mirror-section" id="diagnostic-trigger" style="background: #000000 url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'50\' height=\'50\' fill=\'none\' stroke=\'rgba(221,221,221,0.35)\' stroke-width=\'0.23\'/%3E%3C/svg%3E') repeat; background-size:50px; color:#f8f8f8; border-bottom:2px solid #333;">
+
+  <h2 class="diagnostic-title" style="text-align:center; font-family: Helvetica, Arial, sans-serif;">System Diagnosis: <br><span>The Friction Levels</span></h2>
   <div class="vial-sticky-container">
 
     <div class="vial-visual-wrapper">
@@ -106,65 +109,33 @@
   </div>
 </section>
 
-<script>
-document.addEventListener('scroll', function() {
-  const content = document.querySelector('.vial-content-wrapper');
-  const fill = document.getElementById('vial-fill');
-  const points = document.querySelectorAll('.pain-point');
-  if (!content || !fill) return;
 
-  const rect = content.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
 
-  // Map fill height to how far the content column has scrolled through the
-  // viewport. This ties the mercury-liquid height directly to the text
-  // column's position so they stay in sync.
-  const visibleRatio = Math.min(Math.max((windowHeight - rect.top) / (windowHeight + rect.height), 0), 1);
-  fill.style.height = (visibleRatio * 100) + "%";
 
-  // 2. TEXT SYNC
-  points.forEach((point) => {
-    const pointRect = point.getBoundingClientRect();
-    if (pointRect.top < windowHeight * 0.55 && pointRect.bottom > windowHeight * 0.45) {
-      point.classList.add('active');
-    } else {
-      point.classList.remove('active');
-    }
-  });
-});
-</script>
 
-<!-- Visual connector line from vial to pillars (positioned by JS) -->
-<div class="flow-line" aria-hidden="true"></div>
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- who-section removed per request -->
 
-<!-- values-section removed per request -->
 
-<!-- New Where We Chat section with icons -->
-<section class="chat-section">
-  <h2 class="section-title">Where We Chat</h2>
-  <div class="chat-icons">
-    <!-- Placeholders for messaging app logos; replace src paths with actual logos -->
-    <img src="images/whattsappLogo.webp" alt="WhatsApp logo">
-    <img src="images/TellegramLogo.webp" alt="Telegram logo">
-  </div>
-  <p class="chat-description">
-    Communication happens on WhatsApp, and Telegram via text, voice notes and occasional video calls. I live in the Pacific Time zone and reply whenever I’m awake. If you’re overseas, expect slight delays but we keep momentum steady.
-  </p>
-</section>
 
-<!-- one-percent-section moved/renamed to about-me-section and relocated to bottom -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- additional values-section removed per request -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- HMAM Deep Dive and Studies Section moved above the values section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Pillars Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="pillars-section">
   <div class="bottleneck" aria-hidden="true"></div>
   <img class="hmam-img" src="images/HMAM.webp"/>
@@ -179,8 +150,8 @@ The result is a repeatable, research-driven system for building motivation that 
       \times \left[ \left( \text{Chance} \cdot \text{AdaptiveLearning} \right) \cdot f_\text{Belief}^{C} \right]
       $$
     </div>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<!-- Fun Facts -->
+
+
 <div class="hmam-funfact-box">
 <div class="hmam-funfact-title">FUN-ish FACT</div>
 <div class="hmam-funfact-row">
@@ -197,10 +168,10 @@ The result is a repeatable, research-driven system for building motivation that 
 </div>
 </div>
 </div>
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- Integrated Studies Content -->
+
+
+
+
 <h2 class="studies-heading">Studies</h2>
 <div class="courseinfo-facts2">
 <div class="courseinfo-fact2">50+ peer‑reviewed papers</div>
@@ -217,10 +188,15 @@ The result is a repeatable, research-driven system for building motivation that 
   <a class="studies-button mentorship-secondary" href="#offer-section">View Mentorship Options</a>
 </div>
 </section>
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- PILLAR (Method) - duplicated values-section structure -->
+
+
+
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Method / Values Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="values-section" id="method" style="border-bottom:2px solid #333;">
   <h2 class="values-title">- Method -</h2>
   <div class="values-row">
@@ -242,11 +218,16 @@ The result is a repeatable, research-driven system for building motivation that 
   </div>
 </section>
 
-<!-- Rules Section (Image 8) -->
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Rules Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="rules-section" id="rules">
-<!-- Section heading with a smaller tag for the subtitle -->
+
 <h2 class="rules-heading">- The Values -  <span class="rules-tag">(we play by)</span></h2>
-<!-- Mobile-specific rules header without decorative dashes; uses a separate tag for subtitle -->
+
 <h2 class="rules-heading-mobile">The Values <span class="rules-tag-mobile">(we play by)</span></h2>
 <div class="rules-list">
 <article class="rule-item">
@@ -276,14 +257,19 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
 </article>
 </div>
 </section>
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- signs-section removed per request -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- Story Slice (renamed from Authority) -->
+
+
+
+
+
+
+
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Story Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="story-section one-percent-section" id="story" style="text-align:center; max-width:800px; margin:0 auto; border-bottom:2px solid #333;">
   <div class="bg-words" aria-hidden="true">
     <div class="bg-word">EXHAUSTED</div>
@@ -293,11 +279,11 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
     <div class="bg-word-clarity hidden">SYSTEM</div>
   </div>
 <h2 class="story-title">- I Only Wanted Something to Change -</h2>
-<!-- Mobile-specific story title without dashes -->
+
 <h2 class="story-title-mobile">I Only Wanted Something to Change</h2>
 <div class="story-container">
 <div class="story-image">
-<!-- Replace with your real portrait -->
+
 <img alt="Drewen Schoon portrait" src="images/Pain Picture v3.webp"/>
 </div>
 <div class="story-content">
@@ -312,7 +298,12 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
 </div>
 </section>
 
-<!-- PROOF: Symptom Progressions (interactive compare) -->
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Proof Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="proof-section section-light" id="proof">
   <h2 class="section-title">Symptom Progressions</h2>
   <div class="proof-container">
@@ -342,14 +333,19 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
   </div>
 </section>
 
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
 
-<!-- Testimonials -->
+
+
+
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Testimonials Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="section-light testimonials-section" id="client-results">
 <div class="testimonials-grid">
-  <!-- Audio testimonial card -->
+
   <div class="testimonial-card">
     <div class="testimonial-name">Irina - Spain</div>
     <p class="testimonial-quote">"Your coaching, your words they are so empowering. Everyday I know I made the best decision of my life for, for talking to you and our coaching and eveything. Im so thankful"</p>
@@ -361,21 +357,26 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
   </div>
 </div>
 </section>
-<!-- ===================== OFFER SECTION (renamed from Plans) ===================== -->
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Offer Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="offer-section" id="offer-section">
 <div class="offer-head">
   <div class="system-status"><span class="status-light" aria-hidden="true"></span> System Status: <span class="status-text">Open</span></div>
   <h2>The Neuro-Audit</h2>
   <p class="sub">Both tiers include personal access and deep guidance. Plus+ adds advanced analysis, custom research, and priority response.</p>
 </div>
-<!-- Side-by-side summary cards -->
+
 <div class="plan-cards">
 <article class="plan-card">
 <header>
 <h3>Base</h3>
 <p class="tagline">Foundation, focus, and consistent support.</p>
-<!-- Optional price placeholder -->
-<!-- <p class="price">$60 / month</p> -->
+
+
 </header>
 <ul class="bullets">
 <li>1-on-1 Direct Messaging</li>
@@ -390,7 +391,7 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
 <header>
 <h3>Plus+</h3>
 <p class="tagline">Calls, custom research, and priority access.</p>
-<!-- <p class="price">$80 / month</p> -->
+
 </header>
 <ul class="bullets">
 <p><b>Everything in Base plus:</b></p>
@@ -403,7 +404,7 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
 <div class="cta-row"><a class="btn btn-plus buy-btn" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Join Plus+</a><span class="price-tag">$79.99 / month</span></div><div class="slots-note">Limited capacity – a few spots each month</div>
 </article>
 </div>
-<!-- Comparison grid (desktop / tablet) -->
+
 <div aria-label="Feature comparison" class="comparison">
 <div class="comp-row comp-head">
 <div class="col feature">Feature</div>
@@ -483,7 +484,7 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
 <div class="col plus">✅</div>
 </div>
 </div>
-<!-- Mobile details (for users who want blurbs without a grid) -->
+
 <div class="mobile-details">
 <details>
 <summary>What you get in Base</summary>
@@ -508,18 +509,44 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
 </ul>
 </details>
 </div>
-<!-- Sticky CTA for mobile -->
+
 <div class="sticky-cta">
 <a class="btn buy-btn" href="https://buy.stripe.com/28EeV73nRfoN7Cd9XSdUY01">Join Base</a>
 <a class="btn btn-plus buy-btn" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Join Plus+</a>
 </div>
 </section>
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- #11 FaQ-->
-<!-- Guarantee Section -->
-<!-- SAFETY (Q&A) - duplicate rules-section structure for common objections -->
+
+
+
+
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Chat Section -->
+  <!-- ----------------------------------------------------------------------------- -->
+<section class="chat-section">
+  <h2 class="section-title">Where We Chat</h2>
+  <div class="chat-icons">
+
+    <img src="images/whattsappLogo.webp" alt="WhatsApp logo">
+    <img src="images/TellegramLogo.webp" alt="Telegram logo">
+  </div>
+  <p class="chat-description">
+    Communication happens on WhatsApp, and Telegram via text, voice notes and occasional video calls. I live in the Pacific Time zone and reply whenever I’m awake. If you’re overseas, expect slight delays but we keep momentum steady.
+  </p>
+</section>
+
+
+
+
+
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Safety Rules Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="rules-section" id="safety" style="border-bottom:2px solid #333;">
   <h2 class="rules-heading">- Common Objections -</h2>
   <h2 class="rules-heading-mobile">Common Objections</h2>
@@ -547,12 +574,17 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
     </article>
   </div>
 
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
 
 
-<!-- About Me (moved from earlier and renamed) -->
+
+
+
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- About Me Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="about-me-section">
   <h3 class="about-mobile-title">About Me</h3>
   <div class="one-percent-left">
@@ -575,7 +607,12 @@ Today, I work with clients around the world, from Spain to the United States, he
   </div>
 </section>
 
-<!-- Signature / Digital Seal -->
+
+  
+  
+  <!-- ----------------------------------------------------------------------------- -->
+  <!-- Signature Section -->
+  <!-- ----------------------------------------------------------------------------- -->
 <section class="signature-block">
   <div class="signature-wrap">
     <div class="signature">Drewen Schoon</div>
@@ -585,7 +622,7 @@ Today, I work with clients around the world, from Spain to the United States, he
 </section>
 
 
-<script>
+<noscript>
 (function(){
   // Idle neuro-pulse
   let idleTimer;
@@ -598,113 +635,212 @@ Today, I work with clients around the world, from Spain to the United States, he
   // Hero Intersection observer to trigger sledge/key animations
   const hero = document.getElementById('hero');
   if (hero) {
+    // Disable all scroll-driven hero collapsing/expanding to avoid any auto-scroll feel.
+    const disableHeroCollapse = true;
+    if (disableHeroCollapse) {
+      // Keep hero static; skip attaching observers, but allow the rest of the script to run.
+    } else {
+    // Debounced hide/show: hide when intentionally scrolled past, and only
+    // show the hero again after a sustained in-view (avoid tiny upward nudges).
+    let heroHideTimer = null;
+    let heroShowTimer = null;
+    let lastScrollY = window.scrollY;
+    let lastScrollDirection = 0; // 1 = down, -1 = up
+
+    // Track scroll direction briefly to avoid showing on quick flicks up
+    window.addEventListener('scroll', ()=>{
+      const y = window.scrollY;
+      lastScrollDirection = (y > lastScrollY) ? 1 : (y < lastScrollY ? -1 : lastScrollDirection);
+      lastScrollY = y;
+    }, {passive:true});
+
     const heroObs = new IntersectionObserver((entries)=> {
       entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-          hero.classList.remove('active');
-        } else if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-          hero.classList.add('active');
+        const outOfView = entry.intersectionRatio < 0.12 && entry.boundingClientRect.top < 0;
+        if (outOfView) {
+          // larger delay to ensure intentional scroll past the hero
+          clearTimeout(heroShowTimer);
+          clearTimeout(heroHideTimer);
+          heroHideTimer = setTimeout(()=> hero.classList.add('active'), 220);
+        } else {
+          // Only reopen the hero when the user is effectively at the very top of the page.
+          // This prevents the fullscreen hero from reanimating while scrolling up from the hook section.
+          if (window.scrollY <= 16) {
+            clearTimeout(heroHideTimer);
+            clearTimeout(heroShowTimer);
+            const extraDelay = (lastScrollDirection === -1) ? 320 : 150;
+            heroShowTimer = setTimeout(()=> hero.classList.remove('active'), extraDelay);
+          } else {
+            hero.classList.add('active');
+          }
         }
       });
-    }, {threshold: 0.5});
+    }, {threshold: [0,0.12,0.5]});
     heroObs.observe(hero);
+    }
   }
+
+  // Enforce alternating section backgrounds starting at the Hook (diagnostic-trigger)
+  (function(){
+    const start = document.getElementById('diagnostic-trigger');
+    if (!start) return;
+    start.classList.add('bg-black');
+    // forward alternation
+    let next = start.nextElementSibling;
+    let isWhite = true;
+    while(next) {
+      if (next.tagName && next.tagName.toLowerCase() === 'section') {
+        next.classList.remove('bg-white','bg-black');
+        next.classList.add(isWhite ? 'bg-white' : 'bg-black');
+        isWhite = !isWhite;
+      }
+      next = next.nextElementSibling;
+    }
+    // backward alternation
+    let prev = start.previousElementSibling;
+    let prevIsWhite = false;
+    while(prev) {
+      if (prev.tagName && prev.tagName.toLowerCase() === 'section') {
+        prev.classList.remove('bg-white','bg-black');
+        prev.classList.add(prevIsWhite ? 'bg-white' : 'bg-black');
+        prevIsWhite = !prevIsWhite;
+      }
+      prev = prev.previousElementSibling;
+    }
+  })();
 
   // Vial: grid distortion, hiss overlay, mercury shake intensity
   const content = document.querySelector('.vial-content-wrapper');
   const fill = document.getElementById('vial-fill');
-  const grid = document.querySelector('.grid-overlay');
-  const hiss = document.querySelector('.hiss-overlay');
   const section = document.getElementById('diagnostic-trigger');
+  const vialImg = document.querySelector('.vial-base-img');
+  const track = document.querySelector('.mercury-track');
+  const vialWrapper = document.querySelector('.vial-visual-wrapper');
+  // Smoothed follow state for the vial position
+  let targetVialOffset = 0;
+  let currentVialOffset = 0;
+  let vialRaf = null;
+  function animateVial() {
+    if (!vialWrapper) return;
+    currentVialOffset += (targetVialOffset - currentVialOffset) * 0.16; // easing factor
+    // Round for sub-pixel stability
+    const rounded = Math.round(currentVialOffset * 100) / 100;
+    vialWrapper.style.transform = `translateY(${rounded}px)`;
+    if (Math.abs(targetVialOffset - currentVialOffset) > 0.5) {
+      vialRaf = requestAnimationFrame(animateVial);
+    } else {
+      vialRaf = null;
+    }
+  }
+
+  // Smooth fill animation state (delayed, faster acceleration)
+  let currentFillPercent = 0;
+  let targetFillPercent = 0;
+  let fillAnimFrame = null;
+  let fillAnimStart = 0;
+  const fillAnimDuration = 220; // faster acceleration (ms)
+  const fillAnimDelay = 160; // ms delay before starting animation
+  let fillAnimTimeout = null;
+  function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+  function animateFillToTarget(){
+    if (!fill) return;
+    if (fillAnimFrame) cancelAnimationFrame(fillAnimFrame);
+    const from = currentFillPercent;
+    const to = Math.max(0, Math.min(100, targetFillPercent));
+    if (from === to) { currentFillPercent = to; fill.style.height = to + '%'; return; }
+    fillAnimStart = performance.now();
+    function step(now){
+      const elapsed = now - fillAnimStart;
+      const progress = Math.min(1, elapsed / fillAnimDuration);
+      const eased = easeOutCubic(progress);
+      currentFillPercent = from + (to - from) * eased;
+      fill.style.height = currentFillPercent + '%';
+      if (progress < 1) fillAnimFrame = requestAnimationFrame(step); else { currentFillPercent = to; fill.style.height = to + '%'; fillAnimFrame = null; }
+    }
+    fillAnimFrame = requestAnimationFrame(step);
+  }
+
+  // Align the mercury track to the visible vial image bounds so it scales 1:1
+  // with the artwork without changing the image's size. This computes pixel
+  // offsets and writes inline styles on load/resize/image load.
+  function alignMercuryTrack() {
+    if (!vialImg || !track || !track.parentElement) return;
+    // If the image isn't measured yet, bail (will re-run on load)
+    if (vialImg.naturalWidth === 0) return;
+
+    const imgRect = vialImg.getBoundingClientRect();
+    const containerRect = track.parentElement.getBoundingClientRect(); // .vial-container
+
+    // Offsets calibrated from the artwork: use small top/bottom margins (percent of image height)
+    const topMarginPct = 0.06;   // move tube start slightly higher
+    const bulbMarginPct = 0.12;  // reduce bulb margin so the bar reaches a bit lower
+
+    // Compute positions as percentages so alignment scales with container size.
+    const topPx = Math.max(0, (imgRect.top - containerRect.top + imgRect.height * topMarginPct));
+    const heightPx = Math.max(12, (imgRect.height - (imgRect.height * (topMarginPct + bulbMarginPct))));
+    const leftCenterPx = imgRect.left + imgRect.width / 2 - containerRect.left;
+
+    const topPct = (topPx / containerRect.height) * 100;
+    const heightPct = (heightPx / containerRect.height) * 100;
+    const leftPct = (leftCenterPx / containerRect.width) * 100;
+
+    // Use percentage width so the track scales exactly with the image width
+    // increase the multiplier so the bar appears to fill the tube more fully
+    // bumped to 38% of image width for a much fuller visual fill
+    const trackWidthPct = Math.max(6, (imgRect.width * 0.38 / containerRect.width) * 100);
+
+    // Apply styles using percentages for placement and percentage width for scaling
+    track.style.left = leftPct + '%';
+    track.style.top = topPct + '%';
+    track.style.height = heightPct + '%';
+    track.style.width = trackWidthPct + '%';
+    track.style.bottom = 'auto';
+    // ensure centering uses translateX(-50%) so leftPct denotes center
+    track.style.transform = 'translateX(-50%)';
+  }
+
+  // Debounced helpers
+  const debouncedAlign = (function() { let t; return function() { clearTimeout(t); t = setTimeout(alignMercuryTrack, 80); }; })();
+  window.addEventListener('resize', debouncedAlign);
+  window.addEventListener('orientationchange', debouncedAlign);
+  window.addEventListener('load', debouncedAlign);
+  if (vialImg) vialImg.addEventListener('load', alignMercuryTrack);
+  // warm run
+  setTimeout(alignMercuryTrack, 60);
 
   document.addEventListener('scroll', function() {
-    if (!content || !fill) return;
-    const rect = content.getBoundingClientRect();
+    if (!fill) return;
+    const targetRect = (section && section.getBoundingClientRect()) || (content && content.getBoundingClientRect());
+    if (!targetRect) return;
     const windowHeight = window.innerHeight;
-    const visibleRatio = Math.min(Math.max((windowHeight - rect.top) / (windowHeight + rect.height), 0), 1);
-    const percent = visibleRatio * 100;
-    fill.style.height = (percent) + '%';
+    // Smooth progress for vial fill
+    const progress = Math.min(Math.max((windowHeight - targetRect.top) / (targetRect.height + windowHeight * 0.35), 0), 1);
+    const baseFill = 12;
+    const percent = baseFill + progress * (100 - baseFill);
 
-    // shake classes based on percent
-    fill.classList.remove('shake-low','shake-med','shake-high','shake-critical');
-    if (percent > 80) fill.classList.add('shake-critical');
-    else if (percent > 65) fill.classList.add('shake-high');
-    else if (percent > 45) fill.classList.add('shake-med');
-    else if (percent > 20) fill.classList.add('shake-low');
+    // Schedule smooth fill animation
+    targetFillPercent = percent;
+    clearTimeout(fillAnimTimeout);
+    fillAnimTimeout = setTimeout(animateFillToTarget, fillAnimDelay);
 
-    // grid warp + hiss opacity based on percent
-    if (grid) {
-      const s = 1 + visibleRatio * 0.03;
-      const r = (visibleRatio - 0.5) * 2 * 0.6;
-      grid.style.transform = `scale(${s}) skew(${r}deg, ${-r}deg)`;
-      grid.style.opacity = 0.3 + visibleRatio * 0.4;
-    }
-    if (hiss) {
-      hiss.style.opacity = Math.max(0, (percent - 70) / 40);
-      hiss.style.transform = `translateY(${(1-visibleRatio)*6}px)`;
-    }
+    // Removed legacy shake/hiss/glow logic for "Neuro-Protocol" silence.
 
-    // pain-point activation (existing)
-    document.querySelectorAll('.pain-point').forEach((point) => {
-      const pr = point.getBoundingClientRect();
-      if (pr.top < windowHeight * 0.55 && pr.bottom > windowHeight * 0.45) point.classList.add('active'); else point.classList.remove('active');
-    });
-
-    // also update flow line position if visible
-    if (typeof updateFlowLine === 'function') updateFlowLine();
   });
 
-  // Pillars activation: sequential glow
+  // Pillars activation: Simple fade-in only
   const pillars = document.querySelector('.pillars-section');
   if (pillars) {
-    const bottleneckEl = document.querySelector('.bottleneck');
     const pillarObs = new IntersectionObserver((entries)=>{
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           pillars.classList.add('active');
-          // sequential glow
-          document.querySelectorAll('.values-section .value-item').forEach((it,i)=>{
-            it.classList.remove('glow');
-            setTimeout(()=> it.classList.add('glow'), i * 520);
-          });
-          // dynamic bottleneck widening based on intersection ratio
-          if (bottleneckEl) {
-            const widthPx = Math.max(6, Math.round(12 - entry.intersectionRatio * 8));
-            bottleneckEl.style.background = `repeating-linear-gradient(90deg, #d0d0d0 0 ${widthPx}px, transparent ${widthPx}px ${widthPx*2}px)`;
-          }
-        } else {
-          pillars.classList.remove('active');
-          document.querySelectorAll('.values-section .value-item').forEach(it => it.classList.remove('glow'));
-          if (bottleneckEl) bottleneckEl.style.background = '';
         }
       });
-    }, {threshold: [0.15,0.35,0.6]});
+    }, {threshold: 0.15});
     pillarObs.observe(pillars);
   }
 
-  // flow-line positioning (basic: connect vial bottom center to first pillar card)
-  const flowLine = document.querySelector('.flow-line');
-  function updateFlowLine() {
-    if (!flowLine) return;
-    const vial = document.querySelector('.vial-container');
-    const firstCard = document.querySelector('.values-section .value-item');
-    if (!vial || !firstCard) { flowLine.style.opacity = 0; return; }
-    const vRect = vial.getBoundingClientRect();
-    const cRect = firstCard.getBoundingClientRect();
-    const x = vRect.left + vRect.width / 2;
-    const top = vRect.bottom;
-    const height = (cRect.top - vRect.bottom);
-    flowLine.style.left = (x - 0.5) + 'px';
-    flowLine.style.top = (top) + 'px';
-    flowLine.style.height = Math.max(0, height) + 'px';
-    flowLine.style.opacity = 1;
-    // small glow as system 'turns on'
-    flowLine.classList.toggle('active', pillars && pillars.classList.contains('active'));
-  }
-  window.addEventListener('resize', updateFlowLine);
-  setTimeout(updateFlowLine, 500);
-
-  // Proof slider behaviour
+  // Proof slider behaviour (Tech Spec Compare)
   const compare = document.getElementById('compare');
   const splitter = document.getElementById('splitter');
   if (compare && splitter) {
@@ -722,28 +858,19 @@ Today, I work with clients around the world, from Spain to the United States, he
     window.addEventListener('pointerup', (e)=> { dragging = false; });
   }
 
-  // Typewriter for story: reveal sentences on intersection
+  // Story activation: Simple fade
   const story = document.querySelector('.story-section');
   if (story) {
-    const storyObs = new IntersectionObserver((entries)=> {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          story.classList.add('active');
-          // swap background words
-          const words = story.querySelectorAll('.bg-word');
-          words.forEach((w,i)=> setTimeout(()=> w.classList.add('fade-out'), i*200));
-          // show clarity words after
-          setTimeout(()=> {
-            document.querySelectorAll('.bg-word-clarity').forEach((w,i)=> setTimeout(()=> w.classList.remove('hidden'), i*140));
-          }, 700);
-        }
-      });
-    }, {threshold: 0.2});
-    storyObs.observe(story);
+      const storyObs = new IntersectionObserver((entries)=> {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) story.classList.add('active');
+        });
+      }, {threshold: 0.2});
+      storyObs.observe(story);
   }
 
 })();
-</script>
+</noscript>
 </body>
 <footer class="site-footer">
 <div class="footer-content">
@@ -752,7 +879,7 @@ Today, I work with clients around the world, from Spain to the United States, he
 </img></div>
 <div class="footer-links">
     <a href="studies.html">Studies</a>
-    <!-- Removed contact link -->
+
     <a href="index.html">Home</a>
 </div>
 <div class="footer-copy">
