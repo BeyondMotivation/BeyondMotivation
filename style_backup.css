@@ -1,3 +1,4 @@
+/* --- FONT FACES --- */
 @font-face {
   font-family: 'Helvetica';
   src: url('fonts/Helvetica.woff') format('woff'),
@@ -151,6 +152,7 @@
   font-style: normal;
 }
 
+/* --- ROOT VARIABLES --- */
 :root {
   --bg-core: #000000;
   --bg-card: #0a0a0a;
@@ -161,6 +163,7 @@
   --font-main: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+/* --- GLOBAL RESETS --- */
 * {
   box-sizing: border-box;
   animation: none !important;
@@ -209,34 +212,7 @@ section {
   position: relative;
 }
 
-
-/* ----------------------------------------------------------------------------- */
-/* Global Title Section */
-/* ----------------------------------------------------------------------------- */
-
-.global-title-section {
-  background-color: #000000;
-  padding: 60px 20px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.global-title-section h2 {
-  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-weight: bold;
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  color: #FFFFFF;
-  margin: 0;
-  letter-spacing: -0.02em;
-}
-
-
-/* ----------------------------------------------------------------------------- */
-/* Navbar */
-/* ----------------------------------------------------------------------------- */
-
+/* --- NAVBAR --- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -276,11 +252,7 @@ section {
   letter-spacing: 1px;
 }
 
-
-/* ----------------------------------------------------------------------------- */
-/* Hero Section */
-/* ----------------------------------------------------------------------------- */
-
+/* --- HERO --- */
 .new-hero, .hero {
   min-height: auto;
   display: flex;
@@ -328,11 +300,7 @@ section {
   display: none !important;
 }
 
-
-/* ----------------------------------------------------------------------------- */
-/* Hook / Diagnostic Section */
-/* ----------------------------------------------------------------------------- */
-
+/* --- VIAL SECTION --- */
 .vial-mirror-section {
   padding: 60px 20px;
   background-color: #000000 !important;
@@ -444,136 +412,26 @@ section {
   color: rgba(255, 255, 255, 0.5);
 }
 
-
-/* ----------------------------------------------------------------------------- */
-/* Pivot Section */
-/* ----------------------------------------------------------------------------- */
-
-#pivot-manifesto {
-  background-color: #000000;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.pivot-text {
-  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-weight: bold;
-  font-size: clamp(2rem, 8vw, 5rem);
-  color: rgba(255, 255, 255, 0.1);
-  letter-spacing: -0.04em;
-  line-height: 1.2;
-  margin: 0;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0);
-  transition: color 1.5s ease-out, text-shadow 1.5s ease-out;
-}
-
-#pivot-manifesto.is-active .pivot-text {
-  color: rgba(255, 255, 255, 1.0);
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-}
-
-#pivot-manifesto.is-active .pivot-text {
-  animation: pivot-settle 2s ease-out 1.5s forwards;
-}
-
-@keyframes pivot-settle {
-  to {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  }
-}
-
-
-/* ----------------------------------------------------------------------------- */
-/* Logic Section */
-/* ----------------------------------------------------------------------------- */
-
+/* --- LOGIC SECTION (formerly pillars) --- */
 .logic-section {
-  background-color: #000000;
-  padding: 100px 5%;
+  background-color: var(--bg-core) !important;
 }
 
-.logic-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  max-width: 1400px;
-  margin: 0 auto;
-  align-items: center;
-}
-
-@media (max-width: 900px) {
-  .logic-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-.logic-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.logic-header {
-  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-weight: bold;
-  font-size: 2.5rem;
-  color: #FFFFFF;
-  margin: 0;
-  letter-spacing: -0.02em;
-}
-
-.logic-text {
-  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-size: 1.1rem;
-  color: #A1A1A1;
-  line-height: 1.8;
-  margin: 0;
-}
-
-.logic-highlight {
-  color: #FFFFFF;
-  font-weight: 500;
-}
-
-.logic-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logic-image {
-  width: 100%;
+.logic-section .hmam-img {
   max-width: 500px;
-  height: auto;
-  object-fit: contain;
+  margin: 0 auto;
+  display: block;
 }
 
 @media (max-width: 768px) {
-  .logic-header {
-    font-size: 2rem;
-  }
-  
-  .logic-text {
-    font-size: 1rem;
-  }
-  
-  .logic-image {
+  .logic-section .hmam-img {
     max-width: 300px;
   }
 }
 
-
-/* ----------------------------------------------------------------------------- */
-/* Pillars Section */
-/* ----------------------------------------------------------------------------- */
-
+/* --- PILLARS SECTION (formerly values) --- */
 .pillars-section {
-  background-color: #000000;
+  background-color: #F5F5F5;
   padding: 80px 5%;
 }
 
@@ -621,6 +479,7 @@ section {
   color: #FFFFFF;
   margin: 0 0 20px 0;
   padding-bottom: 15px;
+  border-bottom: 1px solid #D0D0D0;
 }
 
 .pillar-method {
@@ -639,6 +498,7 @@ section {
   margin: 0;
 }
 
+/* Legacy values styling - keep for compatibility */
 .values-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -681,21 +541,37 @@ section {
   display: block; 
 }
 
-
-/* ----------------------------------------------------------------------------- */
-/* Rules Section */
-/* ----------------------------------------------------------------------------- */
-
-.rules-section {
-  background-color: var(--bg-core) !important;
-  color: var(--text-main) !important;
+.bottleneck { 
+  display: none; 
 }
 
+/* --- HMAM / STUDIES --- */
+.hmam-funfact-box, .studies-description, .hmam-closing-paragraph, .courseinfo-fact2 {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border) !important;
+  padding: 20px;
+  border-radius: 8px;
+}
 
-/* ----------------------------------------------------------------------------- */
-/* Story Section */
-/* ----------------------------------------------------------------------------- */
+.hmam-funfact-title { 
+  color: var(--text-main) !important; 
+}
 
+.studies-button {
+  background-color: var(--text-main) !important;
+  color: var(--bg-core) !important;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+/* --- STORY SECTION --- */
 .story-section {
   max-width: 800px;
   margin: 0 auto;
@@ -719,47 +595,7 @@ section {
   display: none; 
 }
 
-
-/* ----------------------------------------------------------------------------- */
-/* Proof Section */
-/* ----------------------------------------------------------------------------- */
-
-.proof-section, .faq-section, #faq-section {
-  background-color: var(--bg-core) !important;
-  color: var(--text-main) !important;
-}
-
-.faq-question { 
-  color: var(--text-main) !important; 
-  padding: 15px 0; 
-  text-align: left; 
-  background: none; 
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.faq-answer { 
-  color: var(--text-muted) !important; 
-  display: block; 
-  max-height: none !important; 
-  padding: 15px 0; 
-  font-size: 0.95rem;
-}
-
-.faq-caret { 
-  display: none; 
-}
-
-
-/* ----------------------------------------------------------------------------- */
-/* Testimonials Section */
-/* ----------------------------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------------------------- */
-/* Offer Section */
-/* ----------------------------------------------------------------------------- */
-
+/* --- OFFER SECTION --- */
 .offer-section {
   background-color: var(--bg-core) !important;
   text-align: center;
@@ -808,11 +644,7 @@ section {
   display: none !important; 
 }
 
-
-/* ----------------------------------------------------------------------------- */
-/* Chat Section */
-/* ----------------------------------------------------------------------------- */
-
+/* --- CHAT SECTION --- */
 .chat-section {
   text-align: center;
 }
@@ -839,36 +671,35 @@ section {
   color: var(--text-muted);
 }
 
-
-/* ----------------------------------------------------------------------------- */
-/* Safety / Objections Section */
-/* ----------------------------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------------------------- */
-/* About Me Section */
-/* ----------------------------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------------------------- */
-/* Signature Section */
-/* ----------------------------------------------------------------------------- */
-
-.digital-seal {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0.5rem;
-  color: var(--accent);
+/* --- PROOF / FAQ --- */
+.proof-section, .faq-section, .rules-section, #faq-section {
+  background-color: var(--bg-core) !important;
+  color: var(--text-main) !important;
 }
 
+.faq-question { 
+  color: var(--text-main) !important; 
+  border-bottom: 1px solid var(--border); 
+  padding: 15px 0; 
+  text-align: left; 
+  background: none; 
+  font-size: 1.1rem;
+  font-weight: 600;
+}
 
-/* ----------------------------------------------------------------------------- */
-/* Footer */
-/* ----------------------------------------------------------------------------- */
+.faq-answer { 
+  color: var(--text-muted) !important; 
+  display: block; 
+  max-height: none !important; 
+  padding: 15px 0; 
+  font-size: 0.95rem;
+}
 
+.faq-caret { 
+  display: none; 
+}
+
+/* --- FOOTER --- */
 .site-footer {
   text-align: center;
   padding: 30px;
@@ -883,16 +714,7 @@ section {
   font-size: 0.9rem;
 }
 
-.footer-logo img {
-  width: 32px;
-  height: auto;
-}
-
-
-/* ----------------------------------------------------------------------------- */
-/* Mobile Responsive */
-/* ----------------------------------------------------------------------------- */
-
+/* --- MOBILE --- */
 @media (max-width: 700px) {
   body {
     padding-top: 50px;
@@ -940,4 +762,79 @@ section {
   .story-title, .story-title-mobile { 
     font-size: 1.5rem;
   }
+}
+/* --- PIVOT MANIFESTO SECTION --- */
+#pivot-manifesto {
+  background-color: #000000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* --- GLOBAL TITLE SECTION --- */
+.global-title-section {
+  background-color: #000000;
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.global-title-section h2 {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: bold;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+
+.pivot-text {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: bold;
+  font-size: clamp(2rem, 8vw, 5rem);
+  color: rgba(255, 255, 255, 0.1);
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0);
+  transition: color 1.5s ease-out, text-shadow 1.5s ease-out;
+}
+
+#pivot-manifesto.is-active .pivot-text {
+  color: rgba(255, 255, 255, 1.0);
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+/* Settle to softer glow after initial reveal */
+#pivot-manifesto.is-active .pivot-text {
+  animation: pivot-settle 2s ease-out 1.5s forwards;
+}
+
+@keyframes pivot-settle {
+  to {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* --- DIGITAL SEAL (FOOTER) --- */
+.digital-seal {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  color: var(--accent);
+}
+
+/* --- FOOTER LOGO --- */
+.footer-logo img {
+  width: 32px;
+  height: auto;
 }
