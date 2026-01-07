@@ -42,49 +42,29 @@
 </header>
 <!-- New Hero Section (Image 1) -->
 <section class="new-hero">
-  <!-- Desktop-only image -->
-  <img 
-    src="images/HEADSHOT PRO v2.webp" 
-    alt="Desktop hero image" 
-    class="hero-desktop-image hide-mobile"
-  />
-
-  <!-- Mobile-only images -->
-  <img 
-    src="images/Mobile Hero 1.webp" 
-    alt="Motivation background" 
-    class="hero-mobile-bg hide-desktop"
-  />
-
-<h1 class="new-hero-title">is what I do.</h1>
-<p class="new-hero-tagline">
-Motivation coaching for when nothing else works.<br/>
-</p>
-<!-- Inline mentorship CTA for the hero.  This button replaces the former
-  floating button and anchors the CTA within the hero itself. -->
-<a href="#offer-section" class="hero-mentorship-button">View Mentorship Options</a>
+<h1 class="new-hero-title">Discipline is the biggest trap in modern psychology.</h1>
+<p class="new-hero-tagline">A 10-lane highway still gets 1-lane traffic jams.
+More force won’t help, Just clear the wreck.</p>
+<a href="#offer-section" class="hero-mentorship-button">Apply</a>
 </section>
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- Hook Section (Image 2) -->
-<section class="hook-section" id="diagnostic-trigger">
-  <!-- Center the section heading above the split layout -->
-  <h2 class="diagnostic-title">System Diagnosis: <br><span>The Friction Levels</span></h2>
+<section class="vial-mirror-section" id="diagnostic-trigger" style="background: #000000 url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'50\' height=\'50\' fill=\'none\' stroke=\'rgba(221,221,221,0.35)\' stroke-width=\'0.23\'/%3E%3C/svg%3E') repeat; background-size:50px; color:#f8f8f8; padding:120px 8%; border-bottom:2px solid #333;">
+  <h2 class="diagnostic-title" style="text-align:center; font-family: 'Playfair', serif;">System Diagnosis: <br><span>The Friction Levels</span></h2>
   <div class="vial-sticky-container">
-    
-<div class="vial-visual-wrapper">
-  <div class="vial-container">
-    <img src="/images/Glass Vile.webp" alt="Vial" class="vial-base-img">
-    
-    <div class="mercury-track">
-       <div id="vial-fill" class="mercury-liquid"></div>
+
+    <div class="vial-visual-wrapper">
+      <div class="vial-container">
+        <img src="/images/Glass Vile.webp" alt="Vial" class="vial-base-img">
+        <div class="mercury-track">
+          <div id="vial-fill" class="mercury-liquid"></div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     <div class="vial-content-wrapper">
-      
       <div class="pain-point" data-threshold="20">
         <span class="level-tag">Level 01</span>
         <h3>Distraction</h3>
@@ -115,39 +95,28 @@ Motivation coaching for when nothing else works.<br/>
         <p>The pressure has nowhere to go. You feel the "vibration" in your chest. You’ve floor-boarded the gas until the engine overheated.</p>
       </div>
     </div>
-    
   </div>
 </section>
 
 <script>
 document.addEventListener('scroll', function() {
-  const vialSection = document.getElementById('diagnostic-trigger');
+  const content = document.querySelector('.vial-content-wrapper');
   const fill = document.getElementById('vial-fill');
   const points = document.querySelectorAll('.pain-point');
-  
-  const rect = vialSection.getBoundingClientRect();
+  if (!content || !fill) return;
+
+  const rect = content.getBoundingClientRect();
   const windowHeight = window.innerHeight;
 
-  // 1. IMPROVED ACTIVATION LOGIC
-  // We calculate progress based on how much of the section has passed the 
-  // 70% mark of the screen. This makes it start "sooner" and move "faster."
-  // Start the animation earlier and accelerate the progress so the
-  // vial fills more responsively as the user scrolls.
-  const startTrigger = windowHeight * 0.3;
-  const endTrigger = windowHeight * 0.15;
-
-  let rawProgress = (startTrigger - rect.top) / (rect.height);
-
-  // Boost more aggressively so the fill reaches 100% sooner
-  let boostedProgress = rawProgress * 2.0;
-  let finalProgress = Math.min(Math.max(boostedProgress, 0), 1);
-  
-  fill.style.height = (finalProgress * 100) + "%";
+  // Map fill height to how far the content column has scrolled through the
+  // viewport. This ties the mercury-liquid height directly to the text
+  // column's position so they stay in sync.
+  const visibleRatio = Math.min(Math.max((windowHeight - rect.top) / (windowHeight + rect.height), 0), 1);
+  fill.style.height = (visibleRatio * 100) + "%";
 
   // 2. TEXT SYNC
   points.forEach((point) => {
     const pointRect = point.getBoundingClientRect();
-    // Point lights up when it's in the focus area of the screen
     if (pointRect.top < windowHeight * 0.55 && pointRect.bottom > windowHeight * 0.45) {
       point.classList.add('active');
     } else {
@@ -239,6 +208,28 @@ The result is a repeatable, research-driven system for building motivation that 
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
+<!-- PILLAR (Method) - duplicated values-section structure -->
+<section class="values-section" id="method" style="border-bottom:2px solid #333;">
+  <h2 class="values-title">- Method -</h2>
+  <div class="values-row">
+    <div class="value-item">
+      <h3>Internal Narrative</h3>
+      <p>Addressing the dopamine baseline and narrative reframing to eliminate the 'vibration' of resistance.</p>
+      <div class="value-number">01</div>
+    </div>
+    <div class="value-item">
+      <h3>Biological Regulation</h3>
+      <p>Moving the nervous system from a 'Freeze' state into a high-performance 'Flow' state using neuro-alignment.</p>
+      <div class="value-number">02</div>
+    </div>
+    <div class="value-item">
+      <h3>Systemic Efficiency</h3>
+      <p>Optimizing the '10-Lane Highway' architecture to ensure cognitive output matches your natural ambition.</p>
+      <div class="value-number">03</div>
+    </div>
+  </div>
+</section>
+
 <!-- Rules Section (Image 8) -->
 <section class="rules-section" id="rules">
 <!-- Section heading with a smaller tag for the subtitle -->
@@ -281,7 +272,7 @@ Humility is not weakness; it’s the posture that allows new knowledge to enter.
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- Story Slice (renamed from Authority) -->
-<section class="story-section" id="story">
+<section class="story-section one-percent-section" id="story" style="text-align:center; max-width:800px; margin:0 auto; border-bottom:2px solid #333;">
 <h2 class="story-title">- I Only Wanted Something to Change -</h2>
 <!-- Mobile-specific story title without dashes -->
 <h2 class="story-title-mobile">I Only Wanted Something to Change</h2>
@@ -313,6 +304,7 @@ I’d sit at my desk and feel paralyzed, scrolling through advice that never see
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
 <!-- ---------------------------------------------------- -->
+
 <!-- Testimonials -->
 <section class="section-light testimonials-section" id="client-results">
 <div class="testimonials-grid">
@@ -331,7 +323,7 @@ I’d sit at my desk and feel paralyzed, scrolling through advice that never see
 <!-- ===================== OFFER SECTION (renamed from Plans) ===================== -->
 <section class="offer-section" id="offer-section">
 <div class="offer-head">
-<h2>Choose Your Mentorship Path</h2>
+<h2>The Neuro-Audit</h2>
 <p class="sub">Both tiers include personal access and deep guidance. Plus+ adds advanced analysis, custom research, and priority response.</p>
 </div>
 <!-- Side-by-side summary cards -->
@@ -349,7 +341,7 @@ I’d sit at my desk and feel paralyzed, scrolling through advice that never see
 <li>Exclusive Livestreams &amp; Guides</li>
 <li>Rare Esoteric Philosophy</li>
 </ul>
-<div class="cta-row"><a class="btn" href="https://buy.stripe.com/28EeV73nRfoN7Cd9XSdUY01">Join Base</a><span class="price-tag">$59.99 / month</span></div><div class="slots-note">Limited capacity – a few spots each month</div>
+<div class="cta-row"><a class="btn buy-btn" href="https://buy.stripe.com/28EeV73nRfoN7Cd9XSdUY01">Join Base</a><span class="price-tag">$59.99 / month</span></div><div class="slots-note">Limited capacity – a few spots each month</div>
 </article>
 <article class="plan-card plan-plus">
 <div class="badge">Most Popular</div>
@@ -366,7 +358,7 @@ I’d sit at my desk and feel paralyzed, scrolling through advice that never see
 <li>Monthly Growth Reviews</li>
 <li>Belief System Reconstruction</li>
 </ul>
-<div class="cta-row"><a class="btn btn-plus" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Join Plus+</a><span class="price-tag">$79.99 / month</span></div><div class="slots-note">Limited capacity – a few spots each month</div>
+<div class="cta-row"><a class="btn btn-plus buy-btn" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Join Plus+</a><span class="price-tag">$79.99 / month</span></div><div class="slots-note">Limited capacity – a few spots each month</div>
 </article>
 </div>
 <!-- Comparison grid (desktop / tablet) -->
@@ -476,8 +468,8 @@ I’d sit at my desk and feel paralyzed, scrolling through advice that never see
 </div>
 <!-- Sticky CTA for mobile -->
 <div class="sticky-cta">
-<a class="btn" href="https://buy.stripe.com/28EeV73nRfoN7Cd9XSdUY01">Join Base</a>
-<a class="btn btn-plus" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Join Plus+</a>
+<a class="btn buy-btn" href="https://buy.stripe.com/28EeV73nRfoN7Cd9XSdUY01">Join Base</a>
+<a class="btn btn-plus buy-btn" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Join Plus+</a>
 </div>
 </section>
 <!-- ---------------------------------------------------- -->
@@ -485,192 +477,38 @@ I’d sit at my desk and feel paralyzed, scrolling through advice that never see
 <!-- ---------------------------------------------------- -->
 <!-- #11 FaQ-->
 <!-- Guarantee Section -->
-<section class="section-light guarantee-section" id="guarantee">
-<div class="guarantee-container">
-<h2 class="guarantee-title">Satisfaction Guarantee</h2>
-<p class="guarantee-desc">
-          I'm confident you’ll love Motivation Mentorship. Try coaching risk free! <b>No changes in motivation, emotions, actions, or thoughts in 15 days? No-questions-asked money-back guarantee</b>. If you’re not satisfied for any reason, simply let me know and I’ll refund your purchase. No hassle, no worries.
-        </p>
-</div>
-</section>
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<!-- ---------------------------------------------------- -->
-<section id="faq-section">
-  <div class="faq-container">
-    <div class="faq-accordion">
-
-      <!-- Item 1 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          What exactly do I get with the mentorship?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          Daily 1-on-1 messaging support focused on your goals. I help you diagnose bottlenecks
-          (energy, focus, identity beliefs, dopamine balance, overwhelm), set tight action steps,
-          review progress, and course-correct quickly. You’ll get clear, timely feedback. Not generic tips.
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          How do Base and Plus+ differ?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          <strong>Base ($59.99/mo)</strong>: daily 1-on-1 messaging. No calls. Tactical check-ins, habit tuning,
-          accountability, momentum building.<br><br>
-          <strong>Plus+ ($79.99/mo)</strong>: everything in Base <em>plus</em> deeper personalized research on your specific
-          problems (I bring you data, frameworks, and step-by-step recommendations tailored to you), priority responses,
-          and more detailed reviews. Calls not required, but available.
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          What’s the time commitment for me each day?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          5–15 minutes to check in, answer a few focused prompts, and execute the day’s key action(s).
-          The goal is to reduce cognitive load—not add homework. We keep it lightweight and high-leverage.
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          How fast do you respond and when are you available?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          I reply daily (pacific standard time) with thoughtful, actionable feedback. Most messages get a same-day response;
-          if something requires deeper analysis, I’ll let you know and follow up with a thorough answer.
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          What kinds of problems do you help with specifically?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          Sharper focus & energy, momentum after burnout, identity & belief rewiring, dopamine reset strategies,
-          creative flow, discipline systems that actually stick, sleep/ritual optimization, fear/avoidance loops,
-          and “I know what to do but I’m not doing it” paralysis.
-        </div>
-      </div>
-
-      <!-- Item 6 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          How does onboarding work?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          After you join, you’ll complete a quick intake (goals, constraints, patterns). I map your bottlenecks,
-          we define a minimum-effective routine, and set your first 7-day plan. Then we iterate daily based on results.
-        </div>
-      </div>
-
-      <!-- Item 7 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          Is this therapy or medical advice?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          No. This is coaching/mentorship informed by neuroscience & psychology—education, strategy, and accountability.
-          It’s not therapy, counseling, or medical care.
-        </div>
-      </div>
-
-      <!-- Item 8 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          What if I’ve tried courses and nothing stuck?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          Courses are one-size-fits-all. This is adaptive. We diagnose <em>your</em> friction (identity conflicts, energy
-          timing, environment, reward schedule), test tiny changes, and lock what works. Most people fail from
-          mis-matched systems, not lack of willpower.
-        </div>
-      </div>
-
-      <!-- Item 9 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          Can I switch tiers or cancel anytime?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          Yes—upgrade/downgrade anytime if a slot is available. Cancel anytime; your access continues through the end
-          of the current billing period.
-        </div>
-      </div>
-
-      <!-- Item 10 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          Do you offer a guarantee or refund window?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          If you don’t feel the mentorship is a fit within the first 15 days, message me and I’ll make it right
-          with a straightforward refund. No hoops.
-        </div>
-      </div>
-
-      <!-- Item 11 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          How many spots are available right now?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          Limited capacity to keep replies high-quality. Current openings are live updated on the mentorship card section.
-          If a tier is full, you can join the waitlist and I’ll notify you when a spot opens.
-        </div>
-      </div>
-
-      <!-- Item 12 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          What results should I expect, and how fast?
-          <span class="material-symbols-outlined faq-caret">expand_more</span>
-        </button>
-        <div class="faq-answer">
-          Expect early wins in the first 1–2 weeks (clarity, tighter routines, fewer open loops). Deeper changes
-          (identity, routine, automaticity, resilience) compound over 4–8 weeks. We measure by behavior and outcomes, not vibes.
-        </div>
-      </div>
-
-    </div>
+<!-- SAFETY (Q&A) - duplicate rules-section structure for common objections -->
+<section class="rules-section" id="safety" style="border-bottom:2px solid #333;">
+  <h2 class="rules-heading">- Common Objections -</h2>
+  <h2 class="rules-heading-mobile">Common Objections</h2>
+  <div class="rules-list">
+    <article class="rule-item">
+      <div class="rule-number">1</div>
+      <h3>Will this be science-backed?</h3>
+      <h4>Evidence & sourcing</h4>
+      <div class="rule-separator"></div>
+      <p>Yes — the Neuro-Audit uses neuroscience-aligned protocols and is grounded in peer-reviewed literature and applied practice.</p>
+    </article>
+    <article class="rule-item">
+      <div class="rule-number">2</div>
+      <h3>Is this medical advice?</h3>
+      <h4>Coaching vs medicine</h4>
+      <div class="rule-separator"></div>
+      <p>This is coaching and systems design. We do not provide medical diagnosis; we offer behavioral and regulatory strategies.</p>
+    </article>
+    <article class="rule-item">
+      <div class="rule-number">3</div>
+      <h3>What if it doesn't work for me?</h3>
+      <h4>Refund & adapt</h4>
+      <div class="rule-separator"></div>
+      <p>We iterate rapidly and offer a short-window guarantee — if the approach fails in early testing, we'll adjust or refund per the offer terms.</p>
+    </article>
   </div>
-</section>
 
-<script>
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const item = this.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    // Close all others
-    document.querySelectorAll('.faq-item.open').forEach(openItem => {
-      if(openItem !== item) openItem.classList.remove('open');
-    });
-    // Toggle current
-    item.classList.toggle('open', !isOpen);
-  });
-});
-</script>
+<!-- ---------------------------------------------------- -->
+<!-- ---------------------------------------------------- -->
+<!-- ---------------------------------------------------- -->
 
-<!-- Removed the global floating mentorship button per user request.
-     CTAs are now embedded within the hero and studies sections. -->
 
 <!-- About Me (moved from earlier and renamed) -->
 <section class="about-me-section">

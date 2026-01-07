@@ -371,7 +371,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 /* PIXEL-PERFECT VIAL SECTION                                   */
 /* ------------------------------------------------------------ */
 
-.hook-section {
+.vial-mirror-section {
   position: relative;
   background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.2)' stroke-width='0.2'/%3E%3C/svg%3E") repeat;
   background-size: 50px;
@@ -410,7 +410,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
 }
 
 /* Center the heading above the split layout */
-.hook-section .diagnostic-title {
+.vial-mirror-section .diagnostic-title {
   text-align: center;
   margin: 0 auto 1.5rem;
   font-family: 'Playfair', serif;
@@ -1508,27 +1508,7 @@ display: block;
   /* Removed scattered hero adjustments; see consolidated hero mobile block above for these styles. */
   /* Removed duplicate hook centering; handled in hook section mobile block above. */
   /* Who section: reduce title spacing and fix list alignment */
-  .who-center h2 {
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-  .who-points {
-    padding-left: 1.5rem;
-    margin-left: 0;
-  }
-  .who-points li {
-    list-style-position: inside;
-    padding-left: 0.2rem;
-    letter-spacing: normal;
-  }
-  /* Shrink the right column text and reduce margins */
-  .who-right {
-    font-size: 1rem;
-    margin: 0 0.5rem;
-  }
-  .who-right span {
-    font-size: 1.5rem;
-  }
+  /* Removed who-section mobile rules (section deleted in HTML) */
   /* Buy section: show the H2, hide the H3, and drop the value numbers slightly */
   .buy-section .values-title {
     display: block;
