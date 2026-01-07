@@ -400,7 +400,9 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, label, input, textarea, butto
   top: 10vh;
   /* Slightly favor the visual column (45%) so the image can be larger
      while the content column retains room for text. */
-  flex: 0 0 60%;
+  /* Give the visual column additional room so the vial can be displayed
+     at roughly 2x the original size while preserving the content column. */
+  flex: 0 0 66%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -512,9 +514,9 @@ display: block;
 
 
 /* -----------------------------------------------------------------------------*/
-/* One Percent / About Me Section                                               */
+/* About Me Section (renamed from One Percent)                                  */
 /* -----------------------------------------------------------------------------*/
-.one-percent-section {
+.about-me-section {
     background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
   background-size: 50px;
   background-color: #000;
@@ -609,7 +611,7 @@ display: block;
     display: none;
   }
   /* Stack the three columns vertically and define a custom order */
-  .one-percent-section {
+  .about-me-section {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
@@ -627,84 +629,12 @@ display: block;
   }
 }
 
-/* -----------------------------------------------------------------------------*/
-/* Signs Section                                                                */
-/* -----------------------------------------------------------------------------*/
-.signs-section {
-  background-color: var(--light-bg);
-  color: var(--text-dark);
-  padding: 2ch 2rem;
-
-  justify-content: center;
-}
-
-.signs-section h2 {
-  font-family: 'Playfair', serif;
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-
-.square-copy{
-  white-space: pre;
-  line-height: 1;
-  align-content: center;
-  margin: 0 auto;
-  font-size: 20px;
-  text-align: center;
-}
-.signs-section span {
-  font-family: 'Playfair', serif;
-color: #ffffff;
-font-weight: 500;
-font-size: 25px;
-background: #111111;
-padding: 7px;
-}
-
-/* Mobile-only title for the signs section (hidden by default) */
-.signs-title-mobile {
-  display: none;
-  font-family: 'Playfair', serif;
-  font-weight: 700;
-}
-
-@media (max-width: 700px) {
-  /* Hide the desktop title inside the signs section */
-  .signs-section h2 {
-    display: none;
-  }
-  /* Display the simplified mobile title */
-  .signs-title-mobile {
-    display: block;
-    font-size: 2.4rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-    text-align: center;
-  }
-  /* Reduce the size of the body copy and allow normal wrapping */
-  .square-copy {
-    font-size: 1rem;
-    line-height: 1.2;
-    white-space: normal;
-    padding: 0 0.2rem;
-  }
-    .square-copy span {
-  font-family: 'Playfair', serif;
-color: #ffffff;
-font-weight: 500;
-font-size: 24px;
-background: #111111;
-padding: 4px;
-  }
-}
+/* signs-section removed per request */
 
 /* -----------------------------------------------------------------------------*/
 /* HMAM Deep Dive & Studies Section                                             */
 /* -----------------------------------------------------------------------------*/
-.hmam-deepdive-section {
+.pillars-section {
   /* Invert the HMAM section to a light theme: white background and dark text. */
   background-color: var(--light-bg);
   color: var(--text-dark);
@@ -712,14 +642,14 @@ padding: 4px;
   padding-bottom: 3rem !important;
   text-align: center;
 }
-.hmam-deepdive-section h2{
+.pillars-section h2{
     font-family: 'Playfair', serif;
   font-size: 4rem;
   margin-bottom: 0rem;
   text-align: center;
   color: var(--text-dark);
 }
-.hmam-deepdive-section .hmam-img {
+.pillars-section .hmam-img {
   max-width: 520px;
   margin: 0 auto 1.5rem;
 }
@@ -791,7 +721,7 @@ padding: 4px;
 
 @media (max-width: 700px) {
   /* Reduce padding for the HMAM section */
-  .hmam-deepdive-section {
+  .pillars-section {
     padding: 3rem 1.5rem;
   }
   /* Hide only the desktop HMAM title (with the dash) and show the simplified mobile version */
@@ -807,7 +737,7 @@ padding: 4px;
     text-align: center;
   }
   /* Ensure the HMAM graphic is fully visible and centered on mobile */
-  .hmam-deepdive-section .hmam-img {
+  .pillars-section .hmam-img {
     max-width: 90%;
     width: 90%;
     margin: 0 auto 1rem;
@@ -828,13 +758,12 @@ padding: 4px;
     margin-bottom: 0.6rem;
   }
   /* Increase the size of the studies button on mobile */
-  .hmam-studies-button {
+  .studies-button {
     font-size: 1.1rem;
     padding: 1rem 2rem;
   }
 }
-
-.hmam-studies-heading {
+.studies-heading {
   font-family: 'Playfair', serif;
   font-size: 2.5rem;
   margin: 2rem 0 1rem;
@@ -864,14 +793,13 @@ padding: 4px;
   color: var(--text-dark);
 }
 
-.hmam-studies-description {
+.studies-description {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 1rem;
   color: var(--text-dark);
 }
-
-.hmam-studies-button {
+.studies-button {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.8rem 1.6rem;
@@ -883,121 +811,12 @@ padding: 4px;
   border: 1px solid var(--text-dark);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-
-.hmam-studies-button:hover {
+.studies-button:hover {
   background-color: var(--text-dark);
   color: var(--text-light);
 }
 
-/* -----------------------------------------------------------------------------*/
-/* Values Section                                                               */
-/* -----------------------------------------------------------------------------*/
-.values-section {
-  /* The values section stays on a light background with dark text.  The
-     layout mimics the provided design reference: a simple white row
-     with evenly‑spaced columns separated by vertical rules. */
-  background-color: var(--light-bg);
-  color: var(--text-dark);
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.values-section h3{
-  font-family: 'Playfair', serif;
-  font-size: 2.5rem;
-  margin-top: 0rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: rgb(122, 122, 122);
-  
-}
-.values-row {
-  /* Display the values in a single row.  We remove gaps so the vertical
-     dividers align flush between items.  The container width is capped
-     so the content doesn’t stretch too wide on large screens. */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.value-item {
-  /* Remove card styling so the items sit directly on the white background.
-     Each item fills the available space equally in the row. */
-  background-color: transparent;
-  border-radius: 0;
-  padding: 1rem;
-  flex: 1 1 20%;
-  position: relative;
-  box-shadow: none;
-  min-width: 200px;
-}
-
-.value-item h3 {
-  font-family: 'Playfair', serif;
-  font-size: 2.3rem;
-  margin-bottom: 0.75rem;
-  color: var(--text-dark);
-}
-
-.value-item p {
-  font-size: 1rem;
-  color: #2c2c2c;
-  max-width: 95%;
-  margin: 0 auto;
-}
-
-.value-number {
-  position: absolute;
-  bottom: 0rem;
-  left: 1rem;
-  font-size: 3rem;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.212);
-  opacity: 0.3;
-}
-
-/* Add vertical dividers between value items except for the first one */
-.value-item:not(:first-child) {
-  border-left: 1px solid var(--text-dark);
-}
-
-/* Style the values title to stand out above the row */
-.values-title {
-  font-family: 'Playfair', serif;
-  font-size: 3.2rem;
-  margin-bottom: 0rem;
-  text-align: center;
-  color: var(--text-dark);
-}
-
-/* Hide the mobile values title by default */
-.values-title-mobile {
-  display: none;
-  font-family: 'Playfair', serif;
-  font-weight: 700;
-}
-
-/* Mobile optimizations for the Values section */
-@media (max-width: 700px) {
-  /* Reduce padding on the container to save space */
-  .values-section {
-    padding: 1rem 1rem;
-  }
-  /* Hide the desktop version of the title and show the mobile-friendly one */
-  .values-title {
-    display: none;
-  }
-  .values-title-mobile {
-    display: block;
-    font-size: 2.8rem;
-    line-height: 0.9;
-    max-width: 90%;
-    margin: 0 auto 1rem;
-    color: var(--text-dark);
-  }
-}
+/* values-section removed per request */
 
 /* -----------------------------------------------------------------------------*/
 /* Rules Section                                                                */
@@ -1156,15 +975,15 @@ padding: 4px;
 }
 
 /* -----------------------------------------------------------------------------*/
-/* Authority Section                                                             */
+/* Story Section (renamed from Authority)                                       */
 /* -----------------------------------------------------------------------------*/
-.authority-section {
+.story-section {
   background-color: var(--dark-bg);
   color: var(--text-light);
   padding: 6rem 2rem;
 }
 
-.authority-container {
+.story-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1174,21 +993,21 @@ padding: 4px;
   margin: 0 auto;
 }
 
-.authority-image {
+.story-image {
   flex: 1 1 350px;
   text-align: center;
 }
-.authority-image img {
+.story-image img {
   max-width: 100%;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(255,255,255,0.05);
 }
 
-.authority-content {
+.story-content {
   flex: 1 1 500px;
 }
 
-.authority-title {
+.story-title {
   font-family: 'Playfair', serif;
   font-size: 3rem;
   margin-bottom: 1.5rem;
@@ -1197,23 +1016,23 @@ padding: 4px;
   color: var(--text-light);
 }
 
-/* Mobile-only title for the authority section (hidden by default) */
-.authority-title-mobile {
+/* Mobile-only title for the story section (hidden by default) */
+.story-title-mobile {
   display: none;
   font-family: 'Playfair', serif;
   font-weight: 700;
 }
 
 @media (max-width: 700px) {
-  /* Reduce padding on the authority section */
-  .authority-section {
+  /* Reduce padding on the story section */
+  .story-section {
     padding: 4rem 1.5rem;
   }
-  /* Hide the desktop authority title and show the mobile-friendly version */
-  .authority-title {
+  /* Hide the desktop story title and show the mobile-friendly version */
+  .story-title {
     display: none;
   }
-  .authority-title-mobile {
+  .story-title-mobile {
     display: block;
     font-size: 2.4rem;
     line-height: 1.25;
@@ -1223,13 +1042,13 @@ padding: 4px;
   }
 }
 
-.authority-story {
+.story-story {
   font-size: 1.3rem;
   font-weight: 100;
   color: rgba(219, 219, 219, 0.9);
   line-height: 1.5;
 }
-.authority-story b{
+.story-story b{
   font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -1241,13 +1060,13 @@ padding: 4px;
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
-  .authority-story {
+  .story-story {
   font-size: 01rem;
   font-weight: 100;
   color: rgba(228, 228, 228, 0.9);
   line-height: 1.5;
 }
-.authority-story b{
+.story-story b{
   font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -1256,11 +1075,11 @@ padding: 4px;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.5;
 }
-  .authority-container {
+  .story-container {
     flex-direction: column;
     text-align: center;
   }
-  .authority-quote {
+  .story-quote {
     border-left: none;
     border-top: 2px solid var(--accent-color);
     padding-left: 0;
@@ -1310,108 +1129,14 @@ padding: 4px;
   font-weight: 600;
 }
 /* ============== PRICING / CTA SECTION ============== */
-.plans {
-      background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
+.offer-section {
+    background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
   background-size: 50px;
   background-color: #000;
  color: #fff; padding: 3rem 1.5rem 6rem;
 }
 
-/* -----------------------------------------------------------------------------*/
-/* Who Section (Combined Who It’s For / Not For)                                */
-/* -----------------------------------------------------------------------------*/
-.who-section {
-  background: #000000 url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='50' fill='none' stroke='rgba(221,221,221,0.35)' stroke-width='0.23'/%3E%3C/svg%3E") repeat;
-  background-size: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-items: center;
-  color: var(--text-light);
-  padding: 4rem 2rem;
-  gap: 4rem;
-}
-
-.who-left {
-  flex: 1 1 300px;
-  text-align: center;
-}
-
-.who-left img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-.who-center {
-  flex: 2 1 100px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #cccccc;
-}
-.who-points li {
-  margin-bottom: 0.8rem;
-  font-size: 1.4rem;
-  line-height: 1.6;
-  letter-spacing: 3px;
-  list-style-type: kannada;
-  align-content: center;
-}
-.who-points b {
-  color: #fff;
-  font-weight: 500;
-}
-
-
-.who-center h2 {
-  font-family: 'Playfair', serif;
-  font-size: 2.3rem;
-  margin-bottom: 3rem;
-  color: var(--text-light);
-}
-.who-center h2 span{
-  font-family: 'Playfair', serif;
-  font-size: 2.3rem;
-  margin-bottom: 3rem;
-  background-color: white;
-  padding: 5px;
-  color: var(--text-dark);
-}
-
-.who-right {
-  flex: 1 1 300px;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1;
-  text-align: center;
-  color: #ffffff46;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.who-right span {
-  font-size: 2.7rem;
-  color: #ffffff;
-  margin: 0.5rem 0;
-  text-shadow:1px 1px 10px #ffffff4f, 1px 1px 10px #ffffff4f;
-  display: block;
-}
-
-@media (max-width: 900px) {
-  .who-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-  .who-left, .who-center, .who-right {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-  .who-right {
-    font-size: 2.5rem;
-  }
-}
+/* who-section removed per request */
 
 /* -----------------------------------------------------------------------------*/
 /* Buy Section (What Happens After You Buy)                                     */
@@ -1460,9 +1185,9 @@ padding: 4px;
     font-size: 1rem;
   }
 }
-.plans-head { max-width: 980px; margin: 0 auto 2rem; text-align: center;}
-.plans-head h2 { font-size: 4rem; margin-bottom: .4rem; line-height: 4rem;   font-family: 'Playfair', serif;}
-.plans-head .sub { color: #cccccc; font-size: 1.2rem; }
+.offer-head { max-width: 980px; margin: 0 auto 2rem; text-align: center;}
+.offer-head h2 { font-size: 4rem; margin-bottom: .4rem; line-height: 4rem;   font-family: 'Playfair', serif;}
+.offer-head .sub { color: #cccccc; font-size: 1.2rem; }
 
 .plan-cards {
   display: grid; grid-template-columns: 1fr; gap: 1rem;
@@ -1570,7 +1295,12 @@ padding: 4px;
 
 .faq-container {
   max-width: 800px;
-  margin: 0 auto;
+  /* Explicit responsive sizing: double the base responsive frame so the
+     image appears approximately 2x larger than the original left-column
+     frame. Keeping sizing in layout units (no transforms) ensures children
+     like the mercury track scale 1:1 with the artwork. */
+  width: min(100%, calc(2 * (50vw - 40px)));
+  max-width: 1400px;
 }
 
 .faq-accordion {
@@ -1809,20 +1539,12 @@ padding: 4px;
   .buy-section .value-number {
     bottom: -1rem;
   }
-  /* Values (How Change Happens) section tweaks */
-  .values-section .values-title-mobile {
-    font-size: 3rem;
-  }
-  .values-section > h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
-  }
+  /* values-section rules removed (section deleted) */
   /* HMAM deep dive tweaks: increase spacing below the title and shrink the equation */
   .hmam-deepdive-title-mobile {
     margin-bottom: 1rem;
   }
-  .hmam-deepdive-section .hmam-math-equation {
+  .pillars-section .hmam-math-equation {
     font-size: 0.6rem;
     overflow-wrap: break-word;
   }
@@ -1882,13 +1604,7 @@ padding: 4px;
     max-width: none !important;
     padding: 0.9rem;
   }
-  /* Hide decorative titles and show simplified versions in the values section (excluding buy-section) */
-  .values-section:not(.buy-section) .values-title {
-    display: none !important;
-  }
-  .values-section:not(.buy-section) .values-title-mobile {
-    display: block !important;
-  }
+  /* values-section rules removed (section deleted) */
   .rules-heading {
     display: none !important;
   }
