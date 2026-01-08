@@ -164,6 +164,9 @@
 * {
   box-sizing: border-box;
   animation: none !important;
+}
+
+*:not(.glass-marble) {
   transform: none !important;
 }
 
@@ -252,12 +255,12 @@ section {
   color: inherit;
   padding: 2px 6px;
   border-radius: 2px;
-  transition: background-color 0.6s ease, color 0.6s ease;
+  transition: background-color 0.15s ease-out, color 0.15s ease-out;
 }
 
 .active .highlight-box {
-  background-color: #FFFFFF;
-  color: #000000;
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
 }
 
 
@@ -270,7 +273,12 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: var(--bg-core);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
   position: fixed;
   top: 0;
   left: 0;
@@ -370,6 +378,51 @@ section {
 .vial-mirror-section {
   padding: 100px 5%;
   background-color: var(--bg-core) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass Marble Parallax */
+.marble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-marble {
+  position: absolute;
+  width: clamp(150px, 20vw, 300px);
+  height: auto;
+  opacity: 0.3;
+  filter: blur(8px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.glass-marble[data-marble="1"] {
+  top: 15%;
+  right: 10%;
+}
+
+.glass-marble[data-marble="2"] {
+  top: 35%;
+  left: 5%;
+}
+
+.glass-marble[data-marble="3"] {
+  top: 60%;
+  right: 8%;
+}
+
+.glass-marble[data-marble="4"] {
+  top: 80%;
+  left: 12%;
 }
 
 .pain-points-container {
@@ -380,6 +433,8 @@ section {
   margin: 0 auto;
   text-align: center;
   margin-top: 120px;
+  position: relative;
+  z-index: 2;
 }
 
 .diagnostic-title { 
@@ -489,6 +544,13 @@ section {
   max-width: 1400px;
   margin: 0 auto;
   align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 40px;
 }
 
 @media (max-width: 900px) {
@@ -524,6 +586,11 @@ section {
 .logic-highlight {
   color: #FFFFFF;
   font-weight: 500;
+}
+
+.highlight {
+  color: #000000 !important;
+  font-weight: bold;
 }
 
 .logic-visual {
