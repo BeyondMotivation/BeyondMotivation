@@ -529,6 +529,33 @@ section {
 
 
 /* ----------------------------------------------------------------------------- */
+/* Reverse Pivot Section */
+/* ----------------------------------------------------------------------------- */
+
+#reverse-pivot-section {
+  background-color: var(--bg-core);
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+#reverse-pivot-section .pivot-text {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: bold;
+  font-size: clamp(2rem, 8vw, 5rem);
+  color: rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0);
+  transition: color 1.5s ease-out, text-shadow 1.5s ease-out;
+}
+
+
+/* ----------------------------------------------------------------------------- */
 /* Logic Section */
 /* ----------------------------------------------------------------------------- */
 
@@ -605,6 +632,400 @@ section {
   height: auto;
   object-fit: contain;
 }
+
+@media (max-width: 768px) {
+  .logic-header {
+    font-size: 2rem;
+  }
+  
+  .logic-text {
+    font-size: 1rem;
+  }
+  
+  .logic-image {
+    max-width: 300px;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* Credentials Section */
+/* ----------------------------------------------------------------------------- */
+
+.credentials-section {
+  background-color: var(--bg-core);
+  padding: 40px 5%;
+}
+
+.credentials-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
+
+.credential-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.credential-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin: 0 0 15px 0;
+  letter-spacing: -0.02em;
+}
+
+.credential-subtext {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.credentials-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.ghost-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.ghost-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .credentials-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* Authority Section */
+/* ----------------------------------------------------------------------------- */
+
+.authority-section {
+  background-color: var(--bg-core);
+  padding: 100px 5%;
+}
+
+.authority-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.authority-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.architect-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.authority-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin: 0 0 25px 0;
+  letter-spacing: -0.02em;
+}
+
+.authority-text {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .authority-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .architect-image {
+    max-width: 300px;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* Communication Section */
+/* ----------------------------------------------------------------------------- */
+
+.communication-section {
+  background-color: var(--bg-core);
+  padding: 100px 5%;
+}
+
+.communication-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.communication-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.communication-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.comm-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.communication-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin: 0 0 20px 0;
+  letter-spacing: -0.02em;
+}
+
+.communication-text {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 25px 30px;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 30px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 0 30px 25px 30px;
+}
+
+.faq-answer p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* Offer Section */
+/* ----------------------------------------------------------------------------- */
+
+.offer-section {
+  background-color: var(--bg-core);
+  padding: 100px 5%;
+}
+
+.offer-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 40px;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card.featured {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+}
+
+.scarcity-tag {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 50, 50, 0.9);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-align: center;
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 50, 50, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 50, 50, 0.8); }
+}
+
+.pricing-tier {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin: 30px 0 15px 0;
+  text-align: center;
+}
+
+.pricing-amount {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text-main);
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pricing-period {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: var(--text-muted);
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.pricing-features li {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-button {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  background: var(--text-main);
+  color: var(--bg-core);
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.pricing-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .offer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* Pillars Section */
+/* ----------------------------------------------------------------------------- */
 
 @media (max-width: 768px) {
   .logic-header {
