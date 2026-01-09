@@ -21,7 +21,6 @@
 <a class="navbar-logo" href="index.html">
 <img alt="Logo" src="images/homebutton.png"/>
 </a>
-<p class="site-name">Drewen Schoon</p>
 <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="contactform.html">Contact</a>
@@ -42,8 +41,18 @@
     <div class="sledge" aria-hidden="true"></div>
     <div class="neuro-key" aria-hidden="true"></div>
   </div>
-  <h1 class="new-hero-title">Discipline is the biggest trap in modern psychology.</h1>
-  <p class="new-hero-tagline"><span class="tagline-muted">A 10-lane highway still gets 1-lane traffic jams. More force won't help, just clear the wreck.</span></p>
+  <div class="hero-rating">
+    <span class="hero-stars" aria-label="5 out of 5 stars">★★★★★</span>
+    <span class="hero-rating-copy">Trusted by high-stakes creators</span>
+  </div>
+  <h1 class="new-hero-title">‘Discipline’ is the lie that sabotages your potential</h1>
+  <p class="new-hero-tagline"><span class="tagline-muted"> Coaching that helps high-potential individuals <br> who are ‘tired of being tired.’
+</span></p>
+  <div class="hero-proof-chips" aria-label="Social proof metrics">
+    <div class="hero-chip">7+ Years in the trenches</div>
+    <div class="hero-chip">200+ Clinical papers</div>
+    <div class="hero-chip">5,000+ Execution hours</div>
+  </div>
   <a href="#offer-section" class="hero-mentorship-button">Apply</a>
 </section>
 
@@ -59,53 +68,84 @@
 
 <section class="vial-mirror-section" id="diagnostic-trigger">
       <section class="global-title-section">
-  <h2>Signs Discipline has failed you:</h2>
-  <p class="section-subheader"> <span class="highlight-box"> The harder you push,
-     the harder your mind pulls back.</span> This is the biological cost of forcing focus.</p>
+  <h2>The biological cost of forcing action.</h2>
+  <p class="section-subheader">
 </section>
 
-  <!-- Glass Marbles for Parallax -->
-  <div class="marble-container">
-    <img src="images/Glass Circle.webp" class="glass-marble" data-marble="1" data-speed="0.4" alt="">
-    <img src="images/Glass Circle.webp" class="glass-marble" data-marble="2" data-speed="0.4" alt="">
-    <img src="images/Glass Circle.webp" class="glass-marble" data-marble="3" data-speed="0.4" alt="">
-    <img src="images/Glass Circle.webp" class="glass-marble" data-marble="4" data-speed="0.4" alt="">
-  </div>
+  <!-- Split Section: Text and Image -->
+  <section class="hook-split-section">
+    <div class="hook-split-content">
+      <div class="hook-split-left">
+        <p class="hook-tagline"><span class="hook-tagline-text">
+          <strong>A 10-lane highway can still collapse into a one-lane traffic jam.</strong><br>
+<strong>Pushing harder doesn't fix the congestion, it damages the road.</strong><br>
+Your brain works the same way.<br>
+When mental load, fatigue, and pressure stack up, <br>
+your brain activates defense mechanisms designed to slow you down and protect you.<br>
+What you call laziness isn’t a flaw.<br>
+It’s a safety system doing its job.<br>
+
+        </span></p>
+      </div>
+      <div class="hook-split-right">
+        <canvas id="funnel-canvas" class="funnel-canvas"></canvas>
+      </div>
+    </div>
+  </section>
+
+
 
   <div class="pain-points-container">
-      <div class="pain-point" data-threshold="20" data-marble="1">
-        <span class="level-tag">Level 01</span>
-        <h3>Compulsive Distraction</h3>
+    <div class="pain-point" data-threshold="20">
+      <div class="pain-visual-frame">
+        <img src="images/Distraction Brain.webp" alt="Pain point visual" />
+        <div class="pain-visual-glow" aria-hidden="true"></div>
+      </div>
+      <div class="pain-content">
+        <h3>Procrastination</h3>
         <p>You intend to work, but your mind has other plans.
  By the time you remember you were "trying to be disciplined," 
-You’re already lost in the world of distraction.
+You’re already lost in the world of distraction.<br>
 <span class="highlight-box">"Guess I'll do it tomorrow"</span></p>
       </div>
+    </div>
 
-      <div class="pain-point" data-threshold="40" data-marble="2">
-        <span class="level-tag">Level 02</span>
-        <h3>Inevitable Fatigue</h3>
-        <p>Sleep, caffeine, and "prep time" no longer work. You feel the weight of 
-          exhaustion exactly when you need focus the most.
-        <span class="highlight-box">"I'm too tired."</span> </p>
+    <div class="pain-point" data-threshold="40">
+      <div class="pain-visual-frame">
+        <img src="images/Tirdness.webp" alt="Pain point visual" />
+        <div class="pain-visual-glow" aria-hidden="true"></div>
       </div>
+      <div class="pain-content">
+            <h3>Inevitable Fatigue</h3>
+            <p>Sleep, caffeine, and "prep time" no longer work. You feel the weight of 
+              exhaustion exactly when you need focus the most.<br>
+            <span class="highlight-box">"I'm too tired."</span> </p>
+      </div>
+    </div>
 
-      <div class="pain-point" data-threshold="60" data-marble="3">
-        <span class="level-tag">Level 03</span>
-        <h3>Brain Static</h3>
-        <p>You told yourself that today would be different, 
-but you can’t even think of a single productive or creative thought. 
+    <div class="pain-point" data-threshold="60">
+      <div class="pain-visual-frame">
+        <img src="images/Focus brain.webp" alt="Pain point visual" />
+        <div class="pain-visual-glow" aria-hidden="true"></div>
+      </div>
+      <div class="pain-content">
+            <h3>Brain Static</h3>
+            <p>You told yourself that today would be different, 
+but you can’t even think of a single productive or creative thought. <br>
 <span class="highlight-box">“I cant even think of where to start”</span></p>
       </div>
+    </div>
 
-      <div class="pain-point" data-threshold="80" data-marble="4">
-        <span class="level-tag">Level 04</span>
-        <h3>Anxiety Breakdown</h3>
-        <p>why isn’t anything working, 
-is this just how things are going to be
-<span class="highlight-box">“I just something to change”</span></p>
+    <div class="pain-point" data-threshold="80">
+      <div class="pain-visual-frame">
+        <img src="images/fear brain.webp" alt="Pain point visual" />
+        <div class="pain-visual-glow" aria-hidden="true"></div>
       </div>
-
+      <div class="pain-content">
+            <h3>Anxiety Breakdown</h3>
+            <p>why isn’t anything working, 
+is this just how things are going to be<br>
+<span class="highlight-box">“I just something to change”</span></p>
       </div>
     </div>
   </div>
@@ -230,20 +270,25 @@ is this just how things are going to be
   <!-- ----------------------------------------------------------------------------- -->
 
 <section class="authority-section">
+  <div class="authority-hero-bg" aria-hidden="true"></div>
   <div class="authority-container">
-    <div class="authority-image">
-      <img src="images/HEADSHOT PRO v2.webp" alt="The Architect" class="architect-image">
-    </div>
-    <div class="authority-content">
+    <div class="authority-content glass-wrap">
       <h2 class="authority-header">The Architect of the Protocol.</h2>
-      <p class="authority-text">
-        I didn't start as a coach. I started as a creator in the trenches of game
-         development and lead design—environments where 'waiting for motivation' 
-         is a death sentence. After 7 years of studying why some brains freeze
-          while others fly, I synthesized the HMAM Protocol. I don't give pep 
-          talks; I provide the hardware upgrade for the high-achiever stuck in 
-          a legacy system.
-      </p>
+      <p class="authority-subtext">I didn’t start as a coach. I started as a creator in the trenches of lead design—environments where 'waiting for motivation' is a death sentence.</p>
+      <div class="authority-stats credentials-container">
+        <div class="credential-card">
+          <h3 class="credential-title">7+ Years</h3>
+          <p class="credential-subtext">Field Research</p>
+        </div>
+        <div class="credential-card">
+          <h3 class="credential-title">200+ Papers</h3>
+          <p class="credential-subtext">Neuroscience Foundation</p>
+        </div>
+        <div class="credential-card">
+          <h3 class="credential-title">5,000+ Hours</h3>
+          <p class="credential-subtext">High-Stakes Execution</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -264,17 +309,11 @@ is this just how things are going to be
     <div class="bg-word-clarity hidden">CLARITY</div>
     <div class="bg-word-clarity hidden">SYSTEM</div>
   </div>
-<div class="story-container">
-<div class="story-content">
-  <p class="story-sentence"><b>Every week was the same.</b></p>
-  <p class="story-sentence">I’d stand in the shower wondering why the day already felt wasted.</p>
-  <p class="story-sentence">I’d sit at my desk and feel paralyzed, scrolling through advice that never seemed to fix anything for more than a few days.</p>
-  <p class="story-sentence"><b>It felt like something inside me was broken like everyone else had a manual I didn’t.</b></p>
-  <p class="story-sentence">Then one day at work, during another twelve-hour shift covered in fiberglass and tar, I sat down for lunch and realized the food in my hands had cost me two hours of my life.</p>
-  <p class="story-sentence">That was it. I was done. I quit the job. The relationship ended. I sold the car. I started over, with nothing.</p>
-  <p class="story-sentence"><b>I know it's hard, but we can make progress together.</b></p>
-</div>
-</div>
+  <div class="story-container">
+    <div class="story-content">
+      <p class="story-sentence">I spent years trapped in the 'Discipline-Binge' cycle. I thought I was broken until I realized my 'hardware' was just running a legacy system. I quit the 12-hour shifts, sold the car, and rebuilt my internal architecture from the ground up.</p>
+    </div>
+  </div>
 </section>
 
   
@@ -287,14 +326,13 @@ is this just how things are going to be
 </section>
 
 <section class="chat-section">
-  <div class="chat-icons">
-
-    <img src="images/whattsappLogo.webp" alt="WhatsApp logo">
-    <img src="images/TellegramLogo.webp" alt="Telegram logo">
+  <div class="chat-glass">
+    <div class="chat-icons">
+      <img src="images/whattsappLogo.webp" alt="WhatsApp logo">
+      <img src="images/TellegramLogo.webp" alt="Telegram logo">
+    </div>
+    <p class="chat-description">No formal 'check-ins' that feel like homework. We use high-frequency, low-friction messaging to catch biological bottlenecks the moment they occur. A specialist in your pocket.</p>
   </div>
-  <p class="chat-description">
-    Communication happens on WhatsApp, and Telegram via text, voice notes and occasional video calls. I live in the Pacific Time zone and reply whenever I’m awake. If you’re overseas, expect slight delays but we keep momentum steady.
-  </p>
 </section>
 
 
@@ -304,7 +342,8 @@ is this just how things are going to be
   <!-- Testimonials Section -->
   <!-- ----------------------------------------------------------------------------- -->
 <section class="global-title-section">
-  <h2>Client Results</h2>
+  <h2>Neural Alignments</h2>
+  
 </section>
 
 <section class="section-light testimonials-section" id="client-results">
@@ -341,35 +380,30 @@ is this just how things are going to be
 <div class="plan-cards">
 <article class="plan-card">
 <header>
-<h3>Base</h3>
-<p class="tagline">Foundation, focus, and consistent support.</p>
-
-
+<h3>The Protocol</h3>
+<p class="tagline">Daily 1-on-1 access and high-frequency realignment.</p>
 </header>
 <ul class="bullets">
 <li>1-on-1 Direct Messaging</li>
 <li>Accountability &amp; Performance Review</li>
 <li>Exclusive Livestreams &amp; Guides</li>
-<li>Rare Esoteric Philosophy</li>
 </ul>
-<div class="cta-row"><a class="btn buy-btn" href="https://buy.stripe.com/28EeV73nRfoN7Cd9XSdUY01">Join Base</a><span class="price-tag">$59.99 / month</span></div><div class="slots-note">Limited capacity – a few spots each month</div>
+<div class="cta-row"><a class="btn buy-btn" href="https://buy.stripe.com/28EeV73nRfoN7Cd9XSdUY01">Start Protocol</a><span class="price-tag">$99 / month</span></div><div class="slots-note">Limited capacity – a few spots each month</div>
 </article>
 <article class="plan-card plan-plus">
 <div class="badge">Most Popular</div>
 <header>
-<h3>Plus+</h3>
-<p class="tagline">Calls, custom research, and priority access.</p>
-
+<h3>The Architect</h3>
+<p class="tagline">Introspective Calls and Belief System Reconstruction.</p>
 </header>
 <ul class="bullets">
-<p><b>Everything in Base plus:</b></p>
+<li>Everything in The Protocol</li>
 <li>Introspective Calls</li>
-<li>Customized Data Research</li>
-<li>Priority Response</li>
-<li>Monthly Growth Reviews</li>
 <li>Belief System Reconstruction</li>
+<li>Customized Research Data</li>
+<li>Priority Response</li>
 </ul>
-<div class="cta-row"><a class="btn btn-plus buy-btn" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Join Plus+</a><span class="price-tag">$79.99 / month</span></div><div class="slots-note">Limited capacity – a few spots each month</div>
+<div class="cta-row"><a class="btn btn-plus buy-btn" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Become Architect</a><span class="price-tag">$199 / month</span></div><div class="slots-note">Limited capacity – a few spots each month</div>
 </article>
 </div>
 
@@ -479,8 +513,8 @@ is this just how things are going to be
 </div>
 
 <div class="sticky-cta">
-<a class="btn buy-btn" href="https://buy.stripe.com/28EeV73nRfoN7Cd9XSdUY01">Join Base</a>
-<a class="btn btn-plus buy-btn" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Join Plus+</a>
+<a class="btn buy-btn" href="https://buy.stripe.com/28EeV73nRfoN7Cd9XSdUY01">Start Protocol</a>
+<a class="btn btn-plus buy-btn" href="https://buy.stripe.com/7sYfZbf6z6Shg8J1rmdUY00">Become Architect</a>
 </div>
 </section>
 
@@ -502,10 +536,10 @@ is this just how things are going to be
   <div class="rules-list">
     <article class="rule-item">
       <div class="rule-number">1</div>
-      <h3>Will this be science-backed?</h3>
+      <h3>Is this science-backed?</h3>
       <h4>Evidence & sourcing</h4>
       <div class="rule-separator"></div>
-      <p>Yes — the Neuro-Audit uses neuroscience-aligned protocols and is grounded in peer-reviewed literature and applied practice.</p>
+      <p>Yes. Grounded in 200+ clinical papers on SNS Modulation and Reward Processing.</p>
     </article>
     <article class="rule-item">
       <div class="rule-number">2</div>
@@ -516,10 +550,10 @@ is this just how things are going to be
     </article>
     <article class="rule-item">
       <div class="rule-number">3</div>
-      <h3>What if it doesn't work for me?</h3>
-      <h4>Refund & adapt</h4>
+      <h3>What if it doesn't work?</h3>
+      <h4>The Hardware Guarantee</h4>
       <div class="rule-separator"></div>
-      <p>We iterate rapidly and offer a short-window guarantee — if the approach fails in early testing, we'll adjust or refund per the offer terms.</p>
+      <p>If we don't find your biological bottleneck in 15 days, you don't pay.</p>
     </article>
   </div>
 
@@ -534,26 +568,7 @@ is this just how things are going to be
   <!-- ----------------------------------------------------------------------------- -->
   <!-- About Me Section -->
   <!-- ----------------------------------------------------------------------------- -->
-<section class="global-title-section">
-  <h2>About Me</h2>
-</section>
-
-<section class="about-me-section">
-  <div class="one-percent-left">
-    <span>Don't do the things you enjoy,</span>
-    Be the 1%
-    <span>but enjoy all the things you do.</span>
-  </div>
-  <div class="one-percent-center">
-    <p>
-       Hi, I'm <b>Drewen Schoon</b> - a coach, creator, and entrepreneur with over seven years of experience exploring what drives human motivation.<br/>
-
-From 5,000+ hours in game development to running ventures like a claw-machine company and lead graphic designer, I've blended hands-on experimentation with insights from <b>neuroscience, motivational psychology, and lessons learned directly from nine-figure CEOs.</b><br/>
-
-Today, I work with clients around the world, from Spain to the United States, helping them <b>break free from burnout, rebuild drive, and rediscover a deeper sense of purpose</b>.
-    </p>
-  </div>
-</section>
+<!-- Removed About Me: merged into authority-section -->
 
 
   
