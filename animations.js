@@ -715,3 +715,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// ----------------------------------------------------------------------------- 
+// Offer Section: 3D Tilt Effect
+// ----------------------------------------------------------------------------- 
+
+(function() {
+  const planCards = document.querySelectorAll('.plan-card, .plan-plus');
+  
+  if (planCards.length === 0) return;
+
+  // 3D tilt effect on mouse move
+  planCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // Mouse X position within card
+      const y = e.clientY - rect.top;  // Mouse Y position within card
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      // Calculate rotation based on mouse position (-10 to +10 degrees)
+      const rotateX = ((y - centerY) / centerY) * -10;
+      const rotateY = ((x - centerX) / centerX) * 10;
+      
+      card.style.setProperty('--rotate-x', `${rotateX}deg`);
+      card.style.setProperty('--rotate-y', `${rotateY}deg`);
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--rotate-x', '0deg');
+      card.style.setProperty('--rotate-y', '0deg');
+    });
+  });
+})();
