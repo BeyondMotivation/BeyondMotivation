@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    
+    .test-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    
+    @keyframes dropFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hero-test {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    
+    .hero-test.animate-in {
+      animation: dropFadeIn 0.8s ease-out forwards;
+    }
+    
+    .scroll-test {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    
+    .scroll-test.animate-in {
+      animation: dropFadeIn 0.8s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="test-section hero-test">
+    <h1>HERO - Should fade in on load</h1>
+  </div>
+  
+  <div class="test-section scroll-test" id="test-scroll">
+    <h1>SCROLL SECTION - Should fade in when visible</h1>
+  </div>
+  
+  <script>
+    console.log('Script loaded');
+    
+    // Animate hero on load
+    const heroTest = document.querySelector('.hero-test');
+    console.log('Hero element:', heroTest);
+    if (heroTest) {
+      setTimeout(() => {
+        console.log('Adding animate-in to hero');
+        heroTest.classList.add('animate-in');
+      }, 100);
+    }
+    
+    // Animate on scroll
+    const scrollTest = document.getElementById('test-scroll');
+    console.log('Scroll element:', scrollTest);
+    if (scrollTest) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          console.log('Intersection:', entry.isIntersecting);
+          if (entry.isIntersecting) {
+            console.log('Adding animate-in to scroll section');
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      observer.observe(scrollTest);
+    }
+  </script>
+</body>
+</html>
