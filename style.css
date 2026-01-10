@@ -808,7 +808,7 @@ section {
 .pain-visual-frame {
   position: relative;
   width: 100%;
-  max-width: 280px;
+  max-width: 224px;
   margin: 0 auto;
   aspect-ratio: 1 / 1;
   border-radius: 0;
@@ -956,6 +956,7 @@ section {
   justify-content: center;
   text-align: center;
   padding: 60px 20px;
+  position: relative;
 }
 
 .pivot-1-text {
@@ -964,10 +965,20 @@ section {
   font-size: calc(clamp(2.6rem, 10vw, 6rem) - 7px);
   color: #FFFFFF;
   letter-spacing: -0.04em;
-  line-height: 1.2;
+  line-height: 0.98;
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
   opacity: 0;
   transform: translateY(-30px);
+}
+
+.pivot-subheader {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.02em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #pivot-1.animate-in .pivot-1-text {
@@ -991,14 +1002,21 @@ section {
   display: inline-block;
 }
 
-.pivot-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+.pivot-carousel {
+  width: 100%;
   max-width: 1100px;
-  margin: 40px auto 0;
+  margin: 20px auto 0;
   padding: 0 20px;
-  text-align: center;
+  position: relative;
+}
+
+.pivot-cards {
+  display: flex;
+}
+
+.pivot-cards .swiper-slide {
+  display: flex;
+  justify-content: center;
 }
 
 .pivot-card {
@@ -1006,9 +1024,11 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   padding: 16px;
-  text-align: left;
+  text-align: center;
   opacity: 0;
   transform: translateY(-20px);
+  max-width: 224px;
+  min-height: 144px;
 }
 
 #pivot-1.animate-in .pivot-card {
@@ -1026,6 +1046,7 @@ section {
   color: #FFFFFF;
   margin-bottom: 10px;
   letter-spacing: -0.01em;
+  text-align: center;
 }
 
 .pivot-card-insight {
@@ -1034,6 +1055,7 @@ section {
   color: #B0B0B0;
   line-height: 1.5;
   margin: 0 0 10px 0;
+  text-align: center;
 }
 
 .pivot-card-ref {
@@ -1042,6 +1064,7 @@ section {
   color: #707070;
   font-style: italic;
   margin: 0;
+  text-align: center;
 }
 
 .pivot-meaning-text {
@@ -1055,11 +1078,87 @@ section {
   text-align: center;
 }
 
+.pivot-navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.pivot-prev,
+.pivot-next {
+  width: 31px !important;
+  height: 31px !important;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+  color: rgba(37, 99, 235, 0.6) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.pivot-prev::after,
+.pivot-next::after {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.pivot-prev:hover,
+.pivot-next:hover {
+  background: rgba(0, 0, 0, 0.7);
+  color: rgba(37, 99, 235, 0.9);
+  transform: scale(1.1);
+}
+
+.pivot-prev.swiper-button-disabled,
+.pivot-next.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 @media (max-width: 900px) {
-  .pivot-cards {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .pivot-carousel {
+    padding: 0 10px;
   }
+
+  .pivot-navigation {
+    padding: 0 10px;
+  }
+}
+
+.pivot-carousel-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 0 0 3px #000;
+  color: #2563eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pivot-carousel-btn:active {
+  transform: scale(0.94);
+}
+
+.pivot-carousel-btn:hover {
+  background: #1a1a1a;
+  transform: scale(1.05);
 }
 
 
@@ -2106,5 +2205,30 @@ section {
 
   .story-title, .story-title-mobile { 
     font-size: 1.5rem;
+  }
+
+  .pain-point {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .pain-content {
+    order: -1;
+  }
+
+  .pain-visual-frame {
+    max-width: 100%;
+    margin: 0 auto;
+    max-width: 157px;
+  }
+
+  .pain-content p {
+    font-size: 0.95rem;
+  }
+
+  .pain-content h3 {
+    font-size: 1.8rem;
   }
 }

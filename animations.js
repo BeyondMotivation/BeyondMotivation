@@ -208,6 +208,7 @@
   });
 })();
 
+
 // Offer Section Parallax (glass cards float subtly)
 (function() {
   const offer = document.getElementById('offer-section');
@@ -713,6 +714,35 @@ document.addEventListener('DOMContentLoaded', function() {
     mousewheel: {
       forceToAxis: true,
     }
+  });
+});
+
+// Pivot Carousel (reuse same interaction pattern as pillars)
+document.addEventListener('DOMContentLoaded', function() {
+  const pivotCarousel = new Swiper('.pivot-carousel', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.pivot-next',
+      prevEl: '.pivot-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 24,
+      },
+      1024: {
+        slidesPerView: 1.25,
+        spaceBetween: 28,
+      },
+      1280: {
+        slidesPerView: 1.5,
+        spaceBetween: 32,
+      }
+    },
+    grabCursor: true,
+    keyboard: { enabled: true },
+    mousewheel: { forceToAxis: true }
   });
 });
 
