@@ -191,6 +191,51 @@
   updateTheme();
 })();
 
+// Global Scroll-Triggered Reveal System
+(function() {
+  const observerOptions = {
+    root: null,
+    threshold: 0,
+    rootMargin: '-15% 0px -15% 0px' // Trigger at 75-85% viewport
+  };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        // Optional: unobserve after reveal for performance
+        // revealObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections with hierarchical staggering
+  const sections = document.querySelectorAll('section:not(.pain-points-container):not(.new-hero)');
+  sections.forEach(section => {
+    // Find headlines, subtext, and supporting elements
+    const headlines = section.querySelectorAll('h1, h2, .logic-title, .pain-expand-title');
+    const subtext = section.querySelectorAll('h3, .section-subheader, p:first-of-type');
+    const supporting = section.querySelectorAll('.hero-chip, img, .pillar-card, .plan-card, .credential-card');
+
+    headlines.forEach(el => {
+      el.classList.add('reveal-element', 'reveal-stagger-1');
+      revealObserver.observe(el);
+    });
+
+    subtext.forEach(el => {
+      if (!headlines.length || !Array.from(headlines).includes(el)) {
+        el.classList.add('reveal-element', 'reveal-stagger-2');
+        revealObserver.observe(el);
+      }
+    });
+
+    supporting.forEach(el => {
+      el.classList.add('reveal-element', 'reveal-stagger-3');
+      revealObserver.observe(el);
+    });
+  });
+})();
+
 // FAQ Toggle Animation
 (function() {
   const faqItems = document.querySelectorAll('.faq-item');

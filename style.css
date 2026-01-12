@@ -104,6 +104,27 @@
 /* Animations */
 /* ----------------------------------------------------------------------------- */
 
+/* Global Reveal Animation System */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(4px);
+  transition: opacity 550ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 550ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              filter 550ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.reveal-stagger-1 { transition-delay: 0ms; }
+.reveal-stagger-2 { transition-delay: 100ms; }
+.reveal-stagger-3 { transition-delay: 200ms; }
+.reveal-stagger-4 { transition-delay: 300ms; }
+
 @keyframes dropFadeIn {
   from {
     opacity: 0;
@@ -763,6 +784,13 @@ section {
   text-decoration: none;
   font-size: calc(1rem + 3px);
   cursor: pointer;
+  transition: transform 200ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hero-mentorship-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -790,22 +818,16 @@ section {
   overflow: visible;
 }
 
-@keyframes popIn {
-  0% {
-    transform: scale(0.9);
+@keyframes revealContent {
+  from {
     opacity: 0;
+    transform: translateY(14px);
+    filter: blur(4px);
   }
-  45% {
-    transform: scale(1.03);
+  to {
     opacity: 1;
-  }
-  75% {
-    transform: scale(0.995);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
 
@@ -822,21 +844,23 @@ section {
   background-color: transparent;
   min-height: 0;
   line-height: 0.9;
-  filter: blur(4px);
+  transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pain-point .pain-content {
+  opacity: 0.35;
+  transition: opacity 300ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .pain-point.active {
   color: #FFFFFF;
   pointer-events: auto;
-}
-
-.pain-point.active {
-  filter: blur(0);
+  transform: translateY(-4px);
 }
 
 .pain-point.active .pain-content {
-  opacity: 1 !important;
-  animation: popIn 0.35s cubic-bezier(0.3, 0.8, 0.25, 1) forwards !important;
+  opacity: 1;
 }
 
 .pain-visual-frame {
@@ -864,7 +888,6 @@ section {
   padding: 0;
   gap: 0;
   line-height: 1.8;
-  opacity: 0.1;
 }
 
 .diagnostic-title { 
@@ -898,6 +921,12 @@ section {
   height: auto;
   display: block;
   margin: 0 auto;
+  transform: scale(1.02);
+  transition: transform 550ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pain-point.active .pain-image {
+  transform: scale(1.0);
 }
 
 .pain-content p { 
@@ -1367,6 +1396,45 @@ section {
   max-width: 500px;
   height: auto;
   object-fit: contain;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Pain Expand Section */
+/* ----------------------------------------------------------------------------- */
+
+.pain-expand {
+  background-color: var(--bg-core);
+  padding: 60px 5%;
+  text-align: center;
+}
+
+.pain-expand-title {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.pain-expand-list {
+  list-style: disc;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+}
+
+.pain-expand-item {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
 }
 
 @media (max-width: 768px) {
@@ -2162,9 +2230,13 @@ section {
   font-weight: 600;
   border-radius: 12px;
   font-size: 0.95rem;
-  transition: transform 0.15s ease;
+  transition: transform 200ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.plan-card .btn:hover { transform: scale(1.02); }
+.plan-card .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
 
 .comparison { display: block !important; }
 .mobile-details { display: block; }
