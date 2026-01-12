@@ -1,4 +1,51 @@
-// Pain Points Focus Animation
+// Pain Points Scroll-Hijacking Effect
+(function() {
+  const container = document.querySelector('.pain-points-container');
+  const painPoints = document.querySelectorAll('.pain-point');
+  
+  if (!container || painPoints.length === 0) return;
+
+  let currentIndex = 0;
+  const cardCount = painPoints.length;
+
+  function activateCard(index) {
+    painPoints.forEach((point, i) => {
+      point.classList.toggle('active', i === index);
+    });
+  }
+
+  function updateActivationOnScroll() {
+    let newIndex = 0;
+    let closestDistance = Infinity;
+
+    painPoints.forEach((point, i) => {
+      const rect = point.getBoundingClientRect();
+      const elementCenter = rect.top + rect.height / 2;
+      const viewportCenter = window.innerHeight / 2;
+      const distance = Math.abs(elementCenter - viewportCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        newIndex = i;
+      }
+    });
+
+    if (newIndex !== currentIndex) {
+      currentIndex = newIndex;
+      activateCard(currentIndex);
+    }
+  }
+
+  function handleScroll() {
+    updateActivationOnScroll();
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  activateCard(0);
+})();
+
+// Pain Points Focus Animation (Original - keeping for reference)
 (function() {
   const painPoints = document.querySelectorAll('.pain-point');
   const titleSections = document.querySelectorAll('.global-title-section');
@@ -8,7 +55,7 @@
 
   function updateFocusState() {
     const viewportCenter = window.innerHeight / 2;
-    const activationMargin = 1000; // Large tolerance zone to ensure no gaps
+    const activationMargin = 1000;
     let closestElement = null;
     let closestDistance = Infinity;
     let candidateElements = [];
@@ -18,27 +65,24 @@
       const elementCenter = rect.top + rect.height / 2;
       const distance = Math.abs(elementCenter - viewportCenter);
 
-      // Consider elements within activation margin
       if (distance <= activationMargin) {
         candidateElements.push({ element, distance });
       }
 
-      // Track closest overall (fallback if no candidates in margin)
       if (distance < closestDistance) {
         closestDistance = distance;
         closestElement = element;
       }
     });
 
-    // Remove active class from all elements
-    allFocusElements.forEach(element => element.classList.remove('active'));
+    // Only update non pain-point elements
+    titleSections.forEach(element => element.classList.remove('active'));
 
-    // Activate the closest candidate within the margin, or the overall closest
     const elementToActivate = candidateElements.length > 0 
       ? candidateElements.sort((a, b) => a.distance - b.distance)[0].element
       : closestElement;
 
-    if (elementToActivate) {
+    if (elementToActivate && !elementToActivate.classList.contains('pain-point')) {
       elementToActivate.classList.add('active');
     }
   }
@@ -47,19 +91,17 @@
     updateFocusState();
   }
 
-  // Update on scroll with high frequency
   window.addEventListener('scroll', onScroll, { passive: true });
   
-  // Initial state
   updateFocusState();
 })();
 
-// Unified Theme Transition System
+// Unified Theme Transition System (pain points → logic)
 (function() {
-  const pivotSection = document.getElementById('pivot-manifesto');
-  const reversePivotSection = document.getElementById('reverse-pivot-section');
+  const painSection = document.querySelector('.pain-points-container');
+  const logicSection = document.querySelector('.logic-section');
   
-  if (!pivotSection && !reversePivotSection) return;
+  if (!painSection || !logicSection) return;
 
   function interpolateColor(color1, color2, progress) {
     const c1 = parseInt(color1.slice(1), 16);
@@ -105,6 +147,26 @@
     });
   }
 
+  function getProgress() {
+    const scrollY = window.scrollY;
+    const vh = window.innerHeight;
+
+    const painEnd = painSection.offsetTop + painSection.offsetHeight;
+    const logicStart = logicSection.offsetTop;
+
+    // Start easing near the end of the pain section; finish before logic fully enters
+    const start = painEnd - vh * 0.5;
+    const end = logicStart - vh * 0.2;
+
+    if (end <= start) {
+      // Fallback if sections overlap unexpectedly
+      return scrollY >= logicStart ? 1 : 0;
+    }
+
+    const raw = (scrollY - start) / (end - start);
+    return Math.max(0, Math.min(1, raw));
+  }
+
   function updateTheme() {
     // Dark theme colors
     const darkBg = '#000000';
@@ -115,70 +177,12 @@
     const lightBg = '#FFFFFF';
     const lightText = '#000000';
     const lightMuted = '#666666';
-    
-    // Default to dark theme
-    let finalBg = darkBg;
-    let finalText = darkText;
-    let finalMuted = darkMuted;
-    
-    // Determine scroll position relative to both sections
-    let pivotCompleted = false;
-    let reversePivotCompleted = false;
-    
-    // Check forward pivot transition (dark → light)
-    if (pivotSection) {
-      const pivotRect = pivotSection.getBoundingClientRect();
-      const pivotTop = pivotRect.top;
-      const pivotHeight = pivotRect.height;
-      
-      const animationStart = -(2 / 5) * pivotHeight;
-      const animationEnd = -(4 / 5) * pivotHeight;
-      
-      let progress = 0;
-      
-      if (pivotTop <= animationStart && pivotTop > animationEnd) {
-        // Currently animating through pivot
-        progress = (animationStart - pivotTop) / (animationStart - animationEnd);
-        progress = Math.max(0, Math.min(1, progress));
-        finalBg = interpolateColor(darkBg, lightBg, progress);
-        finalText = interpolateColor(darkText, lightText, progress);
-        finalMuted = interpolateColor(darkMuted, lightMuted, progress);
-      } else if (pivotTop <= animationEnd) {
-        // Pivot animation complete - we're in light theme zone
-        pivotCompleted = true;
-        finalBg = lightBg;
-        finalText = lightText;
-        finalMuted = lightMuted;
-      }
-    }
-    
-    // Check reverse pivot transition (light → dark)
-    // Only apply this if we've completed the forward pivot
-    if (reversePivotSection && pivotCompleted) {
-      const reversePivotRect = reversePivotSection.getBoundingClientRect();
-      const reversePivotTop = reversePivotRect.top;
-      const reversePivotHeight = reversePivotRect.height;
-      
-      const animationStart = -(2 / 5) * reversePivotHeight;
-      const animationEnd = -(4 / 5) * reversePivotHeight;
-      
-      let progress = 0;
-      
-      if (reversePivotTop <= animationStart && reversePivotTop > animationEnd) {
-        // Currently animating through reverse pivot
-        progress = (animationStart - reversePivotTop) / (animationStart - animationEnd);
-        progress = Math.max(0, Math.min(1, progress));
-        finalBg = interpolateColor(lightBg, darkBg, progress);
-        finalText = interpolateColor(lightText, darkText, progress);
-        finalMuted = interpolateColor(lightMuted, darkMuted, progress);
-      } else if (reversePivotTop <= animationEnd) {
-        // Reverse pivot animation complete - back to dark theme
-        reversePivotCompleted = true;
-        finalBg = darkBg;
-        finalText = darkText;
-        finalMuted = darkMuted;
-      }
-    }
+
+    const progress = getProgress();
+
+    const finalBg = interpolateColor(darkBg, lightBg, progress);
+    const finalText = interpolateColor(darkText, lightText, progress);
+    const finalMuted = interpolateColor(darkMuted, lightMuted, progress);
     
     applyTheme(finalBg, finalText, finalMuted);
   }

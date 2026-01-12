@@ -779,53 +779,76 @@ section {
 .pain-points-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 150px;
   max-width: 1400px;
-  margin: 120px auto 0;
+  margin: 200px auto 0;
   padding: 0 10%;
   position: relative;
   z-index: 2;
+  height: fit-content;
+  width: 100%;
+  overflow: visible;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  45% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.995);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .pain-point {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  margin-bottom: 0;
-  opacity: 0.2;
-  transform: scale(0.95);
-  color: #666666;
-  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  display: block;
+  margin: 0;
+    gap: 150px !important;
+    padding: 0 10%;
+    margin: 140px auto 0;
+  position: relative;
+  width: 100%;
+  pointer-events: auto;
+  border-radius: 0;
+  background-color: transparent;
+  min-height: 0;
+  line-height: 0.9;
+  filter: blur(4px);
 }
 
 .pain-point.active {
-  opacity: 1;
-  transform: scale(1);
   color: #FFFFFF;
+  pointer-events: auto;
+}
+
+.pain-point.active {
+  filter: blur(0);
+}
+
+.pain-point.active .pain-content {
+  opacity: 1 !important;
+  animation: popIn 0.35s cubic-bezier(0.3, 0.8, 0.25, 1) forwards !important;
 }
 
 .pain-visual-frame {
-  position: relative;
-  width: 100%;
-  max-width: 224px;
-  margin: 0 auto;
-  aspect-ratio: 1 / 1;
-  border-radius: 0;
-  overflow: hidden;
-  opacity: 0.3;
-  transition: opacity 0.3s ease;
+  display: none;
 }
 
 .pain-point.active .pain-visual-frame {
-  opacity: 1;
+  display: none;
 }
 
 .pain-visual-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  display: none;
 }
 
 .pain-visual-glow {
@@ -835,27 +858,54 @@ section {
 .pain-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  line-height: 1.8;
+  opacity: 0.1;
 }
 
 .diagnostic-title { 
   font-size: 2.5rem; 
-  margin-bottom: 2rem; 
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
 }
 
 .pain-content h3 { 
   color: inherit;
-  font-size: 2.535rem;
+  font-size: 2.9rem;
   letter-spacing: 0.02em;
-  margin-bottom: 0.5rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.pain-content h3 span {
+  font-weight: 300;
+  font-size: inherit;
+  color: rgb(138, 138, 138) !important;
+  letter-spacing: inherit;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.pain-image {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .pain-content p { 
   color: inherit;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   margin: 0;
-  line-height: 1.6;
+  padding: 0;
+  line-height: 1.2;
   font-size: 1.32rem;
 }
 
@@ -948,9 +998,9 @@ section {
 /* ----------------------------------------------------------------------------- */
 
 #pivot-1 {
+  display: none;
   background-color: var(--bg-core);
   min-height: 50vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -998,6 +1048,79 @@ section {
   line-height: inherit;
   letter-spacing: inherit;
   text-shadow: none !important;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Hook 2 Section */
+/* ----------------------------------------------------------------------------- */
+
+#hook2 {
+  background-color: var(--bg-core);
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.hook2-header {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: calc(clamp(2.6rem, 10vw, 6rem) - 7px);
+  color: white;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hook2-subheader {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
+.hook2-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.02em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Desktop and Mobile Versions */
+.hook2-desktop {
+  display: none;
+}
+
+.hook2-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hook2-desktop {
+    display: block;
+  }
+  
+  .hook2-mobile {
+    display: none;
+  }
+}
+
+#hook2.animate-in .hook2-header {
+  animation: dropFadeIn 0.8s ease-out forwards !important;
   opacity: 1;
   display: inline-block;
 }
@@ -1168,7 +1291,18 @@ section {
 
 .logic-section {
   background-color: var(--bg-core);
-  padding: 20px 5%;
+  padding: 70px 5% 20px;
+}
+
+.logic-title {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  text-align: center;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
 }
 
 .logic-container {
@@ -2207,28 +2341,48 @@ section {
     font-size: 1.5rem;
   }
 
+  .pain-points-container {
+    gap: 70px !important;
+    padding: 60px 8% 110px;
+    margin: 100px auto 0;
+    height: fit-content;
+  }
+
   .pain-point {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
-    align-items: stretch;
+    gap: 0 !important;
+    align-items: start;
+    margin: 0 !important;
+    padding: 0 !important;
+    row-gap: 0 !important;
   }
 
   .pain-content {
     order: -1;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
   }
 
   .pain-visual-frame {
     max-width: 100%;
     margin: 0 auto;
     max-width: 157px;
+    display: none;
   }
 
   .pain-content p {
     font-size: 0.95rem;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
   }
 
   .pain-content h3 {
     font-size: 1.8rem;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
   }
 }
