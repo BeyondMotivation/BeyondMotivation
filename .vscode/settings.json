@@ -1,3 +1,9 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "chat.tools.terminal.autoApprove": {
+        "/^open \"/Users/pugsmac/Documents/GitHub/BeyondMotivation/resources\\.html\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
 }

@@ -2458,3 +2458,188 @@ section {
     padding: 0;
   }
 }
+
+/* ----------------------------------------------------------------------------- */
+/* Resources Page */
+/* ----------------------------------------------------------------------------- */
+
+.resources-subheader {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: 300;
+  font-size: 1.35rem;
+  color: #A1A1A1;
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.resources-section {
+  background-color: var(--bg-core);
+  padding: 60px 5% 100px;
+  position: relative;
+}
+
+.resources-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.resource-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 200ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              border-color 200ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              background-color 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.resource-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resource-card-title {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.resource-card-description {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.resource-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.resource-meta-item {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.02em;
+}
+
+.resource-meta-item:not(:last-child)::after {
+  content: "·";
+  margin-left: 16px;
+  opacity: 0.5;
+}
+
+.resource-download-button {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 12px 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  cursor: pointer;
+}
+
+.resource-download-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Resources Transition Section */
+.resources-transition-section {
+  background-color: var(--bg-core);
+  padding: 80px 5% 100px;
+  text-align: center;
+}
+
+.resources-transition-content {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.resources-transition-title {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.resources-transition-text {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resources-container {
+    gap: 24px;
+  }
+
+  .resource-card {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .resource-card-title {
+    font-size: 1.4rem;
+  }
+
+  .resource-card-description {
+    font-size: 1rem;
+  }
+
+  .resource-meta {
+    gap: 12px;
+  }
+
+  .resource-meta-item:not(:last-child)::after {
+    margin-left: 12px;
+  }
+
+  .resources-transition-title {
+    font-size: 1.5rem;
+  }
+
+  .resources-transition-text {
+    font-size: 1.1rem;
+  }
+}
