@@ -1320,7 +1320,56 @@ section {
 
 .logic-section {
   background-color: var(--bg-core);
-  padding: 70px 5% 20px;
+  padding: 80px 5%;
+}
+
+.logic-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #000000 !important;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.logic-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #666666;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.logic-header-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+  filter: contrast(0.95) brightness(0.97);
 }
 
 .logic-title {
@@ -1334,55 +1383,59 @@ section {
   color: var(--text-main);
 }
 
-.logic-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  max-width: 1400px;
-  margin: 0 auto;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
-  padding: 40px;
-}
-
-@media (max-width: 900px) {
-  .logic-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
 .logic-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .logic-header {
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   font-weight: bold;
   font-size: 2.5rem;
-  color: var(--text-main);
+  color: #000000 !important;
   margin: 0;
   letter-spacing: -0.02em;
 }
 
 .logic-text {
-  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-size: 1.1rem;
-  color: #A1A1A1;
-  line-height: 1.8;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: #000000 !important;
   margin: 0;
 }
 
-.highlight {
+.logic-text.strong {
+  font-weight: 650;
+  font-size: 1.45rem;
+}
+
+.logic-text.subtle {
+  opacity: 0.9;
   color: #000000 !important;
-  font-weight: bold;
+}
+
+.logic-text .strong {
+  font-weight: 650;
+  font-size: 1.45rem;
+  color: #000000 !important;
+}
+
+.logic-text .strong2 {
+  font-weight: 650;
+  font-size: inherit;
+  color: #000000 !important;
+}
+
+.logic-text.quiet {
+  opacity: 0.85;
+  font-style: normal;
+  color: #000000 !important;
+}
+
+.logic-text.quiet em {
+  font-style: italic;
 }
 
 .logic-visual {
@@ -1410,13 +1463,23 @@ section {
 
 .pain-expand-title {
   max-width: 1200px;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;
   text-align: center;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   font-weight: 700;
-  font-size: 2.3rem;
+  font-size: 4.2rem;
   letter-spacing: -0.02em;
   color: var(--text-main);
+  line-height: 1.1;
+}
+
+.pain-expand-header-image {
+  width: 80vw;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 30px;
+  display: block;
 }
 
 .pain-expand-list {
@@ -1430,10 +1493,19 @@ section {
 .pain-expand-item {
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   font-size: 1.8rem;
-  font-weight: 700;
-  color: #000000;
+  color: var(--text-muted);
+  font-weight: 400;
   line-height: 1.5;
   margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.pain-expand-item span {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800 !important;
+  color: #000000 !important;
+  line-height: 1.5;
   letter-spacing: -0.01em;
 }
 
@@ -1576,7 +1648,7 @@ section {
   color: #FFFFFF !important;
   margin: 0 0 15px 0;
   letter-spacing: -0.02em;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .credential-subtext {
