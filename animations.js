@@ -167,6 +167,12 @@
     return Math.max(0, Math.min(1, raw));
   }
 
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  let ticking = false;
+
   function updateTheme() {
     // Dark theme colors
     const darkBg = '#000000';
@@ -178,16 +184,25 @@
     const lightText = '#000000';
     const lightMuted = '#666666';
 
-    const progress = getProgress();
+    const rawProgress = getProgress();
+    const progress = easeInOutCubic(rawProgress);
 
     const finalBg = interpolateColor(darkBg, lightBg, progress);
     const finalText = interpolateColor(darkText, lightText, progress);
     const finalMuted = interpolateColor(darkMuted, lightMuted, progress);
     
     applyTheme(finalBg, finalText, finalMuted);
+    ticking = false;
   }
 
-  window.addEventListener('scroll', updateTheme, { passive: true });
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateTheme);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestTick, { passive: true });
   updateTheme();
 })();
 
@@ -827,4 +842,114 @@ document.addEventListener('DOMContentLoaded', function() {
       card.style.setProperty('--rotate-y', '0deg');
     });
   });
+})();
+
+// Color Invert Animation for Reverse Pivot Section (Rest of Website)
+(function() {
+  const reversePivotSection = document.querySelector('#reverse-pivot-section');
+  
+  if (!reversePivotSection) return;
+
+  function interpolateColor(color1, color2, progress) {
+    const c1 = parseInt(color1.slice(1), 16);
+    const c2 = parseInt(color2.slice(1), 16);
+    
+    const r1 = (c1 >> 16) & 255;
+    const g1 = (c1 >> 8) & 255;
+    const b1 = c1 & 255;
+    
+    const r2 = (c2 >> 16) & 255;
+    const g2 = (c2 >> 8) & 255;
+    const b2 = c2 & 255;
+    
+    const r = Math.round(r1 + (r2 - r1) * progress);
+    const g = Math.round(g1 + (g2 - g1) * progress);
+    const b = Math.round(b1 + (b2 - b1) * progress);
+    
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  function applyInvertedTheme(bgColor, textColor, mutedColor) {
+    document.documentElement.style.setProperty('--bg-core', bgColor);
+    document.documentElement.style.setProperty('--text-main', textColor);
+    document.documentElement.style.setProperty('--text-muted', mutedColor);
+    
+    document.body.style.color = textColor;
+    document.body.style.backgroundColor = bgColor;
+    
+    document.querySelectorAll('section').forEach(section => {
+      section.style.backgroundColor = bgColor;
+    });
+    
+    document.querySelectorAll('.global-title-section').forEach(section => {
+      section.style.backgroundColor = bgColor;
+    });
+    
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
+      heading.style.color = textColor;
+    });
+    
+    document.querySelectorAll('p, span, li').forEach(element => {
+      element.style.color = mutedColor;
+    });
+  }
+
+  function getProgress() {
+    const scrollY = window.scrollY;
+    const vh = window.innerHeight;
+    
+    const reversePivotStart = reversePivotSection.offsetTop;
+    
+    // Start transition before entering the section, finish as it enters viewport
+    const start = reversePivotStart - vh * 0.8;
+    const end = reversePivotStart - vh * 0.2;
+    
+    if (end <= start) {
+      return scrollY >= reversePivotStart ? 1 : 0;
+    }
+    
+    const raw = (scrollY - start) / (end - start);
+    return Math.max(0, Math.min(1, raw));
+  }
+
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  let ticking = false;
+
+  function updateInvertedTheme() {
+    // Light theme colors (current state after first transition)
+    const lightBg = '#FFFFFF';
+    const lightText = '#000000';
+    const lightMuted = '#666666';
+    
+    // Inverted (back to dark) colors
+    const darkBg = '#000000';
+    const darkText = '#FFFFFF';
+    const darkMuted = '#A1A1A1';
+    
+    const rawProgress = getProgress();
+    const progress = easeInOutCubic(rawProgress);
+    
+    // Once we start inverting, stay inverted
+    if (progress > 0) {
+      const finalBg = interpolateColor(lightBg, darkBg, progress);
+      const finalText = interpolateColor(lightText, darkText, progress);
+      const finalMuted = interpolateColor(lightMuted, darkMuted, progress);
+      
+      applyInvertedTheme(finalBg, finalText, finalMuted);
+    }
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateInvertedTheme);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestTick, { passive: true });
+  updateInvertedTheme();
 })();

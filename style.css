@@ -257,6 +257,23 @@ section {
   background-color: var(--bg-core) !important;
   overflow: visible;
   position: relative;
+  transition: background-color 0.3s ease-out;
+}
+
+body {
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+:root {
+  transition: --bg-core 0.3s ease-out, --text-main 0.3s ease-out, --text-muted 0.3s ease-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  transition: color 0.3s ease-out;
+}
+
+p, span, li {
+  transition: color 0.3s ease-out;
 }
 
 
@@ -970,14 +987,14 @@ section {
 
 .pivot-text {
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-weight: bold;
-  font-size: clamp(2rem, 8vw, 5rem);
-  color: rgba(255, 255, 255, 0.1);
-  letter-spacing: -0.04em;
+  font-weight: 500;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: var(--text-main);
+  letter-spacing: -0.02em;
   line-height: 1.2;
   margin: 0;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0);
-  transition: color 1.5s ease-out, text-shadow 1.5s ease-out;
+  text-shadow: none;
+  transition: none;
 }
 
 #pivot-manifesto.is-active .pivot-text {
@@ -1007,19 +1024,27 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 #reverse-pivot-section .pivot-text {
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-weight: bold;
-  font-size: clamp(2rem, 8vw, 5rem);
-  color: rgba(0, 0, 0, 0.1);
-  letter-spacing: -0.04em;
+  font-weight: 500;
+  font-size: clamp(4.2rem, 16.8vw, 7.35rem);
+  color: var(--text-main);
+  letter-spacing: -0.02em;
   line-height: 1.2;
   margin: 0;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0);
-  transition: color 1.5s ease-out, text-shadow 1.5s ease-out;
+  text-shadow: none;
+  transition: none;
+}
+
+#reverse-pivot-section .pivot-text.desktop {
+  display: block;
+}
+
+#reverse-pivot-section .pivot-text.mobile {
+  display: none;
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -1466,8 +1491,8 @@ section {
   margin: 0 auto 20px;
   text-align: center;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-weight: 700;
-  font-size: 4.2rem;
+  font-weight: 500;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   letter-spacing: -0.02em;
   color: var(--text-main);
   line-height: 1.1;
@@ -1480,6 +1505,14 @@ section {
   border-radius: 8px;
   margin: 0 auto 30px;
   display: block;
+}
+
+.pain-expand-header-image.desktop {
+  display: block;
+}
+
+.pain-expand-header-image.mobile {
+  display: none;
 }
 
 .pain-expand-list {
@@ -1509,20 +1542,6 @@ section {
   letter-spacing: -0.01em;
 }
 
-@media (max-width: 768px) {
-  .logic-header {
-    font-size: 2rem;
-  }
-  
-  .logic-text {
-    font-size: 1rem;
-  }
-  
-  .logic-image {
-    max-width: 300px;
-  }
-}
-
 
 /* ----------------------------------------------------------------------------- */
 /* Research Marquee Section */
@@ -1536,13 +1555,13 @@ section {
 
 .marquee-title {
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-weight: 300;
-  font-size: 1rem !important;
-  color: #808080 !important;
+  font-weight: 400;
+  font-size: clamp(1rem, 4vw, 1.6rem);
+  color: var(--text-main);
   text-align: center;
   margin: 0 0 15px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
 }
 
 .marquee-container {
@@ -1636,24 +1655,24 @@ section {
 }
 
 .credential-card {
-  background: #000000;
+  background: #FFFFFF;
   border-radius: 16px;
   padding: 40px 30px;
   text-align: center;
 }
 
 .credential-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  color: #FFFFFF !important;
+  color: #000000 !important;
   margin: 0 0 15px 0;
   letter-spacing: -0.02em;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
 }
 
 .credential-subtext {
-  font-size: 1rem;
-  color: #FFFFFF;
+  font-size: 1.3rem;
+  color: #1a1a1a;
   margin: 0;
   line-height: 1.5;
 }
@@ -1894,6 +1913,17 @@ section {
 .offer-section {
   background-color: var(--bg-core);
   padding: 100px 5%;
+}
+
+.sub {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--text-main);
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-align: center;
 }
 
 .micro-copy {
@@ -2486,10 +2516,18 @@ section {
   }
 
   .pain-points-container {
-    gap: 70px !important;
+    gap: 50px !important;
     padding: 60px 8% 110px;
     margin: 100px auto 0;
     height: fit-content;
+  }
+
+  .pain-point .pain-content {
+    opacity: 0.15;
+  }
+
+  .pain-point.active .pain-content {
+    opacity: 1;
   }
 
   .pain-point {
@@ -2528,6 +2566,45 @@ section {
     line-height: 1.2;
     margin: 0;
     padding: 0;
+  }
+
+  .pain-expand-header-image.desktop {
+    display: none;
+  }
+
+  .pain-expand-header-image.mobile {
+    display: block;
+  }
+
+  #reverse-pivot-section .pivot-text.desktop {
+    display: none;
+  }
+
+  #reverse-pivot-section .pivot-text.mobile {
+    display: block;
+    font-size: clamp(3.15rem, 12.6vw, 6.3rem);
+  }
+
+  .credential-card {
+    padding: 35px 25px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .credential-title {
+    font-size: 2rem;
+  }
+
+  .credential-subtext {
+    font-size: 0.85rem;
+  }
+
+  .logic-text {
+    font-size: 1rem;
+  }
+  
+  .logic-image {
+    max-width: 300px;
   }
 }
 
